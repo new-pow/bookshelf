@@ -22,6 +22,6 @@ jobs:
           If you're interested in more in-depth discussions, check out [my blog][1].
           Feel free to explore the most recent writeups below this README.
         footer: |
-          [1]: https://new-pow.tistory.com/   # Replace with your actual blog URL
+          [1]: https://new-pow.tistory.com
         list_most_recent: 2 # optional, lists most recent TILS below description
         date_format: "2020 Jan 15:04" # optional, must align to https://golang.org/pkg/time/#Time.Format
