@@ -12,14 +12,14 @@ _1 TILs and counting..._
 
 ### 1 most recent TILs
 
-- [4. 아키텍처](Real MySQL (8판)/4. 아키텍처 (4.1 MySQL 엔진 아키텍처).md) - 21210 Dec 17:23
+- [4. 아키텍처](Real-MySQL-(8판)/4-아키텍처-(4.1-MySQL-엔진 아키텍처).md) - 21210 Dec 17:35
 
 ### Categories
 
-- [Real MySQL (8판)](#real mysql (8판))
+- [Real-MySQL-(8판)](#real-mysql-(8판))
 
-### [Real MySQL (8판)](#real mysql (8판))
-- [4. 아키텍처](Real MySQL (8판)/4. 아키텍처 (4.1 MySQL 엔진 아키텍처).md)
+### [Real-MySQL-(8판)](#real-mysql-(8판))
+- [4. 아키텍처](Real-MySQL-(8판)/4-아키텍처-(4.1-MySQL-엔진 아키텍처).md)
 
 [1]: https://new-pow.tistory.com
 
