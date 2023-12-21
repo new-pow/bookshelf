@@ -12,14 +12,14 @@ _2 TILs and counting..._
 
 ### 1 most recent TILs
 
-- [4. 아키텍처](Real-MySQL/4-아키텍처.md) - 21210 Dec 17:38
+- [4. 아키텍처](📖-4-아키텍처.md) - 21210 Dec 17:38
 
 ### Categories
 
 - [Real-MySQL](#real-mysql)
 
 ### [Real-MySQL](#real-mysql)
-- [4. 아키텍처](Real-MySQL/4-아키텍처.md)
+- [4. 아키텍처](📖-4-아키텍처.md)
 
 [1]: https://new-pow.tistory.com
 
