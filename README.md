@@ -21,5 +21,5 @@ _1 TILs and counting..._
 ### [Real MySQL (8판)](#real mysql (8판))
 - [4. 아키텍처](Real MySQL (8판)/4. 아키텍처 (4.1 MySQL 엔진 아키텍처).md)
 
-[1]: https://new-pow.tistory.com/   # Replace with your actual blog URL
+[1]: https://new-pow.tistory.com
 
