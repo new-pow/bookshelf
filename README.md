@@ -12,7 +12,6 @@ A collection of notes and solutions on various mathematical topics.
 - [.git](#.git)
 - [🥞-Real-MySQL](#🥞-Real-MySQL)
 - [README.md](#README.md)
-- [.github](#.github)
 
 ### [.git](#.git)
 - [shallow]("./.git/shallow") - Thu Dec 21 2023
@@ -52,9 +51,4 @@ A collection of notes and solutions on various mathematical topics.
 - [0-개요.md]("./🥞-Real-MySQL/0-개요.md") - Thu Dec 21 2023
 
 ### [README.md](#README.md)
-
-### [.github](#.github)
-- [config/.ignore]("./.github/config/.ignore") - Thu Dec 21 2023
-- [workflows/Readme-Builder.yml]("./.github/workflows/Readme-Builder.yml") - Thu Dec 21 2023
-- [src/update-readme.py]("./.github/src/update-readme.py") - Thu Dec 21 2023
 
