@@ -35,8 +35,8 @@ jobs:
 
     - name: Set up Git user name and email
       run: |
-        git config --global user.name 'lys7aves'
-        git config --global user.email 'lys7aves@gmail.com'
+        git config --global user.name 'new-pow'
+        git config --global user.email 'i.newpow@gmail.com'
         
     - name: Commit and push changes
       run: |
