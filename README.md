@@ -12,7 +12,7 @@ _3 TILs and counting..._
 
 ### 2 most recent TILs
 
-- [👩🏻‍💻 MySQL에서 `Process`의 의미 : 단일 프로세스 프로그램인데 프로세스를 종료할 수 있다고요?](🥞-Real-MySQL/👩🏻‍💻-MySQL에서-Process의 의미.md) - 21 Dec 23 23:26 +0900
+- [👩🏻‍💻 MySQL에서 `Process`의 의미 : 단일 프로세스 프로그램인데 프로세스를 종료할 수 있다고요?](🥞-Real-MySQL/MySQL에서-Process의-의미.md) - 23 Dec 23 02:14 +0900
 - [📖 4. 아키텍처](🥞-Real-MySQL/📖-Chapter-4-아키텍처.md) - 21 Dec 23 23:26 +0900
 
 ### Categories
@@ -20,7 +20,7 @@ _3 TILs and counting..._
 - [🥞-Real-MySQL](#🥞-real-mysql)
 
 ### [🥞-Real-MySQL](#🥞-real-mysql)
-- [👩🏻‍💻 MySQL에서 `Process`의 의미 : 단일 프로세스 프로그램인데 프로세스를 종료할 수 있다고요?](🥞-Real-MySQL/👩🏻‍💻-MySQL에서-Process의 의미.md)
+- [👩🏻‍💻 MySQL에서 `Process`의 의미 : 단일 프로세스 프로그램인데 프로세스를 종료할 수 있다고요?](🥞-Real-MySQL/MySQL에서-Process의-의미.md)
 - [📖 4. 아키텍처](🥞-Real-MySQL/📖-Chapter-4-아키텍처.md)
 
 [1]: https://new-pow.tistory.com
