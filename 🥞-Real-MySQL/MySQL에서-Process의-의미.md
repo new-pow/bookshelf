@@ -1,6 +1,6 @@
-# 👩🏻‍💻 MySQL에서 `Process`의 의미 : 단일 프로세스 프로그램인데 프로세스를 종료할 수 있다고요?
+# 👩🏻‍💻 MySQL에서 `Process`의 의미
 
-## 궁금했던 것
+## 궁금했던 것 :  단일 프로세스인데 프로세스를 종료할 수 있다고요?
 요즘 공부하고 있는 책 `RealMySQL`에서 다음과 같은 구절이 나옵니다. (Lock 파트)
 
 ```text
@@ -50,6 +50,12 @@
     > 다양한 Unix 소켓 파일과 TCP/IP 포트에서 연결을 수신하는 **[여러 mysqld](https://dev.mysql.com/doc/refman/8.0/en/mysqld.html)** 프로세스를 관리하도록 설계되었습니다 서버를 시작 또는 중지하거나 현재 상태를 보고할 수 있습니다.
 
 결국 `mysqld` 만이 유일한 SQL 쿼리를 처리하는 프로세스라는 문서 내용입니다.
+그 프로세스 내에서 포그라운드 스레드와 백그라운드 스레드로 나뉘며 각 스레드의 역할을 수행합니다.
+클라이언트의 쿼리 요청을 처리하는 것은 포그라운드 스레드에서 이루어집니다.
+
+
+![](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1feb7462-9c33-4bf1-b0bb-7973d34ffaf2%2F0ec12c3c-7287-444a-ab5e-4e68e6f40278%2FUntitled.png?table=block&id=cbd181ce-fd12-43f3-b207-b088c7073dab&spaceId=1feb7462-9c33-4bf1-b0bb-7973d34ffaf2&width=2000&userId=180a704c-6552-4796-9dd2-ab125439ed98&cache=v2)
+- 참고 : 80 페이지 MySQL 스레딩 모델
 
 [참고 링크 :  https://dev.mysql.com/doc/refman/8.0/en/mysqld.html](https://dev.mysql.com/doc/refman/8.0/en/mysqld.html)
 
@@ -57,6 +63,8 @@
 
 ## 그럼 `processlist`의 정체는 무엇일까?
 다음의 쿼리로 MySQL의 processlist를 조회할 수 있습니다.
+대체 이 process는 무엇일까요?
+
 
 ```sql
 SHOW FULL PROCESSLIST;
@@ -70,7 +78,7 @@ SHOW FULL PROCESSLIST;
 +----+---------------+-------------------+-------------+-------+------+----------------------+-----------------------------------------------------------------------------------------+
 ```
 
-이 `processlist`는 MySQL 서버 내에서 실행중인 스레드 집합에 의해 수행되는 작업 단위를 모아둔 리스트입니다.
+위에서 언급한 OS의 프로세스와는 다르게 이 `processlist`는 MySQL 서버 내에서 실행중인 스레드 집합에 의해 수행되는 작업 단위를 모아둔 리스트입니다.
 
 <aside> 💡 **`processlist`**
 
@@ -145,8 +153,6 @@ select * From performance_schema.threads;
 - Linux의 경우 THREAD_OS_ID는 gettid() 함수의 값에 해당합니다. 이 값은 예를 들어 perf 또는 ps -L 명령을 사용하거나 proc 파일 시스템(/proc/[pid]/task/[tid])에서 노출됩니다.
 
 
-![](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F1feb7462-9c33-4bf1-b0bb-7973d34ffaf2%2F0ec12c3c-7287-444a-ab5e-4e68e6f40278%2FUntitled.png?table=block&id=cbd181ce-fd12-43f3-b207-b088c7073dab&spaceId=1feb7462-9c33-4bf1-b0bb-7973d34ffaf2&width=2000&userId=180a704c-6552-4796-9dd2-ab125439ed98&cache=v2)
-- 참고 : 80 페이지 MySQL 스레딩 모델
 
 
 ---
