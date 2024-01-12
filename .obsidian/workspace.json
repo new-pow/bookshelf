@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Etc/References.md",
+                "file": "Etc/Reference-articles.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -100,7 +100,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Etc/References.md",
+                "file": "Etc/Reference-articles.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +117,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Etc/References.md",
+                "file": "Etc/Reference-articles.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +140,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Etc/References.md"
+                "file": "Etc/Reference-articles.md"
               }
             }
           }
@@ -164,7 +164,7 @@
   "active": "10a5ddd216290721",
   "lastOpenFiles": [
     "README.md",
-    "Etc/References.md",
+    "Etc/Reference-articles.md",
     "Etc",
     "💻-그림으로-배우는-리눅스-구조/README.md"
   ]
