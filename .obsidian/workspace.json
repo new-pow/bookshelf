@@ -100,6 +100,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "📌-Etc/Reference-articles.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,6 +117,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "📌-Etc/Reference-articles.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +140,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled.md"
+                "file": "📌-Etc/Reference-articles.md"
               }
             }
           },
@@ -168,10 +170,10 @@
       "copilot:Copilot Chat": false
     }
   },
-  "active": "b4925ed81208cd87",
+  "active": "2ca182ae1ed5b1f3",
   "lastOpenFiles": [
-    "📌-Etc/Reference-articles.md",
     "Untitled.md",
+    "📌-Etc/Reference-articles.md",
     "README.md",
     "📌-Etc",
     "OS_그림으로-배우는-리눅스-구조/README.md"
