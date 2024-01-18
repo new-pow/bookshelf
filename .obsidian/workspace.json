@@ -135,17 +135,7 @@
             }
           },
           {
-            "id": "0a9395e3f1bd0d2a",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "📌-Etc/Reference-articles.md"
-              }
-            }
-          },
-          {
-            "id": "2ca182ae1ed5b1f3",
+            "id": "5fcc19932ba1c55f",
             "type": "leaf",
             "state": {
               "type": "copilot-chat-view",
@@ -153,7 +143,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -170,7 +160,7 @@
       "copilot:Copilot Chat": false
     }
   },
-  "active": "2ca182ae1ed5b1f3",
+  "active": "5fcc19932ba1c55f",
   "lastOpenFiles": [
     "Untitled.md",
     "📌-Etc/Reference-articles.md",
