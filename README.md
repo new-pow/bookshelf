@@ -10,10 +10,11 @@ _6 TILs and counting..._
 
 ---
 
-### 2 most recent TILs
+### 3 most recent TILs
 
 - [👩🏻‍💻 MySQL에서 `Process`의 의미](DB_Real-MySQL/MySQL에서-Process의-의미.md) - 14 Jan 24 12:33 +0900
 - [📖 4. 아키텍처](DB_Real-MySQL/📖-Chapter-4-아키텍처.md) - 14 Jan 24 12:33 +0900
+- [📖 5. 트랜잭션과 잠금](DB_Real-MySQL/📖-Chapter-5-트랜잭션과-잠금.md) - 14 Jan 24 12:33 +0900
 
 ### Categories
 
