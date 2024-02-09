@@ -23,4 +23,4 @@ jobs:
           Feel free to explore the most recent writeups below this README.
         footer: |
           [1]: https://new-pow.tistory.com
-        list_most_recent: 2 # optional, lists most recent TILS below description
+        list_most_recent: 3 # optional, lists most recent TILS below description
