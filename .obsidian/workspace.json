@@ -1,0 +1,172 @@
+{
+  "main": {
+    "id": "a3b017a620e5ef00",
+    "type": "split",
+    "children": [
+      {
+        "id": "be21722199a895d8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "aad5367013e8fd5a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "10a5ddd216290721",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "OS_그림으로-배우는-리눅스-구조/README.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c55d83a8223b95db",
+    "type": "split",
+    "children": [
+      {
+        "id": "5a5d08050bf8e913",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b4925ed81208cd87",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "6ad788eb81117f41",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "fb2077c2e7d12a4e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "63ae2c51ae55cab2",
+    "type": "split",
+    "children": [
+      {
+        "id": "d6de3ea22f047711",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fb1c77238b44d7c9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "OS_그림으로-배우는-리눅스-구조/README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "eb11328716438715",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "OS_그림으로-배우는-리눅스-구조/README.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "22fa77f96388f5a3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "5fcc19932ba1c55f",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-chat-view",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "copilot:Copilot Chat": false
+    }
+  },
+  "active": "10a5ddd216290721",
+  "lastOpenFiles": [
+    "README.md",
+    "📌-Etc/Reference-articles.md",
+    "Untitled.md",
+    "📌-Etc",
+    "OS_그림으로-배우는-리눅스-구조/README.md"
+  ]
+}
