@@ -32,9 +32,22 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "693df0b440061c6d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "📌-Etc/Why-does-the-Array-Index-start-from-Zero.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -100,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kotlin-in-Action/chapters/1-코틀린이란-무엇이며-왜-필요한가.md",
+                "file": "📌-Etc/Why-does-the-Array-Index-start-from-Zero.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Kotlin-in-Action/chapters/1-코틀린이란-무엇이며-왜-필요한가.md",
+                "file": "📌-Etc/Why-does-the-Array-Index-start-from-Zero.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Kotlin-in-Action/chapters/1-코틀린이란-무엇이며-왜-필요한가.md"
+                "file": "📌-Etc/Why-does-the-Array-Index-start-from-Zero.md"
               }
             }
           }
@@ -161,11 +174,12 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "2597f3f4d048bc59",
+  "active": "693df0b440061c6d",
   "lastOpenFiles": [
+    "Kotlin-in-Action/chapters/1-코틀린이란-무엇이며-왜-필요한가.md",
+    "📌-Etc/Why-does-the-Array-Index-start-from-Zero.md",
     "README.md",
     "Database/무제 파일.md",
-    "Kotlin-in-Action/chapters/1-코틀린이란-무엇이며-왜-필요한가.md",
     "Database",
     "Kotlin-in-Action/무제 파일.md",
     "Kotlin-in-Action/chapters",
