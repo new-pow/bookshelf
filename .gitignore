@@ -2,8 +2,9 @@
 .DS_Store
 .idea
 .idea/*
-.obsidian
 .obsidian/*
-.obsidian/workspace.json
 .obsidian
 .obsidian/workspace.json
+
+# go 생략
+*.go
