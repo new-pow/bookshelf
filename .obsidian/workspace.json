@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Domain-Driven-Design-Quickly/Untitled.md",
+                "file": "Domain-Driven-Design-Quickly/Chapter1.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -113,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Domain-Driven-Design-Quickly/Untitled.md",
+                "file": "Domain-Driven-Design-Quickly/Chapter1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Domain-Driven-Design-Quickly/Untitled.md",
+                "file": "Domain-Driven-Design-Quickly/Chapter1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Domain-Driven-Design-Quickly/Untitled.md"
+                "file": "Domain-Driven-Design-Quickly/Chapter1.md"
               }
             }
           }
@@ -184,10 +184,11 @@
       "copilot:Copilot Chat": false
     }
   },
-  "active": "b4925ed81208cd87",
+  "active": "a02f23741f00307b",
   "lastOpenFiles": [
     "Domain-Driven-Design-Quickly/README.md",
-    "Domain-Driven-Design-Quickly/Untitled.md",
+    "Domain-Driven-Design-Quickly/Chapter1.md",
+    "Domain-Driven-Design-Quickly/.md",
     "README.md",
     "OS_그림으로-배우는-리눅스-구조/README.md",
     "Domain-Driven-Design-Quickly",
