@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Domain-Driven-Design-Quickly/Chapter1.md",
+                "file": "Domain-Driven-Design-Quickly/Chapter2-ubiquitous-language.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -113,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Domain-Driven-Design-Quickly/Chapter1.md",
+                "file": "Domain-Driven-Design-Quickly/Chapter2-ubiquitous-language.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Domain-Driven-Design-Quickly/Chapter1.md",
+                "file": "Domain-Driven-Design-Quickly/Chapter2-ubiquitous-language.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Domain-Driven-Design-Quickly/Chapter1.md"
+                "file": "Domain-Driven-Design-Quickly/Chapter2-ubiquitous-language.md"
               }
             }
           }
@@ -186,8 +186,10 @@
   },
   "active": "a02f23741f00307b",
   "lastOpenFiles": [
+    "Domain-Driven-Design-Quickly/Chapter1-domain-driven-design.md",
+    "Domain-Driven-Design-Quickly/Chapter2-ubiquitous-language.md",
     "README.md",
-    "Domain-Driven-Design-Quickly/Chapter1.md",
+    "[.md",
     "Domain-Driven-Design-Quickly/README.md",
     "Domain-Driven-Design-Quickly/.md",
     "OS_그림으로-배우는-리눅스-구조/README.md",
