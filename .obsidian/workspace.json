@@ -1,27 +1,14 @@
 {
   "main": {
-    "id": "a3b017a620e5ef00",
+    "id": "26f7d66e2f60f36b",
     "type": "split",
     "children": [
       {
-        "id": "be21722199a895d8",
+        "id": "1e0225ed319314d5",
         "type": "tabs",
         "children": [
           {
-            "id": "aad5367013e8fd5a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "10a5ddd216290721",
+            "id": "fb386303a355196e",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -32,23 +19,49 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "2597f3f4d048bc59",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kotlin-in-Action/chapters/1-코틀린이란-무엇이며-왜-필요한가.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "693df0b440061c6d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "📌-Etc/Why-does-the-Array-Index-start-from-Zero.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "c55d83a8223b95db",
+    "id": "1d4b93d1bf91d533",
     "type": "split",
     "children": [
       {
-        "id": "5a5d08050bf8e913",
+        "id": "409101535fbfc8cd",
         "type": "tabs",
         "children": [
           {
-            "id": "b4925ed81208cd87",
+            "id": "57fbd166cf10e5e1",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -58,7 +71,7 @@
             }
           },
           {
-            "id": "6ad788eb81117f41",
+            "id": "e2b25a4960d68963",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -73,7 +86,7 @@
             }
           },
           {
-            "id": "fb2077c2e7d12a4e",
+            "id": "f28f33c8b5e9a9ac",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -87,20 +100,20 @@
     "width": 300
   },
   "right": {
-    "id": "63ae2c51ae55cab2",
+    "id": "1432a86b5cfb7544",
     "type": "split",
     "children": [
       {
-        "id": "d6de3ea22f047711",
+        "id": "3eb3cd2a490913ed",
         "type": "tabs",
         "children": [
           {
-            "id": "fb1c77238b44d7c9",
+            "id": "3e388e1240939866",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OS_그림으로-배우는-리눅스-구조/README.md",
+                "file": "📌-Etc/Why-does-the-Array-Index-start-from-Zero.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,19 +125,19 @@
             }
           },
           {
-            "id": "eb11328716438715",
+            "id": "12db5315eb76e465",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OS_그림으로-배우는-리눅스-구조/README.md",
+                "file": "📌-Etc/Why-does-the-Array-Index-start-from-Zero.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "22fa77f96388f5a3",
+            "id": "c66962d73e903cfc",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -135,11 +148,13 @@
             }
           },
           {
-            "id": "5fcc19932ba1c55f",
+            "id": "334961e7b1fec16a",
             "type": "leaf",
             "state": {
-              "type": "copilot-chat-view",
-              "state": {}
+              "type": "outline",
+              "state": {
+                "file": "📌-Etc/Why-does-the-Array-Index-start-from-Zero.md"
+              }
             }
           },
           {
@@ -152,8 +167,7 @@
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -162,21 +176,44 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "copilot:Copilot Chat": false
+      "switcher:퀵 스위처 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 데일리 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "10a5ddd216290721",
+  "active": "693df0b440061c6d",
   "lastOpenFiles": [
+    "Kotlin-in-Action/chapters/1-코틀린이란-무엇이며-왜-필요한가.md",
+    "📌-Etc/Why-does-the-Array-Index-start-from-Zero.md",
     "README.md",
+    "Database/무제 파일.md",
+    "Database",
+    "Kotlin-in-Action/무제 파일.md",
+    "Kotlin-in-Action/chapters",
+    "Kotlin-in-Action/README.md",
+    "OS_그림으로-배우는-리눅스-구조/README.md",
+    "Kotlin-in-Action",
     "📌-Etc/Reference-articles.md",
-    "Untitled.md",
     "📌-Etc",
-    "OS_그림으로-배우는-리눅스-구조/README.md"
+    "OS_그림으로-배우는-리눅스-구조/src/hello.go",
+    "OS_그림으로-배우는-리눅스-구조/src/hello",
+    "OS_그림으로-배우는-리눅스-구조/src",
+    "OS_그림으로-배우는-리눅스-구조",
+    "DB_Real-MySQL/📖-Chapter-8-인덱스.md",
+    "DB_Real-MySQL/📖-Chapter-5-트랜잭션과-잠금.md",
+    "DB_Real-MySQL/📖-Chapter-4-아키텍처.md",
+    "DB_Real-MySQL/MySQL에서-Process의-의미.md",
+    "DB_Real-MySQL",
+    "🥞-Real-MySQL/📖-Chapter-5-트랜잭션과-잠금.md",
+    "🥞-Real-MySQL/📖-Chapter-8-인덱스.md",
+    "🥞-Real-MySQL/📖-Chapter-4-아키텍처.md",
+    "🥞-Real-MySQL/MySQL에서-Process의-의미.md",
+    "💻-그림으로-배우는-리눅스-구조/README.md",
+    "💻-그림으로-배우는-리눅스-구조/src/hello",
+    "🥞 Database/Real MySQL/0-개요.md",
+    "conflict-files-obsidian-git.md"
   ]
 }
