@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Domain-Driven-Design-Quickly/Chapter2-ubiquitous-language.md",
+                "file": "README.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -113,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Domain-Driven-Design-Quickly/Chapter2-ubiquitous-language.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Domain-Driven-Design-Quickly/Chapter2-ubiquitous-language.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Domain-Driven-Design-Quickly/Chapter2-ubiquitous-language.md"
+                "file": "README.md"
               }
             }
           }
@@ -186,21 +186,22 @@
   },
   "active": "a02f23741f00307b",
   "lastOpenFiles": [
+    "DB_Real-MySQL/MySQL에서-Process의-의미.md",
+    "README.md",
+    "Domain-Driven-Design-Quickly/README.md",
+    "Kotlin-in-Action/무제 파일.md",
+    "Kotlin-in-Action/README.md",
     "Domain-Driven-Design-Quickly/Chapter1-domain-driven-design.md",
     "Domain-Driven-Design-Quickly/Chapter2-ubiquitous-language.md",
-    "README.md",
+    "📌-Etc/Reference-articles.md",
+    "📌-Etc/Why-does-the-Array-Index-start-from-Zero.md",
     "[.md",
-    "Domain-Driven-Design-Quickly/README.md",
     "Domain-Driven-Design-Quickly/.md",
     "OS_그림으로-배우는-리눅스-구조/README.md",
     "Domain-Driven-Design-Quickly",
-    "📌-Etc/Why-does-the-Array-Index-start-from-Zero.md",
     "Kotlin-in-Action/chapters/1-코틀린이란-무엇이며-왜-필요한가.md",
-    "Kotlin-in-Action/무제 파일.md",
     "Kotlin-in-Action/chapters",
-    "Kotlin-in-Action/README.md",
     "Kotlin-in-Action",
-    "📌-Etc/Reference-articles.md",
     "📌-Etc"
   ]
 }
