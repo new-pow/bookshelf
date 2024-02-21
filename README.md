@@ -25,8 +25,8 @@ _10 TILs and counting..._
 - [📌-Etc](#📌-etc)
 
 ### [Domain-Driven-Design-Quickly](#domain-driven-design-quickly)
-- [1장. 도메인 주도 개발이란 무엇인가?](Domain-Driven-Design-Quickly/Chapter1-domain-driven-design.md)
-- [2장. 유비쿼터스 언어](Domain-Driven-Design-Quickly/Chapter2-ubiquitous-language.md)
+- [1장. 도메인 주도 개발이란 무엇인가?](Chapter1-domain-driven-design.md)
+- [2장. 유비쿼터스 언어](Chapter2-ubiquitous-language.md)
 
 ### [Kotlin-in-Action](#kotlin-in-action)
 - [1장. 코틀린이란 무엇이며 왜 필요한가?](Kotlin-in-Action/1-코틀린이란-무엇이며-왜-필요한가.md)
