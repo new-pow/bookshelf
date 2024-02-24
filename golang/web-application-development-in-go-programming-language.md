@@ -8,5 +8,5 @@
 
 | Week | Date | Chapter | Link |
 | :--: | ---- | ---- | ---- |
-| **week 1** | 2024. 2. 21 | Chapter1. Go 언어 알아보기<br>Chapter2. context 패키지 | [related docs](golang/web-application-development/week1.md) |
-|  |  |  |  |
+| **week 1** | 2024. 2. 21 | Chapter1. Go 언어 알아보기<br>Chapter2. context 패키지 | [related docs](./web-application-development/week1.md) |
+| **week 2** | 2024. 2. 28 | Chapter3. database/sql 패키지 | [related docs](./web-application-development/week2.md) |
