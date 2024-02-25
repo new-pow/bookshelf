@@ -13,4 +13,27 @@
 	- `SelectContext` 메서드에서 발생하지 않는다.
 	- 예상한 것과는 달리 동작할 수 있으니 주의하자
 - 트랜잭션을 사용할 때는 defer 문으로 Rollback 메서드를 호출하면 된다.
-	- 
+	- `defer`문으로 선언한 처리는 메서드가 끝나는 시점에 반드시 실행되므로 `Rollback`을 항상 호출할 수 있다.
+	- 만약 로직을 실행하다가
+		- 에러가 발생하면 : Err 발생 -> return Err -> defer tx.Rollback() 호츨
+		- 에러가 발생하지 않으면 : Commit -> defer tx.Rollback() 호출 -> Rollback 메서드는 commit이나 context 패키지 경유의 중단 처리가 끝난 트랜잭션에 대해 rollback을 호출하지 않는다.
+```go
+func (r *Repository) Update(ctx context.Context) error {
+	tx, err := r.db.BeginTx(ctx, nil)
+	if err != nil {
+	return err
+	}
+}
+	defer tx.Rollback()
+	// 이하 생략 p.40
+```
+
+- 대신 많이 사용하는 오픈소스 패키지
+	- 다음과 같은 이유로 이 `database/sql` 패키지를 실제 제품에 사용하는 경우는 드물다.
+		- 쿼리 결과를 구
+	- gorm.io/gorm
+	- github.com/jmoiron/sqlx
+	- github.com/ent/ent
+
+---
+# Chapter4. 
