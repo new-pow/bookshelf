@@ -30,10 +30,18 @@ func (r *Repository) Update(ctx context.Context) error {
 
 - 대신 많이 사용하는 오픈소스 패키지
 	- 다음과 같은 이유로 이 `database/sql` 패키지를 실제 제품에 사용하는 경우는 드물다.
-		- 쿼리 결과를 구
-	- gorm.io/gorm
-	- github.com/jmoiron/sqlx
-	- github.com/ent/ent
+		- 쿼리 결과를 구조체로 변환하는 것이 어렵다.
+		- SQL로부터 RDBMS를 처리하는 Go 코드를 자동생성하고 싶다.
+		- ORM을 사용하고싶다.
+	- 쓸 수 있는 오픈소스 패키지
+		- gorm.io/gorm
+		- github.com/jmoiron/sqlx
+		- github.com/ent/ent
+		- ...
 
 ---
-# Chapter4. 
+# Chapter4. 가시성과 Go
+> Go에는 `private/public` 이 없다.
+> 대신 패키지 밖에서 참조할 수 있는가/없는가 만 있다. `exported/unexported`
+
+- 
