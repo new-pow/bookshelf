@@ -44,4 +44,16 @@ func (r *Repository) Update(ctx context.Context) error {
 > Go에는 `private/public` 이 없다.
 > 대신 패키지 밖에서 참조할 수 있는가/없는가 만 있다. `exported/unexported`
 
-- 
+- `exported` 대문자로 시작하는 패키지 변수, 함수, 구조체, 구조체 필드
+- `unexported` 소문자로 시작하는 패키지 변수, 함수, 구조체, 구조체 필드
+
+## `internal` 패키지
+```
+root
+- internal
+```
+- 외부 패키지에서 참조할 수 없다.
+
+---
+# Chapter5. Go Modules
+> go의 패키지 관리 툴.
