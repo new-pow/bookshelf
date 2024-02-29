@@ -13,7 +13,7 @@ _9 TILs and counting..._
 ### 3 most recent TILs
 
 - [📖 Go 언어로 배우는 웹 애플리케이션 개발](Language Go/web-application-development-in-go-programming-language.md) - 29 Feb 24 21:12 +0900
-- [📖 도메인 주도 설계란 무엇인가?](ddd/domain-driven-design-quickly.md) - 28 Feb 24 22:19 +0900
+- [📖 도메인 주도 설계란 무엇인가?](domain-driven-design-quickly.md) - 28 Feb 24 22:19 +0900
 - [👩🏻‍💻 MySQL에서 `Process`의 의미](MySQL에서-Process의-의미.md) - 21 Feb 24 21:58 +0900
 
 ### Categories
@@ -37,7 +37,7 @@ _9 TILs and counting..._
 - [📖 8. 인덱스](real-mysql_8-인덱스.md)
 
 ### [ddd](#ddd)
-- [📖 도메인 주도 설계란 무엇인가?](ddd/domain-driven-design-quickly.md)
+- [📖 도메인 주도 설계란 무엇인가?](domain-driven-design-quickly.md)
 
 ### [📌-Etc](#📌-etc)
 - [💕 좋았던 아티클](📌-Etc/Reference-articles.md)
