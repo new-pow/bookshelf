@@ -11,7 +11,7 @@
 ## 기록
 | chapter | title | link |
 | ---- | ---- | ---- |
-| 1장 | 도메인 주도 설계란 무엇인가? | [related docs](chapter1.md) |
+| 1장 | 도메인 주도 설계란 무엇인가? | [related docs](DDD/dddq/chapter1.md) |
 | 2장 | 유비쿼터스 언어 | [related docs](chapter2.md) |
 | 3장 | 모델 주도 설계 | [related docs](chapter3.md) |
 | 4장 | 깊은 통찰을 향한 리팩터링 | [related docs](./dddq/chapter4.md) |
