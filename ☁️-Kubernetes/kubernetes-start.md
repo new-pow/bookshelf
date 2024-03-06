@@ -10,4 +10,4 @@
 ## 학습 기록
 | Session        | Link                                        |
 | -------------- | ------------------------------------------- |
-| 1. 쿠버네티스 환경 구성 | [related docs](./kubernetes-start/Note1.md) |
+| 1. 쿠버네티스 환경 구성 | [related docs](☁️-Kubernetes/kubernetes-start/Week1.md) |
