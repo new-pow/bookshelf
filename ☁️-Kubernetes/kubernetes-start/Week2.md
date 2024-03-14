@@ -151,3 +151,88 @@ kube-proxy-p4f9z                             1/1     Running   0          104m
 kube-scheduler-kind-control-plane            1/1     Running   0          104m
 ```
 
+
+---
+# 쿠버네티스의 기본 철학
+- 마이크로서비스 아키텍처 MSA
+	- Microservices Architecture
+	- ↔️ 모놀리식 아키텍처
+- 선언적인 시스템
+
+![](https://private-user-images.githubusercontent.com/103120173/312494983-fc3ddbef-679c-4f91-8466-27d3438e36ed.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTAzNDAzMTksIm5iZiI6MTcxMDM0MDAxOSwicGF0aCI6Ii8xMDMxMjAxNzMvMzEyNDk0OTgzLWZjM2RkYmVmLTY3OWMtNGY5MS04NDY2LTI3ZDM0MzhlMzZlZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwMzEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDMxM1QxNDI2NTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04MjMxZjU0ODZmNjc0MTk2NGFiNmFhM2M4Y2JhZjUyODdkZWI2MjhhMWUxODg0MWIyMjllMjVkYzc4ZGUwNDg0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.tl1a0ARJ5fxWdVYhX5wo8RqxMIhpLleYnY3d_yhtXVQ)
+
+
+## 파드가 배포되면 무슨 일이 일어나나?
+
+---
+# 쿠버네티스의 구조 (아키텍처)
+
+![](https://kubernetes-docsy-staging.netlify.app/images/docs/components-of-kubernetes.png)
+
+- 쿠버네티스 클러스터는 컨테이너화된 애플리케이션을 배포, 스케일 및 관리하기 위한 쿠버네티스의 런타임 환경
+- 클러스터는 여러 노드로 구성되며, 이러한 노드들은 물리적 또는 가상의 서버들을 나타냅니다.
+- 클러스터의 관리 및 조정을 담당하는 **컨트롤 플레인 노드(마스터 노드)**와 실제 애플리케이션 컨테이너가 실행되는 **워커 노드**로 나뉩니다.
+
+## Control Plane
+- 컨트롤 플레인은 컨테이너 오케스트레이션의 핵심 요소
+- 클러스터를 원하는 상태(Desired State)로 지속적으로 유지 및 관리합니다.
+- API 서버, etcd, 컨트롤러 매니저, 스케줄러 등의 컴포넌트로 구성
+- 이런 컴포넌트들을 이용하여 클러스터 내의 리소스들을 관리하고 조정하고 있습니다.
+
+### kube-apiserver
+- Kubernetes API를 제공하는 쿠버네티스 클러스터의 지휘관과 같은 역할로 모든 요청과 명령이 이곳을 통해 처리됩니다.
+	- 상태값을 가지고 있고, 이에 맞춰 다른 컴포넌트들이 움직입니다.
+- 엔드 유저와 다른 클러스터 구성 요소는 API 서버를 통해 클러스터와 상호작용 합니다.
+- `kubectl`을 사용하여 클러스터를 관리할 때, 내부적으로는 HTTP REST API를 통해 kube-apiserver와 통신하게 됩니다. [참고링크](https://coffeewhale.com/apiserver)
+- **controller manager, scheduler 등을 감시 한다**
+
+### etcd
+- 분산 키-값 데이터베이스로 설계되어 있습니다.
+- 쿠버네티스 클러스터 내의 모든 오브젝트의 상태 정보, 메타데이터 및 설정을 보관하고 있습니다.
+- 클러스터 내의 어떤 변화가 전체 클러스터에 일관되게 반영될 것을 보장합니다.
+- **`kubectl describe`** 명령어를 사용해 특정 오브젝트의 세부 정보를 조회할 때, 실제로는 etcd에서 해당 정보를 가져옵니다
+
+```bash
+# 상세 출력을 위한 Describe 커맨드
+kubectl describe nodes my-node
+kubectl describe pods my-pod
+```
+
+### kube-scheduler[​](http://course.whatapk8s.net/docs/kubernetes-basic/kubernetes-structure#kube-scheduler "Direct link to kube-scheduler")
+
+- 파드를 적절한 워커 노드에 배치하는 책임을 가진 컴포넌트입니다.
+- 쿠버네티스 클러스터 내의 여러 노드 중, 새로 생성된 파드가 어느 노드에 실행될지 결정합니다.
+- 파드의 요구사항과 각 노드의 현재 상태를 고려해 최적의 노드를 선택합니다.
+    - 파드가 요청하는 CPU와 메모리와 비교하여 노드의 현재 가용 자원을 확인
+    - 이미 사용 중인 포트와 충돌하지 않도록 노드의 포트 사용 상태도 고려
+- 최종적으로 kube-scheduler는 조건을 만족하는 가장 적절한 노드에 파드를 스케줄링
+
+### Controller Manager
+- 클러스터의 상태를 지속적으로 모니터링하여 사용자가 원하는 상태(desired state)와 현재 상태(actual state)의 차이를 감지하고 필요한 조치를 취하여 두 상태를 일치시키는 역할을 수행
+- 매니저도 여러개
+	- `kube-controller-manager`
+		- `Replication Controller`
+		- `Endpoints Controller`
+		- `Service Account & Token Controllers`
+		- `Namespace Controller`
+	- `cloud-controller-manager`
+		-  `Node Controller`
+		- `Route Controller`
+		- `Service Controller`
+
+## Worker Node
+### Kubelet
+- **노드 등록**: 워커 노드의 정보와 스펙을 kube-apiserver에 등록시킵니다.
+- **파드 수명주기 관리**: API 서버에서 받아온 podSpec을 사용하여 파드를 생성, 업데이트 또는 삭제하는 작업합니다.
+    - podSpec은 파드에서 실행할 컨테이너, CPU 및 메모리 등의 리소스 정보, 환경변수 등의 정보를 포함합니다.
+- **컨테이너 런타임과의 통신**: 큐블렛은 컨테이너를 실행, 중지, 시작하기 위해 컨테이너 런타임(예: Docker, containerd)과 통신합니다.
+
+### container runtime
+- 파드 안에서 컨테이너를 실행시키기 위해서는 컨테이너 런타임이 필요합니다.
+- 컨테이너 레지스트리에서 이미지를 가져오고, 컨테이너를 실행시키고, 컨테이너에 리소스를 할당하고, 또한 호스트 상에서의 컨테이너의 전반적인 라이프 사이클을 관리하는데 책임이 있습니다.
+
+### kube-proxy[​](http://course.whatapk8s.net/docs/kubernetes-basic/kubernetes-structure#kube-proxy "Direct link to kube-proxy")
+
+- 쿠버네티스 서비스 오브젝트와 관련된 네트워크 트래픽을 관리
+- 클러스터 내의 파드 간 통신이나 외부로부터의 트래픽을 파드로 라우팅할 때 거칩니다.
+- 서비스를 사용하면, 파드의 IP 주소와 포트를 직접 알 필요 없이 서비스의 IP와 DNS를 통해 파드에 접근할 수 있는데, 이러한 서비스 요청을 올바른 파드로 전달해주는 역할을 합니다.
