@@ -163,6 +163,7 @@ kube-scheduler-kind-control-plane            1/1     Running   0          104m
 
 
 ## 파드가 배포되면 무슨 일이 일어나나?
+![[Pasted image 20240314113950.png]]
 
 ---
 # 쿠버네티스의 구조 (아키텍처)
