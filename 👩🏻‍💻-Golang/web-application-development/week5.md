@@ -69,3 +69,13 @@ func VersionAdder(v Appversion) func(http.Handler) http.Handler {
 ---
 ## 웹 애플리케이션 자체의 미들웨어 패턴
 
+
+---
+- 왜 브라우저에서 2번 호출되나?
+	- 파비콘때문에
+	- [참고링크](https://forum.golangbridge.org/t/why-handler-is-called-twice/14862)
+	- [참고링크](https://stackoverflow.com/questions/33432192/handlefunc-being-called-twice)
+- 미들웨어 패턴의 순서를 지정해주는 방법
+```
+func main() { firstHandler := Middleware(http.HandlerFunc(FirstHandler) secondHandler := Middleware(http.HandlerFunc(SecondHandler) http.Handle("/first", firstHandler) http.Handle("/second", secondHandler) }	
+```
