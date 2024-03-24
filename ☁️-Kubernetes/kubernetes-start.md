@@ -8,6 +8,8 @@
 - 학습 방법 : 매주 정해진 분량만큼 보고 더 알아올 개념 알아와서 공유하기
 
 ## 학습 기록
-| Session        | Link                                        |
-| -------------- | ------------------------------------------- |
-| 1. 쿠버네티스 환경 구성 | [related docs](☁️-Kubernetes/kubernetes-start/Week1.md) |
+| Session        | Link                                                    |
+| -------------- | ------------------------------------------------------- |
+| 1. 쿠버네티스 환경 구성 | [related docs](☁️-Kubernetes/kubernetes-start/week1.md) |
+| ~3. 쿠버네티스 인사이드 | [related docs](☁️-Kubernetes/kubernetes-start/week2.md) |
+| ~5. 쿠버네티스 오브젝트 | [related docs](☁️-Kubernetes/kubernetes-start/week3.md) |
