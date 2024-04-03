@@ -1,8 +1,5 @@
 # Chapter 16. HTTP 서버를 약한 결합 구성으로 변경하기
 ## 들어가기 전에
-- 코드 해석에 부족함이 있을 수 있습니다 🥲
-- 추가/정정할 내용이 있다면 알려주세요.
-
 - 해당 챕터에서는
 	- 실용적인 Server 구조체를 정의한다.
 	- Beyond the Twelve-Factor App 관점을 적용한다.
@@ -432,3 +429,5 @@ module web-server
 # 변경 후
 module github.com/new-pow/go_todo_app
 ```
+
+- 혹은 이름을 변경하지 않고 바로 `web-server`를 import 해도 됩니다.
