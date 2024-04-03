@@ -129,9 +129,33 @@ kubectl create deployment deploy-nginx --image=nginx
 kubectl scale deployment deploy-nginx --replicas=3
 ```
 
+- 다수의 파드를 배포하는 방법
+	- `ReplicaSet`
+- 기본 replicaSet은 1개입니다.
+```
+kubectl scale deployment deploy-nginx --replicas=3
+
+❯ kubectl get pods -o wide
+NAME                            READY   STATUS    RESTARTS   AGE     IP           NODE                 NOMINATED NODE   READINESS GATES
+deploy-nginx-7f979874cf-4kqjx   1/1     Running   0          24s     10.244.3.3   del-deploy-worker    <none>           <none>
+deploy-nginx-7f979874cf-hn22v   1/1     Running   0          24s     10.244.2.3   del-deploy-worker2   <none>           <none>
+deploy-nginx-7f979874cf-t48jt   1/1     Running   0          4m58s   10.244.1.2   del-deploy-worker3   <none>           <none>
+nginx                           1/1     Running   0          7h26m   10.244.2.2   del-deploy-worker2   <none>           <none>
+```
+
 
 # Load balancer
+- deployment는 어떻게 노출할까?
+```
+❯ kubectl expose deployment deploy-nginx --type=NodePort --port=80
+service/deploy-nginx exposed
+```
+
+- 서비스 말고, 로드밸런서 타입을 정의하자
+	- 네이티브 k8s에서는 지원을 안하기 때문에 보통 사용되는 MetalLB를 사용할 예정
+
 ## 노드포트보다 로드밸런서가 좋은 점
+
 - 노트포트의 IP를 노출하는 부담이 없다
 - 요청 경로를 최적화하여 보내줄 수 있다
 ```
