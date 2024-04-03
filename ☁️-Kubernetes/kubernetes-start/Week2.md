@@ -1,4 +1,5 @@
 # Pod 실습
+## Pod란?
 - 컨테이너들의 집합
 - 한 가지 일을 하는 것들의 단위
 - 보통 컨테이너 하나가 들어있다.
@@ -30,7 +31,8 @@ nodes:
 ```
 
 # Service 실습
-- 배포한 파드를 외부에서 접속하게 하려면 service가 필요하다.
+- 배포한 파드를 외부에서 접속하게 하려면? service가 필요하다.
+- service가 node port들을 찾아가고, node port에서 pod들이 위치한 곳을 찾아갑니다.
 ```
 ☁  ~  curl 10.244.2.2
 
@@ -38,10 +40,47 @@ nodes:
 curl: (28) Failed to connect to 10.244.2.2 port 80 after 75002 ms: Couldn't connect to server
 ```
 
-- 노출해보기
+- nodePort를 노출해보기
 ```
 ☁  ~  kubectl expose pod nginx --type=NodePort --port=80
 service/nginx exposed
+```
+
+```
+root@del-deploy-control-plane /
+❯ kubectl get service
+NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+kubernetes   ClusterIP   10.96.0.1      <none>        443/TCP        12m
+nginx        NodePort    10.96.50.160   <none>        80:31068/TCP   99s
+```
+
+- 다음에 접속하니 웹사이트도 접속 가능
+```
+# nodeIp:podPort
+☁  kind  curl 192.168.247.5:31068
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
 ```
 
 ## 해당 Pod가 올라간 노드 외에 다른 노드에서도 접속이 가능한 이유
@@ -79,9 +118,10 @@ service/deploy-nginx exposed
 
 - `kubectl run` 으로 배포하기 힘들다.
 	- 테스트 할 때나 사용하지 보통 사용하지 않는다.
-- 그래서 사용하는 것
+- 그래서 사용하는 것 pod, deployment를 배포하는 다른 방법
 	- `kubectl create`
 	- `kubectl apply`
+		- 파일을 통해 배포하는 방법
 
 ```
 kubectl create deployment deploy-nginx --image=nginx
