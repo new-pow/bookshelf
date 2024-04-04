@@ -84,9 +84,7 @@ Commercial support is available at
 ```
 
 ## 해당 Pod가 올라간 노드 외에 다른 노드에서도 접속이 가능한 이유
-테스트해보신 것 처럼 NodePort로 expose 시, 해당 Pod가 올라간 노드 외 다른 노드에서도 접속이 가능한 이유는
-
-아래 공식문서에서 설명하고 있는 내용과 같이 모든 노드에서 동일한 포트를 서비스로 프록시하기 때문입니다.
+테스트해보신 것 처럼 NodePort로 expose 시, 해당 Pod가 올라간 노드 외 다른 노드에서도 접속이 가능한 이유는 아래 공식문서에서 설명하고 있는 내용과 같이 모든 노드에서 동일한 포트를 서비스로 프록시하기 때문입니다.
 
 - NodePort 유형
 	- https://kubernetes.io/ko/docs/concepts/services-networking/service/#type-nodeport
@@ -332,4 +330,10 @@ kubectl describe pods my-pod
 ---
 # Networking
 - 서비스, 로드밸런싱, 네트워킹
-- 
+- https://kubernetes.io/ko/docs/concepts/services-networking/
+- 쿠버네티스 네트워킹을 어떻게 할까?
+
+- 파드 내의 컨테이너는 루프백 loopback 
+- 서로 다른 파드 간의 통신을 제공한다.
+- 파드에서 실행중인 애플리케이션을 클러스터 외부에서 접근하려면 NodePort, LoadBalancer를 거쳐야 한다.
+- 서비스를 클러스터 내부에서만 쓰도록 설정할 수도 있다. [서비스 내부 트래픽 정책](https://kubernetes.io/ko/docs/concepts/services-networking/service-traffic-policy/)
