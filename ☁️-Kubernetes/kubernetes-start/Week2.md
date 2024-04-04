@@ -187,13 +187,30 @@ chk-hn         LoadBalancer   10.96.253.167   192.168.1.11   80:30941/TCP   12m
 ```
 - 추측
 	1. host network 설정이 잘못되었나?
+	2. Kind의 특징인가?
+- kind
+	- http://192.168.247.5:30623/ 노드ip + service port로 접속가능했음
+### 원인
+- LoadBalancer 타입 특성 상 external IP로 접근 가능하지만, macOS, Windows에서는 docker network를 host에 노출하지 않으므로 여기서는 NodePort를 통해 외부에 노출 (port : 31593.참고로 이 땜시 개고생함. NodePort로 우회하는 전략을 설명하는 문서가 전무. 오직 hint만 kind 공식 문서에 있을 뿐. [macOS의 경우 docker network를 노출하는 방법](https://www.thehumblelab.com/kind-and-metallb-on-mac/)이 있긴 한데, 이 문서의 prerequisite인 tuntap 설치가 macOS에서는 이제 불가)
+```
+☁  kind  curl 192.168.247.5:30623
+chk-hn-6cb6cdf8f8-68xsn
+```
+- **결국 container 방식의 kind의 한계였음**
 
 ---
-# 쿠버네티스는 어떻게 구성되어 있나?
-## 네임스페이스 namespce
-- `default`
-- `kube-system` : kubernetes 실행을 위한 구역
+# 모두 삭제하자
 
+```
+kubectl delete {object} {name}
+```
+
+---
+# ✨ 쿠버네티스는 어떻게 구성되어 있나?
+## 네임스페이스 namespce
+- 구역을 나누는 네임스페이스
+	- `default` : 우리가 주로 사용하는 구역
+	- `kube-system` : kubernetes 실행을 위한 구역
 - 보는 방법
 ```
 kubectl get pods -n kube-system
@@ -215,10 +232,17 @@ kube-proxy-p4f9z                             1/1     Running   0          104m
 kube-scheduler-kind-control-plane            1/1     Running   0          104m
 ```
 
+##  다른 서비스들
+- 우리에게 안보여지는 요소들이 있는 master node는 사뭇 다를 수 있으나
+- 기본적으로 핵심 구성 요소는 동일하다.
+	- AWS - EKS
+	- Azure - AKS
+	- Google - GKE
+- kubesystem 하위에 구성요소들이 동일하게 있다
 
 ---
 # 쿠버네티스의 기본 철학
-- 마이크로서비스 아키텍처 MSA
+- 마이크로서비스 아키텍처 MSA 형태로 구성되어 있다.
 	- Microservices Architecture
 	- ↔️ 모놀리식 아키텍처
 - 선언적인 시스템
@@ -227,7 +251,10 @@ kube-scheduler-kind-control-plane            1/1     Running   0          104m
 
 
 ## 파드가 배포되면 무슨 일이 일어나나?
-![[Pasted image 20240314113950.png]]
+
+![](https://private-user-images.githubusercontent.com/103120173/319393390-206e7a12-73ca-4cd7-a017-ab4d5fc08d85.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxODg0NTQsIm5iZiI6MTcxMjE4ODE1NCwicGF0aCI6Ii8xMDMxMjAxNzMvMzE5MzkzMzkwLTIwNmU3YTEyLTczY2EtNGNkNy1hMDE3LWFiNGQ1ZmMwOGQ4NS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDAzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQwM1QyMzQ5MTRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1mMWYxOTk2NjFlZDViOGU5MGUzYTM4NjA0NTM1YWY2NDAwODk4OTQyMjUyNTEwNTZjNjUwNWQyYzcyN2UyZGUxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.4HoSJOOf5GqQJ83dr56FHn8EE-7BYyUZEVdHc7E-AW0)
+- 상태를 계속 유지하려고합니다.
+- 
 
 ---
 # 쿠버네티스의 구조 (아키텍처)
