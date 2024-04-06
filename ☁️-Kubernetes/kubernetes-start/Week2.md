@@ -189,7 +189,7 @@ chk-hn         LoadBalancer   10.96.253.167   192.168.1.11   80:30941/TCP   12m
 - kind
 	- http://192.168.247.5:30623/ 노드ip + service port로 접속가능했음
 ### 원인
-- LoadBalancer 타입 특성 상 external IP로 접근 가능하지만, macOS, Windows에서는 docker network를 host에 노출하지 않으므로 여기서는 NodePort를 통해 외부에 노출 (port : 31593.참고로 이 땜시 개고생함. NodePort로 우회하는 전략을 설명하는 문서가 전무. 오직 hint만 kind 공식 문서에 있을 뿐. [macOS의 경우 docker network를 노출하는 방법](https://www.thehumblelab.com/kind-and-metallb-on-mac/)이 있긴 한데, 이 문서의 prerequisite인 tuntap 설치가 macOS에서는 이제 불가)
+- LoadBalancer 타입 특성 상 external IP로 접근 가능하지만, macOS, Windows에서는 docker network를 host에 노출하지 않으므로 여기서는 NodePort를 통해 외부에 노출 (port : 31593.참고로 이 땜시 개고생함. NodePort로 우회하는 전략을 설명하는 문서가 전무. 오직 hint만 kind 공식 문서에 있을 뿐...
 ```
 ☁  kind  curl 192.168.247.5:30623
 chk-hn-6cb6cdf8f8-68xsn
