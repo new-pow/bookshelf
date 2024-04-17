@@ -14,7 +14,7 @@ _10 TILs and counting..._
 
 - [👀 커리어 성장 멘토링 후기](Etc/udemy-career-mentoring.md) - 26 Mar 24 11:44 +0900
 - [📖 도메인 주도 설계란 무엇인가?](🏗️-DDD/domain-driven-design-quickly.md) - 29 Feb 24 21:19 +0900
-- [📖 Go 언어로 배우는 웹 애플리케이션 개발](👩🏻‍💻-Golang/web-application-development-in-go-programming-language.md) - 29 Feb 24 21:18 +0900
+- [📖 Go 언어로 배우는 웹 애플리케이션 개발](👩🏻‍💻-Golang/web-application-development/README.md) - 29 Feb 24 21:18 +0900
 
 ### Categories
 
@@ -38,7 +38,7 @@ _10 TILs and counting..._
 - [📖 도메인 주도 설계란 무엇인가?](🏗️-DDD/domain-driven-design-quickly.md)
 
 ### [👩🏻‍💻-Golang](#👩🏻‍💻-golang)
-- [📖 Go 언어로 배우는 웹 애플리케이션 개발](👩🏻‍💻-Golang/web-application-development-in-go-programming-language.md)
+- [📖 Go 언어로 배우는 웹 애플리케이션 개발](👩🏻‍💻-Golang/web-application-development/README.md)
 
 ### [👩🏻‍💻-Kotlin](#👩🏻‍💻-kotlin)
 - [📖 Kotlin in action](👩🏻‍💻-Kotlin/kotlin-in-action.md)
