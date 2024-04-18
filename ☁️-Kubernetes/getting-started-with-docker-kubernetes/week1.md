@@ -6,7 +6,8 @@
 
 ## 쿠버네티스 클러스터 초기화
 - 버전 1.24부터 도커엔진을 사용할 수 없습니다.
-	- [링크](https://kubernetes.io/docs/setup/production-environment/container-runtimes/)
+	- [링크](https://blog.hyojun.me/5)
+- 관련 오류
 ```
 kubeadm init --apiserver-advertise-address 172.31.0.100 --pod-network-cidr=192.168.0.0/16 --cri-socket /run/containerd/containerd.sock
 
@@ -32,3 +33,10 @@ error execution phase preflight: [preflight] Some fatal errors occurred:
 To see the stack trace of this error execute with --v=5 or higher
 ```
 
+# 쿠버네티스 시작하기
+## 쿠버네티스만의 고유한 특징
+- 모든 리소스는 오브젝트 형태로 관리된다
+- YAML파일을 더 많이 사용한다.
+	- 리소스 오브젝트를 정의하는 방법
+- 여러개의 컴포넌트로 구성되어 있다
+	- 
