@@ -39,4 +39,14 @@ To see the stack trace of this error execute with --v=5 or higher
 - YAML파일을 더 많이 사용한다.
 	- 리소스 오브젝트를 정의하는 방법
 - 여러개의 컴포넌트로 구성되어 있다
-	- 
+
+## Pod
+- 컨테이너를 다루는 기본 단위
+- pod 와 도커 컨테이너의 다른 점
+- 완전하 애플리케이션으로서의 포드
+
+## Replica Set
+- 일정 개수의 pod를 유지하는 컨트롤러
+- 사용하는 이유
+- 동작 원리
+- 
