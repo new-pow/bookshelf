@@ -6,15 +6,15 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_11 TILs and counting..._
+_12 TILs and counting..._
 
 ---
 
 ### 3 most recent TILs
 
+- [견고한 결제 시스템 만들기](🚧-Systems/Payment-system.md) - 22 Apr 24 05:56 +0900
 - [📖 Go 언어로 배우는 웹 애플리케이션 개발](👩🏻‍💻-Golang/web-application-development.md) - 18 Apr 24 00:17 +0900
 - [시작하세요! 도커/쿠버네티스](☁️-Kubernetes/getting-started-with-docker-kubernetes.md) - 18 Apr 24 00:17 +0900
-- [👀 커리어 성장 멘토링 후기](Etc/udemy-career-mentoring.md) - 26 Mar 24 11:44 +0900
 
 ### Categories
 
@@ -24,6 +24,7 @@ _11 TILs and counting..._
 - [👩🏻‍💻-Golang](#👩🏻‍💻-golang)
 - [👩🏻‍💻-Kotlin](#👩🏻‍💻-kotlin)
 - [💾-Database](#💾-database)
+- [🚧-Systems](#🚧-systems)
 
 ### [Etc](#etc)
 - [💕 좋았던 아티클](Etc/Reference-articles.md)
@@ -47,6 +48,9 @@ _11 TILs and counting..._
 ### [💾-Database](#💾-database)
 - [👩🏻‍💻 MySQL에서 `Process`의 의미](💾-Database/MySQL에서-Process의-의미.md)
 - [📖 RealMySQL](💾-Database/real-mysql.md)
+
+### [🚧-Systems](#🚧-systems)
+- [견고한 결제 시스템 만들기](🚧-Systems/Payment-system.md)
 
 [1]: https://new-pow.tistory.com
 
