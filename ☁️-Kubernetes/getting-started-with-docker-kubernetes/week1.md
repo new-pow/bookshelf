@@ -64,6 +64,7 @@ To see the stack trace of this error execute with --v=5 or higher
 - 일정 개수의 pod를 유지하는 컨트롤러
 	- **Controller**중 하나로, **Pod를 복제 생성하고, 복제된 Pod의 개수를 정의된 대로 지속적으로 유지하는 Controller**
 - 사용하는 이유
+	- 정해진 수의 동일한 파드가 항상 실행되도록 관리한다.
 	- 노드 장애 등의 이유로 포드를 사용할 수 없다면 다른 노드에서 포드를 다시 생성한다.
 - 동작 원리
 	- 라벨 셀렉터를 통한 느슨한 연결(Loosely coupled)
