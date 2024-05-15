@@ -90,7 +90,46 @@ spec:
 ## Deployment
 - 디플로이먼트는 컨테이너 애플리케이션을 배포하고 관리하는 역할
 - 디플로이먼트는 레플리카셋의 상위 오브젝트. 디플로이먼트를 생성하면 해당 디플로이먼트에 대응하는 레플리카셋도 함께 생성
+### 왜 디플로이먼트를 사용하는가?
+- 애플리케이션의 업데이트와 배포를 더 욱 편하게 만들기 위해서
+- 디플로이먼트는 파드의 정보를 업데이트함으로써 새로운 레플리카셋과 파드를 생성했음에도 불구하고 이전 버전의 레플리카셋을 삭제하지 않고 남겨두고 있습니다.
+	- 어플리케이션 업데이트가 발생했을 때, 이전 정보를 리비전으로서 보존합니다.
+	- 만약 이전정보대로 다시 어플리케이션 세팅을 한다면, 만들어두었던 replicaset을 사용합니다.
+- 각 버전의 디플로이먼트는 matchLabels.pod-template-hash 라는 이름의 라벨값으로서 자동 생성됩니다.
 - 
 
 ## Service
+- 컨테이너 포트를 외부로 노출해 사용자들이 접근하거나, 쿠버네티스에서 다른 디플로이들이 내부적으로 접근할 수 있돍 한다.
+- 기능
+	- 여러 개의 파드에 쉽게 접근할 수 있도록 고유한 도메인 이름을 보부여한다
+	- 여러 개의 파드에 접근할 때, 요청을 분산하는 로드 밸런서 기능을 수행한다.
+	- 클라우드 플랫폼의 로드 밸런서, 클러스터 노드의 포드 등을 통해 파드를 외부로 노출한다.
+- 종류
+	- clusterIP 타입
+	- NodePort 타입
+	- LoadBalancer 타입
+### ClusterIP 타입 서비스
 - 
+---
+# 실습중 에러
+```
+kubectl apply -f iirin-deployment-nginx.yaml
+Error from server (BadRequest): error when creating "iirin-deployment-nginx.yaml": Deployment in version "v1" cannot be handled as a Deployment: strict decoding error: unknown field "template"
+```
+- [참고링크](https://stackoverflow.com/questions/57233686/error-when-creating-deployment-yaml-deployment-in-version-v1-cannot-be-hand)
+- 디버깅 하는 방법
+```
+kubectl apply -f deployment.yaml -v=10
+```
+```
+`-v`는 로깅(verbose) 수준을 설정하는 옵션
+
+- `-v=0` : 최소한의 정보만 출력합니다.
+- `-v=1` : 기본 정보 출력 (기본 설정).
+- `-v=2` : 보다 상세한 정보 출력.
+- `-v=3` 및 그 이상 : 디버깅을 위해 매우 상세한 정보를 출력합니다. 숫자가 클수록 더 많은 정보를 출력합니다.
+
+따라서 `-v=10`은 가장 상세한 디버깅 정보를 출력하라는 의미
+```
+
+- 결국 들여쓰기를 잘못해서 그런거였다.
