@@ -13,7 +13,7 @@ _12 TILs and counting..._
 ### 3 most recent TILs
 
 - [견고한 결제 시스템 만들기](🚧-Systems/Payment-system.md) - 22 Apr 24 05:56 +0900
-- [📖 Go 언어로 배우는 웹 애플리케이션 개발](👩🏻‍💻-Golang/web-application-development.md) - 18 Apr 24 00:17 +0900
+- [📖 Go 언어로 배우는 웹 애플리케이션 개발](DONE-web-application-development.md) - 18 Apr 24 00:17 +0900
 - [시작하세요! 도커/쿠버네티스](☁️-Kubernetes/getting-started-with-docker-kubernetes.md) - 18 Apr 24 00:17 +0900
 
 ### Categories
@@ -40,7 +40,7 @@ _12 TILs and counting..._
 - [📖 도메인 주도 설계란 무엇인가?](🏗️-DDD/domain-driven-design-quickly.md)
 
 ### [👩🏻‍💻-Golang](#👩🏻‍💻-golang)
-- [📖 Go 언어로 배우는 웹 애플리케이션 개발](👩🏻‍💻-Golang/web-application-development.md)
+- [📖 Go 언어로 배우는 웹 애플리케이션 개발](DONE-web-application-development.md)
 
 ### [👩🏻‍💻-Kotlin](#👩🏻‍💻-kotlin)
 - [📖 Kotlin in action](👩🏻‍💻-Kotlin/kotlin-in-action.md)
