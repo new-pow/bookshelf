@@ -1,0 +1,13 @@
+/reviews:
+  get:
+    description: Gets a bunch of reviews.
+    parameters:
+    - name: maxRating
+      description: Filter reviews by miximum rating.
+      in: query
+      schema:
+        type: number
+    responses:
+      200:
+        description: A bunch of reviews.
+        
