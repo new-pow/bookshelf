@@ -1,0 +1,29 @@
+tags:
+  - token
+description: 새 토큰을 발급합니다.
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          username:
+            type: string
+            description: 유저 이름
+          password:
+            type: string
+            description: 비밀번호
+            format: password
+responses:
+  '200':
+    description: 새로운 유저가 만들어졌습니다.
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            token:
+              type: string
+              description: 생성된 토큰
+security:
+  - MyUserToken: []
