@@ -1,0 +1,39 @@
+tags:
+  - user
+description: 새 유저를 만듭니다.
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          username:
+            type: string
+            description: 유저 이름
+          password:
+            type: string
+            description: 비밀번호
+            format: password
+          fullName:
+            type: string
+            description: 사용자의 전체 이름
+responses:
+  '201':
+    description: 새로운 유저가 만들어졌습니다.
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            username:
+              type: string
+              description: 유저 이름
+            fullName:
+              type: string
+              description: 사용자의 전체 이름
+            uuid:
+              type: string
+              description: 유저의 UUID
+              pattern: '^[0-9a-fA-F/-]{36}$'
+security:
+  - MyUserToken: []

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Open API Practice v1</title>
+</head>
+<body>
+    <h1>Open API Practice v1</h1>
+    <p>Open API Practice v1</p>
+    <div id="farmstall-docs" />
+    <script src="//unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
+    <script>
+        window.onload = function() {
+            const ui = SwaggerUIBundle({
+                url: "api-docs.yaml",
+                dom_id: '#farmstall-docs',
+                deepLinking: true,
+            })
+        }
+    </script>
+</body>
+</html>
