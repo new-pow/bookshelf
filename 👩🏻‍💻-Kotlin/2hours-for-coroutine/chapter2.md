@@ -53,4 +53,54 @@ defer.await() // 연산 반환값을 가져옵니다.
 ## 취소하는 방법
 1. delay(), yield() 같은 coroutines 패키지의 suspend 함수를 사용해야합니다.
 	- 이를 사용할 때 자동으로 취소여부를 체크합니다. 없으면 취소 여부 체크를 모든 동작이 완료되야 취소를 받아들입니다.
-2. 코루틴이 스스로 본인의 상태를 확인해 취소 요청을 받았으면 `CancellationException`을 던집니다.
+	- `CancellationException` 을 던지는 방식
+1. 코루틴이 스스로 본인의 상태를 확인해 취소 요청을 받았으면 `CancellationException`을 던집니다.
+
+```
+lanch(Dispatchers.Default) { // 다른 스레드에서 동작하도록 설정
+	if (isActive) {
+		throw CancellationException()
+	}
+}
+
+job.cancel() // main 스레드에서 동작
+```
+
+# 예외처리
+- 새로운 root 코루틴을 만들고 싶을 때는? `coroutineScope`
+```kotlin
+CoroutineScope(Dispatchers.Default).launch { // 새로운 root 코루틴
+	throw IllegalArgumentException()
+} // 예외 바로 발생. 출력 후 코루틴 종료
+
+val job = CoroutineScope(Dispatchers.Default).async { // 새로운 root 코루틴
+	throw IllegalArgumentException()
+}
+
+job.await() // 이 때 예외 발생.
+```
+
+- `async` 에서 예외가 발생할 경우?
+```kotlin
+val job = async {
+	throw IllegalArgumentException()
+} // 바로 예외 발생
+```
+
+왜 이런 일이 발생할까요?
+- 자식 코루틴의 예외는 부모에게 전파되기 때문.
+	- 부모의 예외처리 성격을 띈다.
+- root coroutine에서 예외가 전파될 것이 없어서 에러가 바로 출력되지 않음.
+
+만약 자식 코루틴의 예외를 부모에게 전파하고 싶지 않다면?
+```kotlin
+async(SupervisorJob()) { // 자식 코루틴의 예외를 전파하지 않는다.
+	throw IllegalArgumentException()
+}
+
+// await 통해 예외를 출력할 수 있긴함.
+```
+
+## 예외를 다루는 방법
+### try-catch-finally
+- 
