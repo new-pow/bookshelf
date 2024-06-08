@@ -147,4 +147,7 @@ val job = CoroutineScope(Dispatchers.Default).launch(exceptionHandler) {
 - 발생한 예외가 `CancellationException`이라면 **취소**로 간주하고 부모 코루틴에게 전파하지 않는다.
 - 그 외의 예외가 발생한 경우 **실패**로 간주하고 부모 코루틴에게 전파한다.
 - 다만 내부적으로는 취소나 실패 모두 '취소됨'으로 관리한다.
-- 
+- |   |
+|---|
+
+
