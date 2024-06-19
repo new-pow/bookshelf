@@ -6,15 +6,15 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_14 TILs and counting..._
+_15 TILs and counting..._
 
 ---
 
 ### 3 most recent TILs
 
-- [Open API와 스웨거를 활용한 실전 API 설계](Etc/open-api.md) - 21 May 24 20:33 +0900
+- [📖 컴퓨터 밑바닥의 비밀](💻-Os/the-secret-of-computer.md) - 17 Jun 24 13:39 +0900
 - [📖 Go 언어로 배우는 웹 애플리케이션 개발](👩🏻‍💻-Golang/DONE-web-application-development.md) - 21 May 24 20:33 +0900
-- [📖 2시간으로 끝내는 코루틴](👩🏻‍💻-Kotlin/2hours-for-coroutine.md) - 18 May 24 10:13 +0900
+- [Open API와 스웨거를 활용한 실전 API 설계](Etc/open-api.md) - 21 May 24 20:33 +0900
 
 ### Categories
 
@@ -23,6 +23,7 @@ _14 TILs and counting..._
 - [🏗️-DDD](#🏗️-ddd)
 - [👩🏻‍💻-Golang](#👩🏻‍💻-golang)
 - [👩🏻‍💻-Kotlin](#👩🏻‍💻-kotlin)
+- [💻-Os](#💻-os)
 - [💾-Database](#💾-database)
 - [🚧-Systems](#🚧-systems)
 
@@ -46,6 +47,9 @@ _14 TILs and counting..._
 ### [👩🏻‍💻-Kotlin](#👩🏻‍💻-kotlin)
 - [📖 2시간으로 끝내는 코루틴](👩🏻‍💻-Kotlin/2hours-for-coroutine.md)
 - [📖 Kotlin in action](👩🏻‍💻-Kotlin/kotlin-in-action.md)
+
+### [💻-Os](#💻-os)
+- [📖 컴퓨터 밑바닥의 비밀](💻-Os/the-secret-of-computer.md)
 
 ### [💾-Database](#💾-database)
 - [👩🏻‍💻 MySQL에서 `Process`의 의미](💾-Database/MySQL에서-Process의-의미.md)
