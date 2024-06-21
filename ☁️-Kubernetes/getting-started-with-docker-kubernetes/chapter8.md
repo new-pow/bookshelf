@@ -1,3 +1,8 @@
+![](https://kubernetes.io/ko/docs/images/ingress.svg)
+
+- 
+
+
 # 질문
 - 페이지 379
 ```
@@ -6,6 +11,7 @@ curl: (7) Failed to connect to alicek106.example.com port 32439 after 19 ms: Cou
 
 왜 안되는거지; 서비스 dns가 뭐지?
 ```
+
 
 
 ```
