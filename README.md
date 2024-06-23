@@ -6,15 +6,15 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_15 TILs and counting..._
+_16 TILs and counting..._
 
 ---
 
 ### 3 most recent TILs
 
+- [프로필 변경](☁️-Kubernetes/자주-쓰는-명령어.md) - 21 Jun 24 12:32 +0900
 - [📖 컴퓨터 밑바닥의 비밀](💻-Os/the-secret-of-computer.md) - 17 Jun 24 13:39 +0900
 - [📖 Go 언어로 배우는 웹 애플리케이션 개발](👩🏻‍💻-Golang/DONE-web-application-development.md) - 21 May 24 20:33 +0900
-- [Open API와 스웨거를 활용한 실전 API 설계](Etc/open-api.md) - 21 May 24 20:33 +0900
 
 ### Categories
 
@@ -37,6 +37,7 @@ _15 TILs and counting..._
 - [시작하세요! 도커/쿠버네티스](☁️-Kubernetes/getting-started-with-docker-kubernetes.md)
 - [🎥 쉽게 시작하는 쿠버네티스(v1.25)](☁️-Kubernetes/kubernetes-start.md)
 - [minikube 의  동작 방식](☁️-Kubernetes/miniKube-practice.md)
+- [프로필 변경](☁️-Kubernetes/자주-쓰는-명령어.md)
 
 ### [🏗️-DDD](#🏗️-ddd)
 - [📖 도메인 주도 설계란 무엇인가?](🏗️-DDD/domain-driven-design-quickly.md)
