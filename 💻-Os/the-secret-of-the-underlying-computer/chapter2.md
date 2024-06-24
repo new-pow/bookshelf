@@ -63,6 +63,7 @@
 	- 어떤 함수가 한 스레드에 의해 호출되어 실행 중일 때, 다른 스레드가 그 함수를 호출하더라도 그 결과가 각각에게 올바로 주어져야 합니다. (값으로 전달)
 	- 동적으로 할당된 데이터를 리턴하거나 **호출자 제공 스토리지를 사용**합니다.
 ```
+입력 문자열 `in_str`을 대문자로 변환하여 출력 문자열 `out_str`에 저장하는 재진입 가능(reentrant) 함수
 /* reentrant function (a better solution) */
 
 char *strtoupper_r(char *in_str, char *out_str) 
@@ -79,6 +80,8 @@ char *strtoupper_r(char *in_str, char *out_str)
 - **상호 배제**: 공유 자원을 꼭 사용해야 할 경우 해당 자원의 접근을 세마포어 등의 락으로 통제합니다.
 ```
 /* pseudo-code threadsafe function */ 
+스레드 안전성을 보장하기 위해 뮤텍스(mutex)를 사용하여 동기화합니다.
+
 int increment_counter(); 
 { 
 	static int counter = 0; 
@@ -90,8 +93,60 @@ int increment_counter();
 	return counter; 
 }
 ```
-- **스레드 지역 저장소**: 공유 자원의 사용을 최대한 줄여 각각의 스레드에서만 접근 가능한 저장소들을 사용함으로써 동시 접근을 막습니다.
+- **스레드 지역 저장소**: 공유 자원의 사용을 최대한 줄여 각각의 스레드에서만 접근 가능한 저장소들을 사용함으로써 동시 접근을 막습니다
+```
+// 스레드 지역 변수 선언
+__thread int tls_counter = 0;
+
+void *thread_function(void *arg) {
+    // 스레드마다 독립적으로 tls_counter 접근
+    for (int i = 0; i < 5; ++i) {
+        tls_counter++;
+        printf("Thread %ld: tls_counter = %d\n", (long)arg, tls_counter);
+    }
+    return NULL;
+}
+
+int main() {
+    pthread_t thread1, thread2;
+
+    // 두 개의 스레드 생성
+    pthread_create(&thread1, NULL, thread_function, (void *)1);
+    pthread_create(&thread2, NULL, thread_function, (void *)2);
+
+    // 각 스레드의 종료 대기
+    pthread_join(thread1, NULL);
+    pthread_join(thread2, NULL);
+
+    return 0;
+}
+```
 - **원자 연산**: 공유 자원에 접근할 때 원자 연산을 이용하거나 '원자적'으로 정의된 접근 방법을 사용함으로써 상호 배제를 구현할 수 있습니다.
+```
+// 공유 변수 선언 (원자적 연산을 위해 atomic_int 사용)
+atomic_int shared_counter = ATOMIC_VAR_INIT(0);
+
+void *thread_function(void *arg) {
+    for (int i = 0; i < 5; ++i) {
+        atomic_fetch_add(&shared_counter, 1);
+        printf("Thread %ld: shared_counter = %d\n", (long)arg, atomic_load(&shared_counter));
+    }
+    return NULL;
+}
+
+int main() {
+    pthread_t thread1, thread2;
+
+    pthread_create(&thread1, NULL, thread_function, (void *)1);
+    pthread_create(&thread2, NULL, thread_function, (void *)2);
+
+    pthread_join(thread1, NULL);
+    pthread_join(thread2, NULL);
+
+    return 0;
+}
+
+```
 
 ## 코루틴
 - 코루틴은 Co(함께, 서로) + routine(규칙적 일의 순서, 작업의 집합) 2개가 합쳐진 단어로 함께 동작하며 규칙이 있는 일의 순서를 뜻합니다.
@@ -113,5 +168,22 @@ int increment_counter();
     - 코루틴이 같은 스레드에서 실행될 경우, 메모리를 교체할 필요가 없으므로 스레드보다 컨텍스트 스위칭 비용이 적습니다.
     - 코드를 통해 개발자가 코루틴이 다른 코루틴에게 실행을 양보하게 할 수 있습니다. (`yield` 함수 등 subroutine 간의 상호작용)
 ![](https://velog.velcdn.com/images/hc-kang/post/9011fdfb-54b7-4908-a188-84ce75037f1c/image.jpeg)
+
+## 코루틴의 장점?
+- 협력형 멀티태스킹
+	-  **비선점형 멀티태스킹**
+	- 실행 중인 프로세스에서 다른 프로세스로 Context Switching을 시작하지 않고 프로세스가 주기적으로 혹은 유휴상태이거나 논리적으로 차단 될 때 자발적으로 자원에 대한 제어를 양보합니다.
+- 경량화된 스레드
+	- 코루틴 간 전환시에 시스템 호출/ 차단 호출이 불필요합니다.
+- 구조화된 동시성
+	- 코루틴간의 관계가 명확합니다.
+	- 부모 코루틴은 자식의 모든 작업이 완료될때까지 기다려줍니다.
+
+---
+- 코루틴 관련 참고자료
+	- https://brunch.co.kr/@mystoryg/188
+	- https://dev.gmarket.com/82
+	- https://medium.com/@wodbs135/%EB%B2%88%EC%97%AD-kotlin-coroutines-flow-in-a-nutshell-ec4cc45b7c0e
+	- 
 
 
