@@ -186,4 +186,22 @@ int main() {
 	- https://medium.com/@wodbs135/%EB%B2%88%EC%97%AD-kotlin-coroutines-flow-in-a-nutshell-ec4cc45b7c0e
 	- 
 
-
+---
+# Node.js 의 동작원리
+- 싱글 스레드 논블로킹 어떻게 가능할까?
+- https://medium.com/zigbang/nodejs-event-loop%ED%8C%8C%ED%97%A4%EC%B9%98%EA%B8%B0-16e9290f2b30
+- callback queue
+- LibUv https://github.com/libuv/libuv
+	- 비동기 I/O를 지원하는 C언어 Library로 윈도우, 리눅스 커널을 Wrapping하여 추상화한 구조로 되어있습니다. 커널의 비동기 API (윈도우- IOCP, 리눅스-AIO) 로 지원할 수 없는 작업을 비동기화 하기 위한 **별도의 Thread Pool**을 가지고 있고 Event Loop, Event Queue를 관리합니다.
+- 이벤트 루프 쓰는 모델
+	- Node.js
+	- Nginx
+	- spring webflux
+- node 클러스터링
+- https://www.digitalocean.com/community/tutorials/node-js-architecture-single-threaded-event-loop
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Event_loop
+- https://pozafly.github.io/javascript/event-loop-and-async/
+- grpc
+	- https://learn.microsoft.com/ko-kr/aspnet/core/grpc/comparison?view=aspnetcore-8.0
+- 동기 논블로킹 쓰는 사례?? 뭐가있지?
+	- 
