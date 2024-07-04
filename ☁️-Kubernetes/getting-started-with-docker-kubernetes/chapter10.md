@@ -90,3 +90,57 @@ s --header "Authorization: Bearer $decoded_token" -k
 kubectl exec iirin-k8s-python-sdk -it -- bash
 ```
 
+### docker 이미지 레지스트리 접근을 위한 시크릿 설정
+- 이미지 레지스트리 접근할 때마다 
+```
+☁  iirin-chapter10 [main] ⚡  kubectl describe sa iirin-reg-auth-alicek106
+Name:                iirin-reg-auth-alicek106
+Namespace:           default
+Labels:              <none>
+Annotations:         <none>
+Image pull secrets:  registry-auth
+Mountable secrets:   <none>
+Tokens:              <none>
+Events:              <none>
+```
+
+### kubeconfig 파일에 서비스 어카운트 인증 정보 설정
+- 쿠버네티스를 설치하면 kubeconfig 파일에 기본적으로 클러스터 관리자 권한을 가지는 인증서 정보가 저장됩니다.
+	- 아무런 제한 없이 쿠버네티스를 사용할 수 있습니다.
+- 만약 여러 개발자가 `kubectl` 명령어를 사용한다면 서비스 어카운트를 이용해 적절한 권한을 조절하는 것이 바람직합니다.
+
+#### kubeconfig 파일에 대하여
+- 일반적으로 `~/.kube/config` 경로에 있습니다. 필요에 따라 `KUBECONFIG` 셸 환경 변수로 경로를 직접 설정할 수 있습니다.
+- `kubectl` 명령어 사용시 kubeconfig의 설정 정보에서 API 서버의 주소와 사용자 인증 정보를 로드하게됩니다.
+- 내용
+	- clusters
+		- 쿠버네티스 API 서버의 접속 정보 목록
+	- users
+		- 사용자 인증 정보 목록
+	- contexts
+		- clusters + users 종합하여 최종적으로 사용할 클러스터의 정보를 설정합니다.
+		- `kubectl`을 사용하려면 여러 개의 컨텍스트 중 하나를 선택해야 합니다.
+- 로컬 개발 환경의 쿠버네티스 컨텍스트, AWS 운영 환경의 쿠버네티스 컨텍스트 등 여러 개의 쿠버네티스 클러스터를 유동적으로 선택해 `kubectl` 명령어를 사용할 수 있습니다.
+- 현재 어떤 컨텍스트를 사용중인지 `kubeconfig`의 `current-context` 항목에서 확인할 수 있습니다.
+
+## 유저와 그룹
+- 왜 따로 사용하는 것일까?
+	- 유저는 '사용자'를 나타내는 개념
+	- 오브젝트는 아니다.
+- `system:serviceaccounts`
+	- 특정 네임스페이스의 모든 서비스 어카운트
+		- `system:serviceaccounts:{namespace}`
+	- API 서버 인증에 성공한 그룹
+		- `systme:authenticated`
+	- 인증에 실패한 유저
+		- `system:anonymous`
+- 쿠버네티스에 의해 미리 정의된 유저나 그룹은 접두어로 `system:` 사용
+### x509 인증
+- 별도의 서버 인증 서버를 사용하면 깃허브 계정, 구글 계정, LDAP 데이터 등을 쿠버네티스 사용자 인증에 사용할 수 있습니다
+- Oauth -> Dex
+- Webhook -> Guard
+- 별도 인증 서버는 쿠버네티스가 아닌 별도의 솔루션을 사용해 구축하는 것이 일반적
+- x509 인증서를 이용한 인증 방법은 몇 가지 한계점이 있어서 실제 환경에서 사용하기 어렵다
+	- 쿠버네티스에서 인증서가 유출됐을 때 하위 인증서를 파기하는 기능이 없음
+	- 파일로 인증 정보를 관리하는 것은 보안상 바람직하지 않음
+- 실제로 클러스터를 운영할 때는 덱스Dex나 가드 Guard 등의 솔루션을 이용해 깃허브 등과 같은 서드 파티에서 인증 정보를 관리하는 것이 더욱 효율적이다.
