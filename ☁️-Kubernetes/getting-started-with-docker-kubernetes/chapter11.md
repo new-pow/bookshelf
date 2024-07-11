@@ -91,7 +91,7 @@ requests.memory  1Gi   500Mi
 - resourceQuota에 limits, cpu나 limits, memory 등을 이용해 네임스페이스에서 사용 가능한 자원의 합을 설정했다면 파드를 생성할 때 반드시 해당 항목을 함께 정의해줘야 합니다.
 #### LimitRange
 - 특정 네임스페이스에서 할당되는 자원의 범위 또는 기본값을 지정할 수 있는 쿠버네티스 오브젝트
-- 컨테이너에 자동으로 기본 Requests, Lmits 값을 설정할 수 있습니다.
+- 컨테이너에 자동으로 기본 Requests, Limits 값을 설정할 수 있습니다.
 - 파드 또는 컨테이너의 CPU, 메모리, 퍼시스턴트 볼륨 클레임 스토리지 크기의 최솟값, 최댓값을 설정할 수 있습니다.
 - 파드단위로 자원 사용량 범위를 제한할 수도 있습니다.
 #### Admission Controller
