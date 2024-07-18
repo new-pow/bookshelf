@@ -105,6 +105,132 @@ requests.memory  1Gi   500Mi
 - API 요청을 검증하고 기본값등을 추가하여 API 데이터를 변형합니다.
 
 ## 쿠버네티스 스케줄링
+- 스케줄링
+	- 컨테이너를 생성하기 전에 특정 목적에 최대한 부합하는 워커 노드를 선택하는 작업
+### 파드가 실제로 노드에 생성되기 전까지
+- 스케줄링에 핵심적인 컴포넌트
+	- kube-scheduler
+	- etcd
+- etcd
+	- 분산 코디네이터의 일종
+	- 클라우드 플랫폼 환경에서 여러 컴포넌트가 정상적으로 상호작용할 수 있도록 데이터를 조정하는 역할
+	- API 서버 kube-apiserver 를 통해서만 접근할 수 있다.
+- 과정
+	- (인증인가 + 변형을 거친후)
+	- API 서버가 etcd에 파드 데이터 저장 (node name 은 아직 없음)
+	- kube-scheduler 가 API 서버 watch를 통해 nodeName이 없는 파드 데이터가 저장되었다고 전달 받음
+	- kube-scheduler가 해당 파드를 할당할 적절한 노드를 선택 후 API 서버에 노드와 파드를 바인딩 요청
+	- 파드의 nodeName 항목에 선택된 노드 이름이 설정됨
+	- 각 노드에서 실행중인 kubelet이 watch를 통해 파드의 데이터에서 nodeName이 설정되었다는 소식을 받음
+	- 해당하는 노드의 kubelet이 컨테이너 런타임을 통해 파드 생성
+- ***watch***
+	- 감시 요청을 보내면 API 서버는 변경 사항 스트림으로 응답합니다. 이러한 변경사항은 감시 요청의 매개변수로 지정한 resourceVersion 이후에 발생한 작업(예: 만들기, 삭제, 업데이트)의 결과를 항목별로 정리합니다. 전체 감시 메커니즘을 통해 클라이언트는 현재 상태를 가져온 다음 이벤트를 놓치지 않고 후속 변경 사항을 구독할 수 있습니다.
+	- https://kubernetes.io/docs/reference/using-api/api-concepts/
+```
+GET /api/v1/namespaces/test/pods?watch=1&resourceVersion=10245
+---
+200 OK
+Transfer-Encoding: chunked
+Content-Type: application/json
+
+{
+  "type": "ADDED",
+  "object": {"kind": "Pod", "apiVersion": "v1", "metadata": {"resourceVersion": "10596", ...}, ...}
+}
+{
+  "type": "MODIFIED",
+  "object": {"kind": "Pod", "apiVersion": "v1", "metadata": {"resourceVersion": "11020", ...}, ...}
+}
+```
+
+### 파드가 생성할 노드를 선택하는 스케줄링 과정
+- 노드 필터링 : 필터링 후 노드 스코어링으로 전달됨
+	- CPU, 메모리 Requests 만큼 가용자원이 있는가
+	- 마스터 노드가 아닌가
+	- status가 ready인가
+- 노드 스코어링 : 미리 정의된 알고리즘 가중치에 따라 노드 점수 계산
+	- 파드가 사용하는 도커 이미지가 이미 노드에 존재함 +
+	- 노드의 가용 자원이 많음 +
+> 주로 노드 필터링 단계 때 쓸 수 있는 설정을 사용함.
+
+
+### Node Selector
+- 파드 yaml 파일에 노드 이름을 직접 명시
+	- 보편적으로 yaml 파일 사용하기 힘듬
+- 노드 라벨 이용
+	- 단일 파드에 대해 수행된다는 한계
+	- deployment, replicaset의 경우 동일한 하나의 노드에 할당된다는 뜻은 아니다.
+- 노드 목록
+	- `ip-172-31-33-201.us-west-2.compute.internal`
+	- `ip-172-31-30-28.us-west-2.compute.internal`
+	- `ip-172-31-14-155.us-west-2.compute.internal`
+- *만약 조건에 맞는 node가 없으면 어떻게하는거지?*
+
+### Node Affinity
+- requiredDuringSchedulingIgnoreDuringExecution
+	- 
+- preferredDuringSchedulingIgnoreDuringExecution
+	- 만족하는 노드를 선호
+	- weight : 얼마나 선호할지 가중치
+- 그러나 이 방법은 파드가 할당된 뒤에 실행, 퇴거시에는 유효하지 않습니다.
+
+### Pod Affinity
+- 특정 조건을 만족하는 파드와 함께 실행되도록 스케줄링
+- 그러나 이 라벨을 가지는 파드와 무조건 같은 노드에 할당하라는 뜻은 아니다.
+	- 토폴로지키에 따라 범주가 나뉨. 만약 토폴로지키가 hostname이라면 토폴로지마다 노드 하나가 할당된다고 확신할 수 있으므로 노드를 지정할 수 있게됨.
+- 같은 파드에 있어서 응답시간을 최대한 줄여야 하는 두 개의 파드를 동일한 가용영역 AZ 혹은 리전의 노드에 할당하는 경우 사용하기 좋음.
+#### Pod Anti-affinity
+- 특정 파드와 같은 토폴로지의 노드를 선택하지 않는 방법
+- 고가용성을 보장하기 위해 파드를 여러 가용영역 또는 리전에 멀리 퍼뜨리는 전략
+
+### Taints 와 Tolerations
+```
+Taints:             bong/my-taint=dirty:NoSchedule
+```
+
+```
+☁  w11 [main] ⚡  kubectl taint node ip-172-31-30-28.us-west-2.compute.internal alicek106/iirin-taint=dirty:NoS
+chedule
+node/ip-172-31-30-28.us-west-2.compute.internal tainted
+☁  w11 [main] ⚡  kubectl taint node ip-172-31-30-28.us-west-2.compute.internal alicek106/iirin-taint=dirty:NoSchedule-
+node/ip-172-31-30-28.us-west-2.compute.internal untainted
+```
+- 노드에 얼룩이 있고, 파드는 이를 견딜수있는 tolerations 가 있어야 해당 노드에 할당될 수 있다.
+- 마스터 노드에 파드가 할당되지 않는 이유도 taint 가 있기 때문입니다.
+	- `:NoExcute`라는 효과의 taint를 허용할 수 있는 파드가 마스터 노드에서 실행되고 있습니다.
+- 효과
+	- `NoSchedule` 
+	- `PreferNoSchedule`
+	- `NoExcute` : 해당 노드에 스케줄링을 하지 않을 뿐 아니라 해당 노드에서 아예 파드를 실행할 수 없도록 설정
+- 쿠버네티스는 특정 문제가 발생한 노드에 대해 자동으로 Taint를 추가합니다.
+
+### Cordon
+- 쿠버네티스에서 제공하는 명시적인 방법
+- 더이상 파드가 스케줄링되지 않는다.
+- 하지만 이미실행중인 파드에게는 영향이 없다.
+### Drain
+- 실행중인 pod들이 퇴거를 수행한다.
+- 노드 유지보수등의 이유로 사용할 수 있다.
+- 단 단일 파드로 생성된 파드가 있다면 drain이 실패할 수 있다.
+	- `--force` 옵션을 함께 사용해야 한다.
+### PodDistributionBudget
+- 파드 개수 유지하기 위한 장치
+- 숫자로도 되지만 비율로도 설정할 수 있다.
+- pod 퇴거가 발생할 때, 특정 개수 혹은 특정 비율만큼의 파드는 정상적인 상태를 유지하도록 사용됩니다.
+
+```
+☁  w11 [main] ⚡  kubectl apply -f 06-simple-pdb-ex.yaml
+error: resource mapping not found for name: "iirin-simple-pdb-example" namespace: "" from "06-simple-pdb-ex.yaml": no matches for kind "PodDisruptionBudget" in version "policy/v1beta1"
+ensure CRDs are installed first
+```
+
+### 커스텀 스케줄러
+- 소스코드로 아래를 구현하면 됩니다.
+	- API 서버의 Watch API를 통해 새롭게 생성된 파드의 데이터를 받아옵니다.
+	- 파드 데이터 중 nodeName이 설정되어있지 않으며, schedulerName 이 정해진 이름과 일치하는 지 검사합니다.
+	- 필요에 따라 적절한 스케줄링 알고리즘을 수행합니다.
+	- 바인딩 API요청을 통해 스케줄링된 노드의 이름을 파드 nodeName에 설정합니다.
+- 쿠버네티스 스케줄러를 확장할 수 있습니다.
 
 
 - 참고 [쿠버네티스가 리소스 요청 및 제한을 적용하는 방법](https://kubernetes.io/ko/docs/concepts/configuration/manage-resources-containers/#how-pods-with-resource-limits-are-run)
