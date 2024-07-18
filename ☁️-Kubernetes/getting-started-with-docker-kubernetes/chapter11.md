@@ -125,7 +125,7 @@ requests.memory  1Gi   500Mi
 	- 해당하는 노드의 kubelet이 컨테이너 런타임을 통해 파드 생성
 - ***watch***
 	- 감시 요청을 보내면 API 서버는 변경 사항 스트림으로 응답합니다. 이러한 변경사항은 감시 요청의 매개변수로 지정한 resourceVersion 이후에 발생한 작업(예: 만들기, 삭제, 업데이트)의 결과를 항목별로 정리합니다. 전체 감시 메커니즘을 통해 클라이언트는 현재 상태를 가져온 다음 이벤트를 놓치지 않고 후속 변경 사항을 구독할 수 있습니다.
-	- https://kubernetes.io/docs/reference/using-api/api-concepts/
+	https://kubernetes.io/docs/reference/using-api/api-concepts/
 ```
 GET /api/v1/namespaces/test/pods?watch=1&resourceVersion=10245
 ---
@@ -168,7 +168,6 @@ Content-Type: application/json
 
 ### Node Affinity
 - requiredDuringSchedulingIgnoreDuringExecution
-	- 
 - preferredDuringSchedulingIgnoreDuringExecution
 	- 만족하는 노드를 선호
 	- weight : 얼마나 선호할지 가중치
@@ -208,6 +207,7 @@ node/ip-172-31-30-28.us-west-2.compute.internal untainted
 - 쿠버네티스에서 제공하는 명시적인 방법
 - 더이상 파드가 스케줄링되지 않는다.
 - 하지만 이미실행중인 파드에게는 영향이 없다.
+- 해지 unCordon
 ### Drain
 - 실행중인 pod들이 퇴거를 수행한다.
 - 노드 유지보수등의 이유로 사용할 수 있다.
