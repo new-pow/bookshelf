@@ -12,7 +12,7 @@ _17 TILs and counting..._
 
 ### 3 most recent TILs
 
-- [프로필 변경](☁️-Kubernetes/자주-쓰는-명령어.md) - 21 Jun 24 12:32 +0900
+- [💪 자주 사용하는 명령어](☁️-Kubernetes/자주-쓰는-명령어.md) - 21 Jun 24 12:32 +0900
 - [📖 컴퓨터 밑바닥의 비밀](💻-Os/the-secret-of-computer.md) - 17 Jun 24 13:39 +0900
 - [📖 Go 언어로 배우는 웹 애플리케이션 개발](👩🏻‍💻-Golang/DONE-web-application-development.md) - 21 May 24 20:33 +0900
 
@@ -34,10 +34,10 @@ _17 TILs and counting..._
 - [👀 커리어 성장 멘토링 후기](Etc/udemy-career-mentoring.md)
 
 ### [☁️-Kubernetes](#☁️-kubernetes)
-- [시작하세요! 도커/쿠버네티스](☁️-Kubernetes/getting-started-with-docker-kubernetes.md)
+- [🐳 시작하세요! 도커/쿠버네티스](☁️-Kubernetes/getting-started-with-docker-kubernetes.md)
 - [🎥 쉽게 시작하는 쿠버네티스(v1.25)](☁️-Kubernetes/kubernetes-start.md)
-- [minikube 의  동작 방식](☁️-Kubernetes/miniKube-practice.md)
-- [프로필 변경](☁️-Kubernetes/자주-쓰는-명령어.md)
+- [👀 minikube 의  동작 방식](☁️-Kubernetes/miniKube-practice.md)
+- [💪 자주 사용하는 명령어](☁️-Kubernetes/자주-쓰는-명령어.md)
 
 ### [🏗️-DDD](#🏗️-ddd)
 - [🤔 도메인 주도 설계의 사실과 오해](🏗️-DDD/Facts-and-Misconceptions-of-Domain-Driven-Design.md)
