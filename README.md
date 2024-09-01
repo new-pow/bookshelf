@@ -6,15 +6,15 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_16 TILs and counting..._
+_17 TILs and counting..._
 
 ---
 
 ### 3 most recent TILs
 
+- [part1. DDD와 객체지향이 어떤 차이가 있는가](🏗️-DDD/도메인 주도 설계의 사실과 오해.md) - 26 Aug 24 11:37 +0900
 - [프로필 변경](☁️-Kubernetes/자주-쓰는-명령어.md) - 21 Jun 24 12:32 +0900
 - [📖 컴퓨터 밑바닥의 비밀](💻-Os/the-secret-of-computer.md) - 17 Jun 24 13:39 +0900
-- [📖 Go 언어로 배우는 웹 애플리케이션 개발](👩🏻‍💻-Golang/DONE-web-application-development.md) - 21 May 24 20:33 +0900
 
 ### Categories
 
@@ -41,6 +41,7 @@ _16 TILs and counting..._
 
 ### [🏗️-DDD](#🏗️-ddd)
 - [📖 도메인 주도 설계란 무엇인가?](🏗️-DDD/domain-driven-design-quickly.md)
+- [part1. DDD와 객체지향이 어떤 차이가 있는가](🏗️-DDD/도메인 주도 설계의 사실과 오해.md)
 
 ### [👩🏻‍💻-Golang](#👩🏻‍💻-golang)
 - [📖 Go 언어로 배우는 웹 애플리케이션 개발](👩🏻‍💻-Golang/DONE-web-application-development.md)
