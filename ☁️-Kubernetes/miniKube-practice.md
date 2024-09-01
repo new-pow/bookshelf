@@ -1,4 +1,4 @@
-# minikube 의  동작 방식
+# 👀 minikube 의  동작 방식
 - 밑바닥에 컨테이너 런타임이 있고 (docker) minikube의 노드들은 하나하나가 프로세서 컨테이너로 돌아갑니다.
 - 실제로 `minikube start` 하면 다음의 컨테이너가 실행되고 있습니다.
 	- `minikube start` 시 보이는 안내문구
