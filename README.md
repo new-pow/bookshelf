@@ -55,7 +55,7 @@ _18 TILs and counting..._
 - [📖 컴퓨터 밑바닥의 비밀](💻-Os/the-secret-of-computer.md)
 
 ### [💼-Career](#💼-career)
-- [](💼-Career/2024-Woman-Tech-Week.md)
+- [](2024-Women-Tech-Week.md)
 
 ### [💾-Database](#💾-database)
 - [👩🏻‍💻 MySQL에서 `Process`의 의미](💾-Database/MySQL에서-Process의-의미.md)
