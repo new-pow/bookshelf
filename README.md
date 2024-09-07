@@ -6,7 +6,7 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_17 TILs and counting..._
+_18 TILs and counting..._
 
 ---
 
@@ -24,6 +24,7 @@ _17 TILs and counting..._
 - [👩🏻‍💻-Golang](#👩🏻‍💻-golang)
 - [👩🏻‍💻-Kotlin](#👩🏻‍💻-kotlin)
 - [💻-Os](#💻-os)
+- [💼-Career](#💼-career)
 - [💾-Database](#💾-database)
 - [🚧-Systems](#🚧-systems)
 
@@ -52,6 +53,9 @@ _17 TILs and counting..._
 
 ### [💻-Os](#💻-os)
 - [📖 컴퓨터 밑바닥의 비밀](💻-Os/the-secret-of-computer.md)
+
+### [💼-Career](#💼-career)
+- [](💼-Career/2024-Woman-Tech-Week.md)
 
 ### [💾-Database](#💾-database)
 - [👩🏻‍💻 MySQL에서 `Process`의 의미](💾-Database/MySQL에서-Process의-의미.md)
