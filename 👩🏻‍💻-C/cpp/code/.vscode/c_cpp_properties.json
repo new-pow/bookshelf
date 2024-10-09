@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "Mac",
+            "name": "macos-clang-arm64",
             "includePath": [
                 "${workspaceFolder}/**"
             ],
