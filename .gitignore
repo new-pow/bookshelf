@@ -8,3 +8,16 @@
 
 # go 생략
 *.go
+
+# node_modules 생략
+*/node_modules
+*/*/node_modules
+*/*/*/node_modules
+*/*/*/*/node_modules
+*/*/*/*/*/node_modules
+*/*/*/*/*/*/node_modules
+*/*/*/*/*/*/*/node_modules
+*/*/*/*/*/*/*/*/node_modules
+*/*/*/*/*/*/*/*/*/node_modules
+*/*/*/*/*/*/*/*/*/*/node_modules
+*/*/*/*/*/*/*/*/*/*/*/node_modules
