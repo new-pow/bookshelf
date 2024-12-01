@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+      {
+          "label": "build",
+          "type": "shell",
+          "command": "/usr/bin/g++",
+          "args": [
+              "-std=c++17",
+              "-g",
+              "${workspaceFolder}/*.cpp",    // 컴파일할 소스 파일들
+              "-o",
+              "${workspaceFolder}/build/Debug/outDebug"  // 지정된 출력 파일 경로
+          ],
+          "group": {
+              "kind": "build",
+              "isDefault": true
+          },
+          "problemMatcher": ["$gcc"],
+          "detail": "Generated task for building project"
+      }
+  ]
+}
