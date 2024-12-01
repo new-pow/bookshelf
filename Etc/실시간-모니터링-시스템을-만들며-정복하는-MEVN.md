@@ -2,7 +2,7 @@
 
 ![](https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791165920876.jpg)
 
-## 개요
+## 개요                                                   
 - 학습 시작 : 2024. 12. 01 -
 
 ## 기록
