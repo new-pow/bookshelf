@@ -1,4 +1,7 @@
 # 추천 시스템 실습을 위한 리서치
+## [블로그] 추천 시스템 구현하기: 협업 필터링 알고리즘
+- https://www.jaenung.net/tree/470
+
 ## [강의] Recommender Systems and Deep Learning in Python
 - https://www.udemy.com/course/the-ultimate-beginners-guide-to-python-recommender-systems/?couponCode=ST5MT020225BROW
 - 
