@@ -1,0 +1,12 @@
+# 타입스크립트 소개와 배경
+- [타입스크립트 공식문서](https://arc.net/l/quote/pbwpchjn)
+- 자바스크립트에서 확장된 언어임
+- 타입스크립트는 자바스크립트와 달리 브라우저에서 실행하기 위해 파일을 한 번 변환해줌 (compile)
+- [HTTP 요청 라이브러리 axios](https://github.com/axios/axios)
+- [Promise 소개 글](https://joshua1988.github.io/web-development/javascript/promise-for-beginners/)
+- [Jsdoc 문서 안내](https://devdocs.io/jsdoc/)
+- [Intellisense 문서](https://code.visualstudio.com/docs/editor/intellisense)
+- 타입스크립트를 쓰는 이유
+	- 에러 사전 방지
+	- 코드 가이드
+- 
