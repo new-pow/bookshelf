@@ -9,4 +9,15 @@
 - 타입스크립트를 쓰는 이유
 	- 에러 사전 방지
 	- 코드 가이드
-- 
+---
+# 타입스크립트 플레이그라운드 사이트 소개
+- npm
+	- node package manager
+	- [NPM 소개 문서](https://joshua1988.github.io/webpack-guide/build/node-npm.html#npm)
+- tsc
+	- typescript compile
+	- `tsc index.ts` 컴파일됨.
+- 웹팩
+	- [웹팩 핸드북(문서)](https://joshua1988.github.io/webpack-guide/)
+- 참고할 것
+	- 공식문서 -> tsconfig reference
