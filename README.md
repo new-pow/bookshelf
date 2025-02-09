@@ -6,15 +6,15 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_24 TILs and counting..._
+_25 TILs and counting..._
 
 ---
 
 ### 3 most recent TILs
 
-- [타입스크립트 코리아 React with TypeScript 세미나](👩🏻‍💻-ReactWithTypeScript/React-with-TypeScript-세미나.md) - 29 Jan 25 02:12 +0900
 - [💪 자주 사용하는 명령어](☁️-Kubernetes/자주-쓰는-명령어.md) - 21 Jun 24 12:32 +0900
 - [📖 컴퓨터 밑바닥의 비밀](💻-Os/the-secret-of-computer.md) - 17 Jun 24 13:39 +0900
+- [📖 Go 언어로 배우는 웹 애플리케이션 개발](👩🏻‍💻-Golang/DONE-web-application-development.md) - 21 May 24 20:33 +0900
 
 ### Categories
 
@@ -24,7 +24,7 @@ _24 TILs and counting..._
 - [🏗️-DDD](#🏗️-ddd)
 - [👩🏻‍💻-Golang](#👩🏻‍💻-golang)
 - [👩🏻‍💻-Kotlin](#👩🏻‍💻-kotlin)
-- [👩🏻‍💻-ReactWithTypeScript](#👩🏻‍💻-reactwithtypescript)
+- [👩🏻‍💻-React-TypeScript](#👩🏻‍💻-react-typescript)
 - [💻-Os](#💻-os)
 - [💼-Career](#💼-career)
 - [💼-Work](#💼-work)
@@ -58,8 +58,9 @@ _24 TILs and counting..._
 - [📖 2시간으로 끝내는 코루틴](👩🏻‍💻-Kotlin/2hours-for-coroutine.md)
 - [📖 Kotlin in action](👩🏻‍💻-Kotlin/kotlin-in-action.md)
 
-### [👩🏻‍💻-ReactWithTypeScript](#👩🏻‍💻-reactwithtypescript)
-- [타입스크립트 코리아 React with TypeScript 세미나](👩🏻‍💻-ReactWithTypeScript/React-with-TypeScript-세미나.md)
+### [👩🏻‍💻-React-TypeScript](#👩🏻‍💻-react-typescript)
+- [타입스크립트 코리아 React with TypeScript 세미나](👩🏻‍💻-React-TypeScript/React-with-TypeScript-세미나.md)
+- [타입스크립트 입문 - 기초부터 실전까지](👩🏻‍💻-React-TypeScript/typescript.md)
 
 ### [💻-Os](#💻-os)
 - [📖 컴퓨터 밑바닥의 비밀](💻-Os/the-secret-of-computer.md)
