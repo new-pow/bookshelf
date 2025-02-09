@@ -1,10 +1,21 @@
 # 추천 시스템 실습을 위한 리서치
+## [Inflean] Python을 이용한 개인화 추천시스템
+- python을 이용한 개인화 추천시스템 도서 기반
+- 
+
+## [Udemy] 머신 러닝 & AI로 추천 시스템 구축하기
+- https://www.udemy.com/course/best-recommender-system/
+- - 배움
+	- 상세하게 알려주어서 시간적으로 여유있을 때 보면 좋을 것 같음.
+	- 설명이 쉬움.
+	- 실습해보는 것이 많아 좋아보임
+	- 아파치 스파크, AWS 까지 시스템 구축을 위한 다른 
+	- *전부 들어본 것이 아니라 그 외의 부분에 대해서는 알 수 없음*
+![](https://i.imgur.com/l3MnnLf.png)
+
+
 ## [블로그] 추천 시스템 구현하기: 협업 필터링 알고리즘
 - https://www.jaenung.net/tree/470
-
-## [강의] Recommender Systems and Deep Learning in Python
-- https://www.udemy.com/course/the-ultimate-beginners-guide-to-python-recommender-systems/?couponCode=ST5MT020225BROW
-- 
 
 ## [유튜브 영상] 추천 시스템의 원리와 구축 사례
 - https://www.youtube.com/watch?v=MTAc8-ygAaM
