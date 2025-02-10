@@ -136,7 +136,8 @@
 ---
 ## 최규민님의 추천 시스템 발표자료들
 ## [PDF] 2021 개인화 추천은 어디로 가고 있는가?
-
+- https://www.slideshare.net/slideshow/ss-246630743/246630743#9
+- 
 
 ### [PDF] 2018 눈으로 듣는 음악 추천 시스템
 - https://www.slideshare.net/slideshow/ss-113740836/113740836
