@@ -127,4 +127,27 @@
 	- Online Feature Store 구축
 ![](https://i.imgur.com/Q8xd6Dg.png)
 - medleware `FeatureRead API` 를 구축
-- 
+
+## [PDF] 추천시스템 이제는 돈이 되어야 한다.
+- https://www.slideshare.net/slideshow/ss-164511610/164511610
+- 의사결정의 과정을 참고하기에 좋음.
+- 어떤 알고리즘을 얼만큼 사용하는가...
+
+---
+## 최규민님의 추천 시스템 발표자료들
+## [PDF] 2021 개인화 추천은 어디로 가고 있는가?
+
+
+### [PDF] 2018 눈으로 듣는 음악 추천 시스템
+- https://www.slideshare.net/slideshow/ss-113740836/113740836
+- Matrix Factorization
+- CF + CBF
+- ![](https://i.imgur.com/UlZIS83.png)
+
+
+
+### [PDF] 2014 Live Brodcasting 추천시스템 발표 자료
+- https://www.slideshare.net/slideshow/deview2014-live-broadcasting/39688044
+- 클래식한 추천시스템 (cosign 기반)을 참고하기 좋음.
+- 이해하기 편한 장표
+
