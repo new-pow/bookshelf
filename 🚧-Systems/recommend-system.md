@@ -19,6 +19,9 @@
 ## [블로그] 추천 시스템 구현하기: 협업 필터링 알고리즘
 - https://www.jaenung.net/tree/470
 
+## [유튜브 영상] 유튜브 알고리즘으로 보는 딥러닝 기반 추천시스템
+- https://youtu.be/uBWuUII__U0?si=t5C6v6gn23z_efP9
+- 유튜브에서 실제로 추천 시스템이 어떻게 구성되어있는지 
 ## [유튜브 영상] 추천 시스템의 원리와 구축 사례
 - https://www.youtube.com/watch?v=MTAc8-ygAaM
 -  배움
