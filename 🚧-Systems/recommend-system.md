@@ -1,7 +1,9 @@
 # 추천 시스템 실습을 위한 리서치
 ## [Inflean] Python을 이용한 개인화 추천시스템
 - python을 이용한 개인화 추천시스템 도서 기반
-- 
+	- https://www.yes24.com/Product/Goods/92150193
+- 목차로 보았을 때 실습 비율이 그렇게 많은것같지는 않음.
+- 한국어로 되어있고, 연락이 가능하다는 장점이 있음.
 
 ## [Udemy] 머신 러닝 & AI로 추천 시스템 구축하기
 - https://www.udemy.com/course/best-recommender-system/
