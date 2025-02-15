@@ -1,5 +1,5 @@
 # 추천 시스템 실습을 위한 리서치
-## [Coursera 강의] ⭐️ Nearest Neighbor Collaborative Filtering
+## [Coursera 강의] Nearest Neighbor Collaborative Filtering
 - [https://www.coursera.org/learn/collaborative-filtering?specialization=recommender-systems](https://www.coursera.org/learn/collaborative-filtering?specialization=recommender-systems)
 - 구독제 유료 강의이지만 7일 무료로 이용 가능. 그 이후로는 $49 가 소요됨.
 - 알고리즘에 대한 설명이 다른 강의보다 깊음. (실용적이지는 않을 수도....)
@@ -12,9 +12,11 @@
 - 구독제 유료 강의이지만 7일 무료로 이용 가능. 그 이후로는 $49 가 소요됨.
 - 강의는 2주 분량
 - 실습의 수준
+	- 
 - ![](https://private-user-images.githubusercontent.com/103120173/413275069-1ec8b792-828d-46d7-bdd2-0053617ece63.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk1MzAxNzEsIm5iZiI6MTczOTUyOTg3MSwicGF0aCI6Ii8xMDMxMjAxNzMvNDEzMjc1MDY5LTFlYzhiNzkyLTgyOGQtNDZkNy1iZGQyLTAwNTM2MTdlY2U2My5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMjE0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDIxNFQxMDQ0MzFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03ZTU5YmI3NTc3YTUyMjE2ZDY2NjBhNjMwZTUzNDhmZjE1OWM5MjlkYzBiMjEzYWEyNDc3Nzc2NGU5Mzg1NDUyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.CPQTJ93ow7X4g1WMzN6PUcZWtsn6K-E0bKUDmRqSV9Y)
 
 ## ⭐️ [유튜브] 추천시스템 설계 2024 국민대학교
+- 30~60분 영상 24편
 - https://www.youtube.com/watch?v=6yUo4uFNaVY&list=PLfHiwT6Xug9NGd-QgBwPLHrsTk7t40naB&index=2 (실습파트)
 - **대학강의라 프로젝트에 완전 적용하기는 좀 힘들수도 있음**. python 프로젝트에 대한 학습과 병행해야함.
 - 알고리즘에 대한 설명과 그 실습을 함께 할 수 있음.
@@ -24,8 +26,7 @@
 	- Rating Prediction
 	- Implicit Feedback
 	- User-free Model
-
-## [Inflean] Python을 이용한 개인화 추천시스템
+## [Inflean] ⭐️ Python을 이용한 개인화 추천시스템
 - python을 이용한 개인화 추천시스템 도서 기반
 	- https://www.yes24.com/Product/Goods/92150193
 - 목차로 보았을 때 실습 비율이 그렇게 많은것같지는 않음.
@@ -44,12 +45,16 @@
 
 ## [블로그] 추천 시스템 구현하기: 협업 필터링 알고리즘
 - https://www.jaenung.net/tree/470
-- 간단한 연습코드
+- 간단한 연습코드 따라해보기 좋았음.
 
 ## [유튜브 영상] 유튜브 알고리즘으로 보는 딥러닝 기반 추천시스템
+- 20분 영상
 - https://youtu.be/uBWuUII__U0?si=t5C6v6gn23z_efP9
 - 유튜브에서 실제로 추천 시스템이 어떻게 구성되어있는지 
+
 ## [유튜브 영상] 추천 시스템의 원리와 구축 사례
+- 1시간 영상
+- AWS personalizer 소개 영상에 가까웠음.
 - https://www.youtube.com/watch?v=MTAc8-ygAaM
 -  배움
 	- 기본적인 추천 시스템에 대한 이해가 가능했음.
@@ -105,7 +110,10 @@
 
 
 
+
 ## [유튜브 영상] 현대적인 추천 시스템 구축을 위한 여정
+
+- 일회성 영상
 - https://www.youtube.com/watch?v=69igsWcmW5g
 - 목적 : 실제 서비스에서 어떻게 쓰이는지 학습한다
 - 배움
@@ -129,6 +137,7 @@
 - 
 
 ## [유튜브 영상] 실시간 추천 시스템 구축하기
+- 일회성 영상
 - 실제로 어떤 유저 행동 로그 스키마를 사용했는가 참고할 수 있음
 - 실제 서비스에서 어떻게 쓰이는지 학습한다
 - **Session-based Recommender**
