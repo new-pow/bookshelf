@@ -1,4 +1,10 @@
 # 추천 시스템 실습을 위한 리서치
+
+- 추천 알고리즘에 대한 학습과 추천 시스템 설계-구축에 대한 서치는 별개로 진행되어야 합니다.
+# 추천 시스템 구축을 위한 서치
+## 
+
+# 추천 알고리즘 학습에 대한 서치
 ## [Coursera 강의] Nearest Neighbor Collaborative Filtering
 - [https://www.coursera.org/learn/collaborative-filtering?specialization=recommender-systems](https://www.coursera.org/learn/collaborative-filtering?specialization=recommender-systems)
 - 구독제 유료 강의이지만 7일 무료로 이용 가능. 그 이후로는 $49 가 소요됨.
@@ -15,7 +21,7 @@
 	- 
 - ![](https://private-user-images.githubusercontent.com/103120173/413275069-1ec8b792-828d-46d7-bdd2-0053617ece63.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk1MzAxNzEsIm5iZiI6MTczOTUyOTg3MSwicGF0aCI6Ii8xMDMxMjAxNzMvNDEzMjc1MDY5LTFlYzhiNzkyLTgyOGQtNDZkNy1iZGQyLTAwNTM2MTdlY2U2My5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMjE0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDIxNFQxMDQ0MzFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03ZTU5YmI3NTc3YTUyMjE2ZDY2NjBhNjMwZTUzNDhmZjE1OWM5MjlkYzBiMjEzYWEyNDc3Nzc2NGU5Mzg1NDUyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.CPQTJ93ow7X4g1WMzN6PUcZWtsn6K-E0bKUDmRqSV9Y)
 
-## ⭐️ [유튜브] 추천시스템 설계 2024 국민대학교
+## [유튜브] ⭐️ 추천시스템 설계 2024 국민대학교
 - 30~60분 영상 24편
 - https://www.youtube.com/watch?v=6yUo4uFNaVY&list=PLfHiwT6Xug9NGd-QgBwPLHrsTk7t40naB&index=2 (실습파트)
 - **대학강의라 프로젝트에 완전 적용하기는 좀 힘들수도 있음**. python 프로젝트에 대한 학습과 병행해야함.
@@ -27,6 +33,7 @@
 	- Implicit Feedback
 	- User-free Model
 ## [Inflean] ⭐️ Python을 이용한 개인화 추천시스템
+![](https://image.yes24.com/goods/110328538/XL)
 - python을 이용한 개인화 추천시스템 도서 기반
 	- https://www.yes24.com/Product/Goods/92150193
 - 목차로 보았을 때 실습 비율이 그렇게 많은것같지는 않음.
