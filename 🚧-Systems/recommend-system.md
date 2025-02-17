@@ -1,11 +1,21 @@
 # 추천 시스템 실습을 위한 리서치
 
-- 추천 알고리즘에 대한 학습과 추천 시스템 설계-구축에 대한 서치는 별개로 진행되어야 합니다.
-# 추천 시스템 구축을 위한 서치
-## 
+- 추천 알고리즘에 대한 학습과 추천 시스템 설계-구축에 대한 서치는 별개로 진행되어야 할 것 같습니다.
+## 추천 시스템 구축을 위한 서치
+### 추천 서빙 시스템 아키텍처: 높은 생산성을 위한 아키텍쳐 및 ML Flywheel | 2024 당근 테크 밋업
+- https://youtu.be/Cs09fzdJo5Y?si=lapprFYxlCCazW8F
+- 당근의 추천 시스템 아키텍처 예제를 엿볼 수 있음.
+- 어떤 후처리를 할지, 어떤 유저에게 추천할지 등을 참고할 수 있음.
+![](https://i.imgur.com/apIZhEv.png)
+![](https://i.imgur.com/Fe69V6r.png)
 
-# 추천 알고리즘 학습에 대한 서치
-## [Coursera 강의] Nearest Neighbor Collaborative Filtering
+### 후처리의 모든 것 (서빙전 필터링)
+- https://eda-ai-lab.tistory.com/612
+- 
+
+
+## 추천 알고리즘 학습에 대한 서치
+### [Coursera 강의] Nearest Neighbor Collaborative Filtering
 - [https://www.coursera.org/learn/collaborative-filtering?specialization=recommender-systems](https://www.coursera.org/learn/collaborative-filtering?specialization=recommender-systems)
 - 구독제 유료 강의이지만 7일 무료로 이용 가능. 그 이후로는 $49 가 소요됨.
 - 알고리즘에 대한 설명이 다른 강의보다 깊음. (실용적이지는 않을 수도....)
@@ -14,14 +24,19 @@
 	- 이웃 사용자 다섯명의 평점들을 통해 사용자-사용자의 모든 영화들에 대해 예상평점을 구하기
 	-  사용자에 대한 예상평점을 계산하고 상위 3개의 영화 구하기 
 
-## [Coursera 강의] 추천시스템 소개: 비개인화 및 콘텐츠 기반
+### [Coursera 강의] 추천시스템 소개: 비개인화 및 콘텐츠 기반
 - 구독제 유료 강의이지만 7일 무료로 이용 가능. 그 이후로는 $49 가 소요됨.
 - 강의는 2주 분량
 - 실습의 수준
-	- 
-- ![](https://private-user-images.githubusercontent.com/103120173/413275069-1ec8b792-828d-46d7-bdd2-0053617ece63.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mzk1MzAxNzEsIm5iZiI6MTczOTUyOTg3MSwicGF0aCI6Ii8xMDMxMjAxNzMvNDEzMjc1MDY5LTFlYzhiNzkyLTgyOGQtNDZkNy1iZGQyLTAwNTM2MTdlY2U2My5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMjE0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDIxNFQxMDQ0MzFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03ZTU5YmI3NTc3YTUyMjE2ZDY2NjBhNjMwZTUzNDhmZjE1OWM5MjlkYzBiMjEzYWEyNDc3Nzc2NGU5Mzg1NDUyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.CPQTJ93ow7X4g1WMzN6PUcZWtsn6K-E0bKUDmRqSV9Y)
+	- 평균 평점 기준 상위 영화
+	- 개수별 인기 영화
+	- 좋아요 비율별 인기 영화
+	- 토이 스토리와의 연관성
+	- 토이 스토리와의 상관관계
+	- 남성/여성 평균 평점 차이
+	- '좋아요'의 남성과 여성 차이
 
-## [유튜브] ⭐️ 추천시스템 설계 2024 국민대학교
+### [유튜브] ⭐️ 추천시스템 설계 2024 국민대학교
 - 30~60분 영상 24편
 - https://www.youtube.com/watch?v=6yUo4uFNaVY&list=PLfHiwT6Xug9NGd-QgBwPLHrsTk7t40naB&index=2 (실습파트)
 - **대학강의라 프로젝트에 완전 적용하기는 좀 힘들수도 있음**. python 프로젝트에 대한 학습과 병행해야함.
@@ -32,12 +47,13 @@
 	- Rating Prediction
 	- Implicit Feedback
 	- User-free Model
+
 ## [Inflean] ⭐️ Python을 이용한 개인화 추천시스템
 ![](https://image.yes24.com/goods/110328538/XL)
-- python을 이용한 개인화 추천시스템 도서 기반
+- python을 이용한 개인화 추천시스템 도서 기반의 인프런 강의
 	- https://www.yes24.com/Product/Goods/92150193
 - 목차로 보았을 때 실습 비율이 그렇게 많은것같지는 않음.
-- 한국어로 되어있고, 연락이 가능하다는 장점이 있음.
+- 한국어로 되어있고, 질의응답이 가능하다는 장점이 있음.
 - 알고리즘 중심
 
 ## [Udemy] 머신 러닝 & AI로 추천 시스템 구축하기
@@ -45,7 +61,7 @@
 - 상세하게 알려주어서 시간적으로 여유있을 때 보면 좋을 것 같음.
 - 설명이 쉬움.
 - 실습해보는 것이 많아 좋아보임
-- 아파치 스파크, AWS 까지 시스템 구축을 위한 다른 
+- 아파치 스파크, AWS 까지 시스템 구축을 위한 다른 툴을 확인할 수 있을 거같음.
 - *전부 들어본 것이 아니라 그 외의 부분에 대해서는 알 수 없음*
 ![](https://i.imgur.com/l3MnnLf.png)
 
@@ -171,19 +187,19 @@
 ![](https://i.imgur.com/Q8xd6Dg.png)
 - medleware `FeatureRead API` 를 구축
 
-## [PDF] 추천시스템 이제는 돈이 되어야 한다.
+---
+### 최규민님의 추천 시스템 발표자료들
+- 실질적으로 초보자를 위한 온보딩이라기보다는 추천 시스템에 대한 시각을 익히고 넓히는 데에 도움이 많이 된 발표 자료들.
+#### [PDF] 2021 개인화 추천은 어디로 가고 있는가?
+- https://www.slideshare.net/slideshow/ss-246630743/246630743#9
+- 추천 서비스의 목적을 상기하는데 도움이 되었음.
+
+#### [PDF] 2019 추천시스템 이제는 돈이 되어야 한다.
 - https://www.slideshare.net/slideshow/ss-164511610/164511610
 - 의사결정의 과정을 참고하기에 좋음.
 - 어떤 알고리즘을 얼만큼 사용하는가...
 
----
-## 최규민님의 추천 시스템 발표자료들
-- 실질적으로 초보자를 위한 온보딩이라기보다는 추천 시스템에 대한 시각을 익히고 넓히는 데에 도움이 많이 된 발표 자료들.
-## [PDF] 2021 개인화 추천은 어디로 가고 있는가?
-- https://www.slideshare.net/slideshow/ss-246630743/246630743#9
-- 추천 서비스의 목적을 상기하는데 도움이 되었음.
-
-### [PDF] 2018 눈으로 듣는 음악 추천 시스템
+##### [PDF] 2018 눈으로 듣는 음악 추천 시스템
 - https://www.slideshare.net/slideshow/ss-113740836/113740836
 - Matrix Factorization
 - CF + CBF
