@@ -3,4 +3,11 @@
 ## 협업 필터링 Collaborative Filtering : CF
 - 가정
 	- 취향이 비슷한 사람들의 집단이 존재함을 가정
-- 
+
+## 유사도 지표
+- CF 에서는 사용자간 유사도를 구하는 것이 매우 핵심
+
+### 상관계수
+![](https://i.imgur.com/brphiAv.png)
+
+
