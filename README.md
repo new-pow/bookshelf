@@ -78,7 +78,7 @@ _25 TILs and counting..._
 
 ### [🚧-Systems](#🚧-systems)
 - [견고한 결제 시스템 만들기](🚧-Systems/Payment-system.md)
-- [추천 시스템 실습을 위한 리서치](🚧-Systems/recommend-system.md)
+- [추천 시스템 실습을 위한 리서치](recommend-system-research.md)
 
 [1]: https://new-pow.tistory.com
 
