@@ -6,15 +6,15 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_25 TILs and counting..._
+_26 TILs and counting..._
 
 ---
 
 ### 3 most recent TILs
 
+- [추천 시스템 실습을 위한 리서치](🚧-Systems/recommend-system-research.md) - 18 Feb 25 11:01 +0900
+- [Python을 이용한 개인화 추천시스템](🚧-Systems/recommend-system-with-python.md) - 18 Feb 25 11:01 +0900
 - [💪 자주 사용하는 명령어](☁️-Kubernetes/자주-쓰는-명령어.md) - 21 Jun 24 12:32 +0900
-- [📖 컴퓨터 밑바닥의 비밀](💻-Os/the-secret-of-computer.md) - 17 Jun 24 13:39 +0900
-- [📖 Go 언어로 배우는 웹 애플리케이션 개발](👩🏻‍💻-Golang/DONE-web-application-development.md) - 21 May 24 20:33 +0900
 
 ### Categories
 
@@ -78,7 +78,8 @@ _25 TILs and counting..._
 
 ### [🚧-Systems](#🚧-systems)
 - [견고한 결제 시스템 만들기](🚧-Systems/Payment-system.md)
-- [추천 시스템 실습을 위한 리서치](recommend-system-research.md)
+- [추천 시스템 실습을 위한 리서치](🚧-Systems/recommend-system-research.md)
+- [Python을 이용한 개인화 추천시스템](🚧-Systems/recommend-system-with-python.md)
 
 [1]: https://new-pow.tistory.com
 
