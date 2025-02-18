@@ -12,9 +12,9 @@ _26 TILs and counting..._
 
 ### 3 most recent TILs
 
-- [추천 시스템 실습을 위한 리서치](🚧-Systems/recommend-system-research.md) - 18 Feb 25 11:01 +0900
+- [👩🏻‍💻 MySQL에서 `Process`의 의미](💾-Database/MySQL에서-Process의-의미.md) - 18 Feb 25 18:49 +0900
+- [타입스크립트 코리아 React with TypeScript 세미나](👩🏻‍💻-React-TypeScript/React-with-TypeScript-세미나.md) - 18 Feb 25 18:49 +0900
 - [Python을 이용한 개인화 추천시스템](🚧-Systems/recommend-system-with-python.md) - 18 Feb 25 11:01 +0900
-- [💪 자주 사용하는 명령어](☁️-Kubernetes/자주-쓰는-명령어.md) - 21 Jun 24 12:32 +0900
 
 ### Categories
 
