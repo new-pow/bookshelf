@@ -46,3 +46,8 @@ rXY=∑in(Xi−X¯)(Yi−Y¯)∑in(Xi−X¯)2∑in(Yi−Y¯)2![{\displaystyle r_
 단순 CF 알고리즘 개선 방법에서 개선
 - K Nearest Neighbors KNN 방법
 - Thresholding 방법
+
+## 사용자의 평가 성향을 고려한 CF
+- 같은 평점이지만 평점 평균에 따라 다른 의미를 가질 수 있다
+- **집단과 사용자간 평점 평균 차이로 보정해줄 수 있다.**
+
