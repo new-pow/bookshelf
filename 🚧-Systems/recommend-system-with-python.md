@@ -9,4 +9,5 @@
 | ---------------- | ---------------------------------------------------------------------------------------------- |
 | 1. 추천 시스템 소개     | [related docs](./recommend-system-with-python/note1.md)                                        |
 | 2. 기본적인 추천 시스템   | `playground/recommend-system` 레포지토리                                                            |
-| 1. 협업 필터링 추천 시스템 | `playground/recommend-system` 레포지토리<br>[related docs](./recommend-system-with-python/note2.md) |
+| 3. 협업 필터링 추천 시스템 | `playground/recommend-system` 레포지토리<br>[related docs](./recommend-system-with-python/note2.md) |
+| 1. MF 기반 추천      | `playground/recommend-system` 레포지토리<br>[related docs](./recommend-system-with-python/note3.md) |
