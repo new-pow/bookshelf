@@ -14,3 +14,5 @@
 | 3. 협업 필터링 추천 시스템   | `playground/recommend-system` 레포지토리<br>[related docs](./recommend-system-with-python/note2.md) |
 | 4. MF 기반 추천        | `playground/recommend-system` 레포지토리<br>[related docs](./recommend-system-with-python/note3.md) |
 | 5. Surprise 패키지 사용 | `playground/recommend-system` 레포지토리<br>[related docs](./recommend-system-with-python/note4.md) |
+| 7.                 |                                                                                                |
+| 8. 하이브리드 추천        | `playground/recommend-system` 레포지토리<br>[related docs](./recommend-system-with-python/note5.md) |
