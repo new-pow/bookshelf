@@ -6,7 +6,7 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_26 TILs and counting..._
+_28 TILs and counting..._
 
 ---
 
@@ -14,7 +14,7 @@ _26 TILs and counting..._
 
 - [👩🏻‍💻 MySQL에서 `Process`의 의미](💾-Database/MySQL에서-Process의-의미.md) - 18 Feb 25 18:49 +0900
 - [타입스크립트 코리아 React with TypeScript 세미나](👩🏻‍💻-React-TypeScript/React-with-TypeScript-세미나.md) - 18 Feb 25 18:49 +0900
-- [Python을 이용한 개인화 추천시스템](🚧-Systems/recommend-system-with-python.md) - 18 Feb 25 11:01 +0900
+- [추천 시스템 실습을 위한 리서치](🚧-Systems/recommend-system-research.md) - 18 Feb 25 11:01 +0900
 
 ### Categories
 
@@ -80,6 +80,8 @@ _26 TILs and counting..._
 - [견고한 결제 시스템 만들기](🚧-Systems/Payment-system.md)
 - [추천 시스템 실습을 위한 리서치](🚧-Systems/recommend-system-research.md)
 - [Python을 이용한 개인화 추천시스템](🚧-Systems/recommend-system-with-python.md)
+- [👍 추천 시스템을 알아보자](🚧-Systems/recommend-system.md)
+- [추천 시스템 입문](🚧-Systems/recommender-systems.md)
 
 [1]: https://new-pow.tistory.com
 
