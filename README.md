@@ -6,15 +6,15 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_28 TILs and counting..._
+_29 TILs and counting..._
 
 ---
 
 ### 3 most recent TILs
 
-- [👩🏻‍💻 MySQL에서 `Process`의 의미](💾-Database/MySQL에서-Process의-의미.md) - 18 Feb 25 18:49 +0900
+- [이펙티브 소프트웨어 테스팅](🧪-Test/effective-software-testing.md) - 24 Mar 25 14:44 +0900
 - [타입스크립트 코리아 React with TypeScript 세미나](👩🏻‍💻-React-TypeScript/React-with-TypeScript-세미나.md) - 18 Feb 25 18:49 +0900
-- [추천 시스템 실습을 위한 리서치](🚧-Systems/recommend-system-research.md) - 18 Feb 25 11:01 +0900
+- [👩🏻‍💻 MySQL에서 `Process`의 의미](💾-Database/MySQL에서-Process의-의미.md) - 18 Feb 25 18:49 +0900
 
 ### Categories
 
@@ -30,6 +30,7 @@ _28 TILs and counting..._
 - [💼-Work](#💼-work)
 - [💾-Database](#💾-database)
 - [🚧-Systems](#🚧-systems)
+- [🧪-Test](#🧪-test)
 
 ### [Etc](#etc)
 - [💕 좋았던 아티클](Etc/Reference-articles.md)
@@ -82,6 +83,9 @@ _28 TILs and counting..._
 - [Python을 이용한 개인화 추천시스템](🚧-Systems/recommend-system-with-python.md)
 - [👍 추천 시스템을 알아보자](🚧-Systems/recommend-system.md)
 - [추천 시스템 입문](🚧-Systems/recommender-systems.md)
+
+### [🧪-Test](#🧪-test)
+- [이펙티브 소프트웨어 테스팅](🧪-Test/effective-software-testing.md)
 
 [1]: https://new-pow.tistory.com
 
