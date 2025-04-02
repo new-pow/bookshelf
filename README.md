@@ -6,15 +6,15 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_29 TILs and counting..._
+_30 TILs and counting..._
 
 ---
 
 ### 3 most recent TILs
 
 - [이펙티브 소프트웨어 테스팅](🧪-Test/effective-software-testing.md) - 24 Mar 25 14:44 +0900
-- [타입스크립트 코리아 React with TypeScript 세미나](👩🏻‍💻-React-TypeScript/React-with-TypeScript-세미나.md) - 18 Feb 25 18:49 +0900
 - [👩🏻‍💻 MySQL에서 `Process`의 의미](💾-Database/MySQL에서-Process의-의미.md) - 18 Feb 25 18:49 +0900
+- [타입스크립트 코리아 React with TypeScript 세미나](👩🏻‍💻-React-TypeScript/React-with-TypeScript-세미나.md) - 18 Feb 25 18:49 +0900
 
 ### Categories
 
@@ -75,6 +75,7 @@ _29 TILs and counting..._
 
 ### [💾-Database](#💾-database)
 - [👩🏻‍💻 MySQL에서 `Process`의 의미](💾-Database/MySQL에서-Process의-의미.md)
+- [[2025-01] 데이터베이스 시스템](💾-Database/database-system.md)
 - [📖 RealMySQL](💾-Database/real-mysql.md)
 
 ### [🚧-Systems](#🚧-systems)
