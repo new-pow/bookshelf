@@ -6,15 +6,15 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_31 TILs and counting..._
+_32 TILs and counting..._
 
 ---
 
 ### 3 most recent TILs
 
 - [이펙티브 소프트웨어 테스팅](🧪-Test/effective-software-testing.md) - 24 Mar 25 14:44 +0900
-- [👩🏻‍💻 MySQL에서 `Process`의 의미](💾-Database/MySQL에서-Process의-의미.md) - 18 Feb 25 18:49 +0900
 - [타입스크립트 코리아 React with TypeScript 세미나](👩🏻‍💻-React-TypeScript/React-with-TypeScript-세미나.md) - 18 Feb 25 18:49 +0900
+- [👩🏻‍💻 MySQL에서 `Process`의 의미](💾-Database/MySQL에서-Process의-의미.md) - 18 Feb 25 18:49 +0900
 
 ### Categories
 
@@ -23,6 +23,7 @@ _31 TILs and counting..._
 - [🍃-Spring](#🍃-spring)
 - [🏗️-DDD](#🏗️-ddd)
 - [👩🏻‍💻-Golang](#👩🏻‍💻-golang)
+- [👩🏻‍💻-Java](#👩🏻‍💻-java)
 - [👩🏻‍💻-Kotlin](#👩🏻‍💻-kotlin)
 - [👩🏻‍💻-React-TypeScript](#👩🏻‍💻-react-typescript)
 - [💻-Os](#💻-os)
@@ -55,6 +56,9 @@ _31 TILs and counting..._
 
 ### [👩🏻‍💻-Golang](#👩🏻‍💻-golang)
 - [📖 Go 언어로 배우는 웹 애플리케이션 개발](👩🏻‍💻-Golang/DONE-web-application-development.md)
+
+### [👩🏻‍💻-Java](#👩🏻‍💻-java)
+- [객체지향 프로그래밍](👩🏻‍💻-Java/java-and-oop.md)
 
 ### [👩🏻‍💻-Kotlin](#👩🏻‍💻-kotlin)
 - [📖 2시간으로 끝내는 코루틴](👩🏻‍💻-Kotlin/2hours-for-coroutine.md)
