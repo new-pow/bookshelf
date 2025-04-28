@@ -6,15 +6,15 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_33 TILs and counting..._
+_34 TILs and counting..._
 
 ---
 
 ### 3 most recent TILs
 
+- [디지털 논리 회로](Etc/디지털-논리-회로.md) - 27 Apr 25 17:09 +0900
 - [운영체제](💻-Os/operation-system.md) - 13 Apr 25 23:55 +0900
 - [이펙티브 소프트웨어 테스팅](🧪-Test/effective-software-testing.md) - 24 Mar 25 14:44 +0900
-- [👩🏻‍💻 MySQL에서 `Process`의 의미](💾-Database/MySQL에서-Process의-의미.md) - 18 Feb 25 18:49 +0900
 
 ### Categories
 
@@ -39,6 +39,7 @@ _33 TILs and counting..._
 - [왜 Array Index는 0부터 시작하는 것일까?](Etc/Why-does-the-Array-Index-start-from-Zero.md)
 - [Open API와 스웨거를 활용한 실전 API 설계](Etc/open-api.md)
 - [👀 커리어 성장 멘토링 후기](Etc/udemy-career-mentoring.md)
+- [디지털 논리 회로](Etc/디지털-논리-회로.md)
 - [실시간 모니터링 시스템을 만들며 정복하는 MEVN](Etc/실시간-모니터링-시스템을-만들며-정복하는-MEVN.md)
 
 ### [☁️-Kubernetes](#☁️-kubernetes)
