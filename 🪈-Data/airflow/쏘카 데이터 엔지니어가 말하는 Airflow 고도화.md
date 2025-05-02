@@ -1,0 +1,11 @@
+- 개발 환경 구축
+	- Docker compose 기반의 로컬 노트북 환경
+	- .airflow ignore 를 통해 파싱하는 DAG cnrth
+- 테스트 환경 구축
+	- DAG 기본 문법 (DagBag 활용)
+	- Dag Convention 등 Dag 검증 테스트 도입
+- Airflow 스케일업하기
+- 모니터링하기
+	- 정상적으로 스케줄되지 않은 Dag를 모아서 10분에 한번씩 슬랙 채널에 알림
+	- 즉각적으로 대응할 수 있도록 담당자를 멘션
+- 
