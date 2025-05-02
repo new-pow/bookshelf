@@ -24,7 +24,8 @@
   },
   "smart_notices": {
     "muted": {
-      "embedding_complete": true
+      "embedding_complete": true,
+      "done_import": true
     }
   }
 }
