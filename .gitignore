@@ -359,3 +359,8 @@ dist
 
 # SvelteKit build / generate output
 .svelte-kit
+
+# smart-env
+.smart-env/*
+.smart-env/*/*
+*.ajson
