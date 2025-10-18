@@ -63,6 +63,7 @@
 	- 출발상황: tpump=0 & queue != 0?
 	- 목적: 평균 대기행렬(Queue)의 길이는?
 - 포아송 확률변수 발생 프로그램
+	- 포아송 확률변수 발생공식:  ![](https://i.imgur.com/jaFbmSK.png)
 ```c
 void poissn(long *np, float mean, int *pp)
 {
@@ -102,3 +103,100 @@ if tpump = 0 and queue !=0 then
 | ---- | --- | --- | ----- |
 | 8    | 0   | 1   | 1     |
 | 9    | 1   | 1   | 0     |
+- 전체 알고리즘
+```c
+read tstep, prarr, seed, mean
+queue = 0 // 대기행렬길이
+totque = 0 // 총대기시간
+totarr = 0 // 도착한 총고객 수
+tpump = 0 // 봉사시간
+time = 0
+tlimit = 100 // 시뮬레이션 시간
+```
+```c
+while time < tlimit do
+  {
+	  time = time-tstep
+      arrive = 0
+      call random(seed, U)
+
+      if U<prarr*tstep then // prarr 는 고객의 도착확률
+      { 
+	      arrive = 1
+          queue = queue+arrive
+          totarr=totarr+1  // 총 고객수 + 1
+	   }
+
+       if tpump>0 then
+	   {
+		  tpump = tpump-tstep
+          if tpump < 0 then 
+		  tpump = 0
+	   }
+
+	   if tpump=0 and queue≠0 then
+	   { 
+		  queue = queue-1
+		  call poissn(seed, mean, p)
+		  tpump = p    
+	   }
+
+       totque = totque+queue // 총 대기시간
+   }(* end of while *)
+
+    aveque = totque/(tlimit/tstep) // 평균 대기행렬길이
+    print aveque, totarr
+    stop
+```
+
+- 결과 분석
+
+| TIME | ARRIVAL | QUEUE | TPUMP | 비고                     |
+| ---- | ------- | ----- | ----- | ---------------------- |
+| 0    | 0       | 0     | 0     |                        |
+| 1    | 1       | 0     | 8     | 첫번째 고객 봉사시간 8          |
+| 2    | 0       | 0     | 7     |                        |
+| 3    | 0       | 0     | 6     |                        |
+| 4    | 1       | 1     | 5     | totque = 1, totarr = 2 |
+| 5    | 0       | 1     | 4     | totque = 2, totarr = 2 |
+| 6    | 0       | 1     | 3     | totque = 3, totarr = 2 |
+| 7    | 0       | 1     | 2     | totque = 4, totarr = 2 |
+| 8    | 0       | 1     | 1     | totque = 5, totarr = 2 |
+| 9    | 1       | 1     | 4     | totque = 6, totarr = 3 |
+| 10   | 0       | 1     | 3     | totque = 7, totarr = 3 |
+| 11   | 0       | 1     | 2     | totque = 8, totarr = 3 |
+- totque 를 총 고객수로 나누면, 평균대기시간
+- totque 를 총 시뮬레이션 시간으로 나누면, 평균대기행렬길이
+
+- 확률변수는 어떻게 결정되는가? -> 14강에서 계속
+	- 확률적 상황으로 표현
+	- 실시스템에서 데이터 수집
+	- 확률분포를 가정, 검정
+
+---
+# 모델링과 시뮬레이션
+- 시스템이란 어느 목적을 위하여 하나 이상 서로 관련있는 구성요소가 결합된 것이다.
+- **모델**이란 **시스템을 서술한 것**으로 축소된 물리적 대상이거나 수학적인 식이나 관계, 도형적 표현일 수 있다.
+![](https://i.imgur.com/yGSdSr8.png)
+
+- 시뮬레이션 모델의 이용 범주
+	- 설명적 장치: 시스템이나 문제를 정의
+	- 분석도구: 한계적 구성요소를 결정
+	- 설계평가도구: 제안된 해결방안을 종합하고 평가함
+	- 예측도구: 미래의 개발계획을 예측
+- 시스템의 범위 결정 문제
+- 외적요인들
+	- 포함하거나
+	- 무시하거나
+	- 입력변수로 한다.
+## 모델의 설계
+- 용이한 경우
+	- 물리적 규칙이 이용 가능하다.
+	- 도형적 표현이 가능하다.
+	- 입력, 출력, 구성요소의 변화가 통제 가능하다.
+- 어려운 경우
+	- 기본 규칙이 없다.
+	- 표현하기 어려운 많은 절차적 요소
+	- 랜덤(random) 구성 요소
+	- 정량화가 어려운 정책적인 입력
+	- 인간의 의사결정이 큰 영향을 주는 경우
