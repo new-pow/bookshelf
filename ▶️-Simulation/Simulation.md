@@ -62,4 +62,31 @@
 	- 봉사시간: 평균 4분, 포아송 확률변수
 	- 출발상황: tpump=0 & queue != 0?
 	- 목적: 평균 대기행렬(Queue)의 길이는?
-- 
+- 포아송 확률변수 발생 프로그램
+```c
+void poissn(long *np, float mean, int *pp)
+{
+	float prod, b, u;
+	*pp = 0; 
+	b = exp(-mean);
+	prod = 1;
+	random(np, &u);
+	prod = prod*u; // 
+	while (prod >= b)
+	{
+		random(np, &u);
+		prod = prod*u;
+	}
+}
+```
+
+- 고객 도착사건 알고리즘
+```c
+call random(U)
+
+if U<0.25 * 1 then
+	arrive = 1 // 도착한것으로 한다.
+	queue = queue + arrive // 도착행렬 길이
+	totarr = totarr + 1 // 총 고객수 계산
+```
+
