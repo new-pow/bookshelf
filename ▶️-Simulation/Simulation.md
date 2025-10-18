@@ -88,5 +88,17 @@ if U<0.25 * 1 then
 	arrive = 1 // 도착한것으로 한다.
 	queue = queue + arrive // 도착행렬 길이
 	totarr = totarr + 1 // 총 고객수 계산
+	
+// 고객이 출발했을때, queue에 고객이 있다면
+if tpump = 0 and queue !=0 then
+{
+	queu = queue -1 // 손님 데려오기
+	callpoissn(seed, mean, p) // 봉사시간 return p
+	tpump = p // 봉사시간
+}
 ```
 
+| TIME | ARR | QUE | TPUMP |
+| ---- | --- | --- | ----- |
+| 8    | 0   | 1   | 1     |
+| 9    | 1   | 1   | 0     |
