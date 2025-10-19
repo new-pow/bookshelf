@@ -252,3 +252,16 @@ while time < tlimit do
 
 ---
 # 대기행렬 문제
+- 지문
+	- 도착상태: 평균 15대/H(일양분포)
+	- 봉사시간: 평균 4분(poisson)
+	- 주유대 1대, 시간 100분
+	- 결과
+		- mean queue length = 1.59
+		- the total arrivals = 22
+- 도착상태 변화
+```c
+call random(U)
+if U < 0.33 * 1 then
+	arrive = 1
+```
