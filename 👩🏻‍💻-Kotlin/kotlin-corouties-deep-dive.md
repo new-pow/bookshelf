@@ -43,3 +43,52 @@
 	- 다른 요소를 찾기 위해 멈췄던 지점에서 다시 실행이된다. -> main 함수와 시퀀스 제너레이터가 번갈아가면서 실행된다.
 	- `yield()` 외에 다른 중단함수를 사용할 수 없다.
 		- SequenceScope 에 RestrictsSuspension 어노테이션이 있기 때문. 리시버가 SequenceScope 가 아닐 경우 중단 함수를 호출하는 것을 허용하지 않는다.
+		- `sequence {}`는 **lazy generator**를 만드는 DSL입니다.  즉, `yield()`나 `yieldAll()`을 사용해서 **값을 하나씩 생성하고**, 실제로는 **이터레이터 기반으로 동작**합니다.
+		- “멈춤”은 **진짜 코루틴 suspension이 아니라**, 내부적으로 **상태 머신(state machine)**으로 변환되어 구현됩니다.
+		- `RestrictsSuspension` 어노테이션의 역할
+			- ```
+			  @RestrictsSuspension
+				public abstract class SequenceScope<in T> internal constructor() {
+				    public abstract suspend fun yield(value: T)
+				    public abstract suspend fun yieldAll(iterator: Iterator<T>)
+				    ...
+				}
+
+			  ```
+		  - `sequence {}` 블록 안에서는 `SequenceScope`를 리시버로 가진 `suspend fun yield()`는 호출 가능.
+		  - `sequence {}`는 **코루틴처럼 보이지만 실제 코루틴 런타임을 사용하지 않습니다.**  즉, `suspend` 키워드는 문법적으로 사용되지만, **non-suspendable 컨텍스트**에서 상태 기계로 변환됩니다.
+		  - 따라서 만약 `delay()`처럼 진짜 코루틴 suspension을 호출해버리면,  런타임에 suspend point를 재개할 수 있는 컨텍스트(`Continuation`)가 없어져 **비정상 상태**가 됩니다.
+		  - 이를 방지하기 위해 `RestrictsSuspension`이 붙어 있습니다.  컴파일러가 “이 리시버가 아닌 곳에서 suspend 호출을 시도하면 컴파일 에러”를 내는 것입니다.
+```kotlin
+val seq = sequence {
+    yield(1)
+    yield(2)
+}
+```
+- 위를 컴파일하면 이렇게 변환된다.
+```kotlin
+val seq = Sequence {
+    val iterator = object : Iterator<Int> {
+        var state = 0
+        override fun next(): Int {
+            when (state) {
+                0 -> { state = 1; return 1 }
+                1 -> { state = 2; return 2 }
+                else -> throw NoSuchElementException()
+            }
+        }
+        override fun hasNext() = state < 2
+    }
+    iterator
+}
+```
+
+- flow 와의 비교
+
+| 항목            | `sequence {}`                 | `flow {}`                  |
+| ------------- | ----------------------------- | -------------------------- |
+| 런타임           | 동기적, 상태 기계                    | 진짜 코루틴 (비동기 가능)            |
+| suspend 함수 호출 | 불가 (`RestrictsSuspension`)    | 가능 (`delay`, `network`, 등) |
+| 호출 방식         | `for`/`iterator()` (blocking) | `collect()` (suspend)      |
+| 목적            | Lazy generator                | 비동기 스트림                    |
+
