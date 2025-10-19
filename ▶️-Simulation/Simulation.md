@@ -435,3 +435,8 @@ g.ComputeQueueing();
 }
 ```
 
+- 평균 대기행렬을 구하는 공식
+	- `aveque = totque/(tlimit/tstep)`
+- 평균 대기시간을 구하는 공식
+	- `aveque = totque/totarr`
+- 
