@@ -439,4 +439,7 @@ g.ComputeQueueing();
 	- `aveque = totque/(tlimit/tstep)`
 - 평균 대기시간을 구하는 공식
 	- `aveque = totque/totarr`
-- 
+---
+## 정규분포
+![](https://i.imgur.com/2Y4opur.png)
+
