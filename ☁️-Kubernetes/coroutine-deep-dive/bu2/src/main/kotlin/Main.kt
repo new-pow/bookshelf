@@ -31,26 +31,30 @@ fun main() = runBlocking {
  * launch: Job을 반환하며, 결과값을 받을 수 없음
  */
 suspend fun exampleLaunch() {
-    val job = GlobalScope.launch {
-        println("launch 코루틴 시작")
-        delay(100)
-        println("launch 코루틴 완료")
+    coroutineScope {
+        val job = launch {
+            println("launch 코루틴 시작")
+            delay(100)
+            println("launch 코루틴 완료")
+        }
+        job.join()
     }
-    job.join()
 }
 
 /**
  * async: Deferred를 반환하며, await()로 결과값을 받을 수 있음
  */
 suspend fun exampleAsync() {
-    val deferred = GlobalScope.async {
-        println("async 코루틴 시작")
-        delay(100)
-        println("async 코루틴 완료")
-        42
+    coroutineScope {
+        val deferred = async {
+            println("async 코루틴 시작")
+            delay(100)
+            println("async 코루틴 완료")
+            42
+        }
+        val result = deferred.await()
+        println("결과값: $result")
     }
-    val result = deferred.await()
-    println("결과값: $result")
 }
 
 /**
@@ -75,20 +79,22 @@ suspend fun exampleSequential() {
  * 병렬 실행: 여러 작업을 동시에 시작
  */
 suspend fun exampleParallel() {
-    val start = System.currentTimeMillis()
+    coroutineScope {
+        val start = System.currentTimeMillis()
 
-    println("모든 작업 시작")
-    val result1 = async { fetchData("data1") }
-    val result2 = async { fetchData("data2") }
+        println("모든 작업 시작")
+        val result1 = async { fetchData("data1") }
+        val result2 = async { fetchData("data2") }
 
-    val data1 = result1.await()
-    val data2 = result2.await()
+        val data1 = result1.await()
+        val data2 = result2.await()
 
-    println("작업 1 결과: $data1")
-    println("작업 2 결과: $data2")
+        println("작업 1 결과: $data1")
+        println("작업 2 결과: $data2")
 
-    val elapsed = System.currentTimeMillis() - start
-    println("총 소요 시간: ${elapsed}ms")
+        val elapsed = System.currentTimeMillis() - start
+        println("총 소요 시간: ${elapsed}ms")
+    }
 }
 
 /**
