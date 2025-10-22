@@ -9,14 +9,20 @@ private val executor = Executors.newSingleThreadScheduledExecutor {
 
 suspend fun delay(timeMillis: Long) {
     suspendCoroutine<Unit> { continueIt ->
+        println("delay1: " + Thread.currentThread())
+
         executor.schedule({
             continueIt.resume(Unit)
+            println("delay2: " + Thread.currentThread())
         }, timeMillis, java.util.concurrent.TimeUnit.MILLISECONDS)
+
+        println("delay3: " +Thread.currentThread())
     }
 }
 
 suspend fun main() {
     println("Start")
+    println(Thread.currentThread())
 
     delay(2000L)
 
