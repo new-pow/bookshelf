@@ -1,6 +1,7 @@
 package bu1
 
 import java.util.concurrent.Executors
+import kotlin.coroutines.coroutineContext
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
@@ -11,20 +12,20 @@ private val executor = Executors.newSingleThreadScheduledExecutor {
 
 suspend fun delay(timeMillis: Long) {
     suspendCoroutine<Unit> { continueIt ->
-        println("delay1: " + Thread.currentThread())
+        println("delay1: " + Thread.currentThread().name)
 
         executor.schedule({
             continueIt.resume(Unit)
-            println("delay2: " + Thread.currentThread())
+            println("delay2: " + Thread.currentThread().name)
         }, timeMillis, java.util.concurrent.TimeUnit.MILLISECONDS)
 
-        println("delay3: " +Thread.currentThread())
+        println("delay3: " +Thread.currentThread().name)
     }
 }
 
 suspend fun main() {
     println("Start")
-    println(Thread.currentThread())
+    println(Thread.currentThread().name)
 
     delay(2000L)
 
