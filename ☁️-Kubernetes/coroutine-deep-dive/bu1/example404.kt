@@ -124,7 +124,7 @@ fun fetchFromNetworkV4(key: String, cont: MyContinuationV4) {
 }
 
 fun printStack(message: String) {
-    val indent = "  ".repeat(callStackDepth)
+    val indent = "  ".repeat(callStackDepthV1)
     println("$indent$message [스택 깊이: ${Thread.currentThread().stackTrace.size - 4}]")
 }
 
