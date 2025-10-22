@@ -230,4 +230,28 @@ suspend fun main() {
 	- 재개 위치 정보를 가지고 있습니다.
 - continuation 객체는 자신이 담당하는 함수를 먼저 호출합니다.
 	- 함수의 실행이 끝나면 자신을 호출한 함수의 컨티뉴에이션을 재개합니다.
-- 
+---
+## 5장. 언어 차원에서의 지원 vs 라이브러리
+- kotlin.coroutines
+	- 언어 차원에서 지원하는 라이브러리
+	- Continuation, suspendCoroutines, suspend 등 최소한의 키워드를 제공한다.
+- kotlinx.coroutines
+	- 별도 라이브러리
+	- launch, async, Deferred 처럼 다양한 기능을 제공
+---
+# 2부. 코틀린 코루틴 라이브러리
+## 6장. 코루틴 빌더
+- 중단 함수가 시작되는 지점이 있습니다. -> 코루틴 빌더 coroutine builder
+	- 중단 함수는 다른 중단함수에 의해 호출되어야 하기 때문입니다.
+- 필수 코루틴 빌더
+	- launch
+	- runBlocking
+	- async
+### launch
+- CoroutineScope 인터페이스의 확장함수
+	- 구조화된 동시성의 핵심
+- 실제 현업에서는 지양함.
+- 메인함수가 끝나면 하위 코루틴이 중단됨.
+	- 
+### runBlocking
+### async
