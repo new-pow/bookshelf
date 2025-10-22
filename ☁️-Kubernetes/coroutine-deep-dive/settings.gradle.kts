@@ -13,4 +13,3 @@ pluginManagement {
 }
 
 rootProject.name = "coroutine-deep-dive"
-include("bu2")
