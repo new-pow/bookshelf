@@ -101,4 +101,18 @@ val seq = Sequence {
 	- 다른 스레드에서 시작할 수 있고
 - Continuation
 	- 직렬화와 역직렬화 가능
-- 
+### 재개
+- `suspendCoroutine` 의 경우 `resume` 으로 재개할 수 있다.
+```kotlin
+import kotlin.coroutines.resume  
+import kotlin.coroutines.suspendCoroutine  
+  
+suspend fun main() {  
+    println("Before")  
+    println(Thread.currentThread().name)  
+    suspendCoroutine<Unit> { cont ->  
+        cont.resume(Unit)  
+    } // Suspends here  
+    println("After")  
+}
+```
