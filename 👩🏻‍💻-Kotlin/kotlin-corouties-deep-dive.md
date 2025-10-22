@@ -116,3 +116,41 @@ suspend fun main() {
     println("After")  
 }
 ```
+- 현재 실무에서
+	- ❌ 사용 안 함: suspendCoroutine, resumeWith (저수준)
+	- ✅ 사용 중: suspend, launch, channel, delay (고수준)
+- Channel 을 예시로 한다면
+	- 1️⃣ LocalConsumer.kt - Channel로 중지/재개
+		```kotlin
+  override suspend fun consume(listener: Listener<Message>) {
+      channel.consumeEach { message ->  // ← 여기서 중지된다!
+          listener.handle(message)
+      }
+  }
+		```
+
+	- 원리:
+		- consumeEach는 메시지를 받을 때까지 코루틴을 중지
+		  -  메시지가 도착하면 자동으로 재개
+		  - 내부적으로 suspendCoroutine이 숨겨져 있음
+
+	-   2️⃣ Channel.send() - 중지/재개 예시
+		```
+		 suspend fun send(message: Message) {
+	      channel.send(message)  // ← 버퍼가 찼으면 중지, 소비되면 재개}
+		  ```
+		
+		 - 내부 동작 (개념적):
+			```
+			 // Channel.send()의 내부 원리 (실제로는 더 복잡함)
+			  suspend inline fun <E> Channel<E>.send(element: E) {
+			      suspendCoroutine<Unit> { continuation ->
+		          // 메시지 추가 시도
+		          // 성공 → continuation.resume(Unit)
+		          // 실패 → 큐에 저장 후 나중에 resume
+			      }
+			  }
+			```
+ 
+- ScheduledExecutorService 를 사용할 수 있음.
+	- 정해진 시간이 지나면 resume(Unit) 을 호출하도록 함.
