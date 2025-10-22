@@ -1,8 +1,12 @@
+import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
 suspend fun main() {
     println("Before")
-    suspendCoroutine<Unit> {  } // Suspends here
+    println(Thread.currentThread().name)
+    suspendCoroutine<Unit> { cont ->
+        cont.resume(Unit)
+    } // Suspends here
     println("After")
 }
 
