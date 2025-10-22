@@ -511,6 +511,11 @@ val messageConsumer = bus.getConsumer()
 
 ---
 ## 7장. 코루틴 컨텍스트
-
+### CoroutineContext 인터페이스
+- 원소나 원소들의 집합을 나타내는 인터페이스
+- Job, CoroutineName, CoroutineDispatcher 와 같은 Element 객체들이 인덱싱된 집합
+	- 맵이나 셋과 같은 컬렉션과 개념이 비슷함
+	- 컬렉션 내 모든 원소는 그 자체만으로 컬렉션임
+- 
 
 ---
