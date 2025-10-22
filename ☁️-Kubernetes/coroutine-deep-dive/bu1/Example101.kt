@@ -10,12 +10,12 @@ fun main() {
         }
     }
 
-    repeat(100_000) {
-        launch {
-            delay(100L)
-            print(".")
-        }
-    }
+//    repeat(100_000) {
+//        launch {
+//            delay(100L)
+//            print(".")
+//        }
+//    }
 }
 
 //fun main() = runBlocking {

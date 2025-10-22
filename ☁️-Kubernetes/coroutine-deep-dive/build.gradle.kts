@@ -5,3 +5,5 @@
  * Learn more about Gradle by exploring our Samples at https://docs.gradle.org/8.12.1/samples
  */
 
+// 각 서브프로젝트는 자신의 build.gradle.kts를 참조합니다.
+
