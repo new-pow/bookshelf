@@ -253,6 +253,111 @@ suspend fun main() {
 - 실제 현업에서는 지양함.
 - 메인함수가 끝나면 하위 코루틴이 중단됨.
 - ?? Job 을 기다리면 되지 않을까? `join()` 등으로... p.60
+#### 생애주기
+```
+launch 호출
+  ↓
+Job 생성 (즉시 반환)
+  ├─ Job 사용 가능
+  │  ├─ job.join() - 완료 대기
+  │  ├─ job.cancel() - 취소
+  │  └─ job.isActive - 상태 확인
+  │
+  └─ 백그라운드에서 코루틴 실행
+     ├─ launch { } 내 코드 실행
+     ├─ (시간 경과)
+     └─ 코루틴 완료
+       ↓
+    job.isActive = false
+```
+
+#### 사용패턴
+##### 패턴 1: Fire-and-Forget (반환값 버림)  
+  
+```kotlin  
+scope.launch {  
+    doSomething()  
+}  
+// Job 버림 → 완료 추적 불가  
+```  
+  
+**특징**:  
+- 가장 간단한 사용법  
+- 결과나 완료 여부가 중요하지 않을 때 사용  
+- 예: 로깅, 분석 이벤트 전송  
+  
+**위험성**:  
+- 작업이 완료되기 전에 프로그램 종료 가능  
+- 작업 상태를 알 수 없음  
+  
+##### 패턴 2: Job 저장 및 제어  
+  
+```kotlin  
+val job = scope.launch {  
+    doSomething()  
+}  
+  
+// Job을 통한 제어  
+job.join()          // 완료 대기  
+job.cancel()        // 즉시 취소  
+println(job.isActive)  // 실행 상태 확인  
+```  
+  
+**특징**:  
+- 코루틴 생명주기 명시적 관리  
+- 필요시 언제든 취소 가능  
+  
+**사용 사례**:  
+- 사용자가 취소할 수 있는 작업  
+- 완료를 기다려야 하는 작업  
+- 타임아웃 처리가 필요한 작업  
+  
+##### 패턴 3: CoroutineStart.LAZY (지연 시작)  
+  
+```kotlin  
+val job = scope.launch(start = CoroutineStart.LAZY) {  
+    doSomething()  
+}  
+  
+// 이 시점에 코루틴은 생성되었지만 시작 안 됨  
+job.start()  // 명시적으로 시작  
+job.join()   // 완료 대기  
+```  
+  
+**특징**:  
+- 코루틴이 준비되지만 시작 지연  
+- 시작 시점을 명시적으로 제어  
+  
+**사용 사례**:  
+- 리소스 초기화 지연  
+- 특정 조건 만족 시에만 시작  
+- 시작 시점 최적화
+#### Job 추적  
+  
+```kotlin  
+fun processMessages(messages: List<Message>) {  
+    val jobs = messages.map { message ->  
+        scope.launch {  
+            handleMessage(message)  
+        }    
+	}
+    jobs.forEach { it.join() }  
+    println("done")
+}  
+  
+// 또는 awaitAll
+suspend fun processMessagesOptimal(messages: List<Message>) {  
+    messages.map { message ->  
+        scope.launch {  
+            handleMessage(message)  
+        }    
+	}.awaitAll()  
+    println("done")  
+}  
+```
+
+
+
 ### runBlocking
 - 블로킹이 필요한 경우
 	- 메인함수의 경우, 프로그램이 너무 빨리 끝나면 안됨.
@@ -260,6 +365,14 @@ suspend fun main() {
 	- 혹은 test 시에 사용하기도 함.
 - 현재는 거의 사용되지 않음.
 	- 유닛 테스트에서는 코루틴을 가상 시간으로 실행시키는 `runTest`  가 주로 사용되고 있음.
+	- ? 저의 경우, `scheduler` 등 executor 코드에 사용중...
 - main 함수는 suspend 를 붙여 중단 함수로 만드는 방법을 주로 사용함.
-	- 
 ### async
+- `Deferred<T>` 의 객체를 리턴하며, 작업이 끝나면 반환하는 중단 메서드인 `await ` 를 사용한다.
+- 만약 값이 생성되기 전에 await 를 호출하면 값이 나올때까지 기다린다.
+	- 값이 필요하지 않을 때는 launch 로 사용한다.
+- 두가지 다른 곳에서 데이터를 얻어와 합치는 경우처럼, 두 작업을 병렬로 실행할 때 주로 사용됩니다.
+- ?? 제일 많이 사용함.
+
+### 구조화된 동시성
+- 
