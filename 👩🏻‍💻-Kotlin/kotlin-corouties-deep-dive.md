@@ -516,6 +516,22 @@ val messageConsumer = bus.getConsumer()
 - Job, CoroutineName, CoroutineDispatcher 와 같은 Element 객체들이 인덱싱된 집합
 	- 맵이나 셋과 같은 컬렉션과 개념이 비슷함
 	- 컬렉션 내 모든 원소는 그 자체만으로 컬렉션임
+- 컨텍스트의 모든 원소는 식별 가능한 유일한 Key 를 가지고 있음.
+- CoroutineContext 에서 원소 찾기
+	- `get` 으로 key를 가진 원소를 찾을 수 있다.
+- context 더하기
+	- + 로 합치기 가능
+	- 그러나 같은 키를 가지고 있다면 덮어쓰일수 있으니 주의!
+- 비어있는 코루틴 컨텍스트 만들기 가능
+- 컨텍스트 폴딩
+	- fold 를 사용할 수 있다.
+	- 누산기의 첫번째 값과 다음상태 계산방식을 정의하면 됨.
+- 컨텍스트 빌더
+	- 부모는 기본적으로 컨텍스트를 자식에게 전달한다. (상속받음)
+	- 그래서 defaultContext + parentContext + childContext 가 된다.
+- 중단 함수에서 컨텍스트 접근하기
+	- 모든 중단 스코프에서 컨텍스트 접근이 가능하다.
+- 컨텍스트 개별적으로 생성하기
+	- `CoroutineContext.Element` 인터페이스를 구현하면 된다.
 - 
-
 ---
