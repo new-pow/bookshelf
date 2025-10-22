@@ -92,3 +92,5 @@ val seq = Sequence {
 | 호출 방식         | `for`/`iterator()` (blocking) | `collect()` (suspend)      |
 | 목적            | Lazy generator                | 비동기 스트림                    |
 
+---
+## 3장. 중단은 어떻게 작동할까?
