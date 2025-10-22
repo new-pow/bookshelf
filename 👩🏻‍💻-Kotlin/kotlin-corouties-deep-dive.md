@@ -375,4 +375,124 @@ suspend fun processMessagesOptimal(messages: List<Message>) {
 - ?? 제일 많이 사용함.
 
 ### 구조화된 동시성
-- 
+- 부모-자식 간의 구조화된 동시성
+	- 자식은 부모로부터 context 를 상속받는다.
+	- 부모는 모든 자식이 작업을 마칠때까지 기다린다.
+	- 부모 코루틴이 취소되면 자식 코루틴도 취소된다.
+	- 자식 코루틴에서 에러가 발생하면, 부모 코루틴 또한 에러로 소멸한다.
+- `runBlocking`은 자식이 될 수 없으며, 루트 코루틴으로만 사용될 수 있다.
+
+---
+##### 사례 1: 리스너 라우팅 (비동기 처리)  
+  
+**상황**: 메시지 수신 시 여러 핸들러를 병렬로 실행  
+  
+**구현 개요**:  
+```  
+메시지 도착  
+  ↓Router.handle(message) 호출  
+  ↓등록된 각 핸들러마다 launch 실행  
+  ├─ launch { handler1(message) }  // 즉시 반환  
+  ├─ launch { handler2(message) }  // 즉시 반환  
+  └─ launch { handler3(message) }  // 즉시 반환  
+  ↓Router.handle() 종료 (핸들러 완료 기다리지 않음)  
+```  
+  
+**특징**:  
+- **독립적 실행**: 각 핸들러는 별도 코루틴에서 실행  
+- **격리된 예외**: 한 핸들러 예외가 다른 핸들러 영향 없음  
+- **Fire-and-Forget**: Job을 저장하지 않음  
+  
+**코드 구조** (추상화):  
+```kotlin  
+// 라우터 구현  
+class MessageRouter {  
+    private val handlers = mutableListOf<suspend (Message) -> Unit>()  
+  
+    fun register(handler: suspend (Message) -> Unit) {  
+        handlers.add(handler)  
+    }  
+  
+    suspend fun route(message: Message) {  
+        handlers.forEach { handler ->  
+            routerScope.launch {  // 각 핸들러를 독립 코루틴에서 실행  
+                try {  
+                    handler(message)  
+                } catch (e: Exception) {  
+                    logger.error("Handler failed", e)  // 격리된 예외 처리  
+                }  
+            }  
+        }        // 이 시점에 모든 핸들러 완료 보장 없음  
+    }  
+  
+    private object routerScope : CoroutineScope {  
+        override val coroutineContext =            Executors.newFixedThreadPool(workerCount)  
+                .asCoroutineDispatcher()  
+    }  
+}  
+```  
+  
+**장점**:  
+- 메시지 수신 후 빠른 응답  
+- 핸들러 간 독립성 보장  
+- CPU 코어 수에 따른 자동 스케일링  
+  
+**주의사항**:  
+- 모든 핸들러 완료가 중요한 경우 Job 수집 필요  
+- 빠른 프로그램 종료 시 실행 중인 핸들러 미완료 가능  
+  
+##### 사용 사례 2: 메시지 소비 루프 (지연 시작)  
+  
+**구현 개요**:  
+```  
+BeBus 인스턴스 생성  
+  ↓launch(start = CoroutineStart.LAZY) 호출  
+  ├─ 코루틴 생성 (아직 시작 안 함)  
+  └─ Job 저장  
+  ↓필요한 시점에 job.start()  ↓메시지 소비 루프 시작  
+  ├─ Channel에서 메시지 대기  
+  └─ 메시지 도착 시 핸들러 호출  
+```  
+  
+**특징**:  
+- **LAZY 시작**: 코루틴 생성 후 시작 지연  
+- **명시적 제어**: `job.start()` 호출로 시작  
+- **생명주기 관리**: 버스 초기화 타이밍 조정  
+  
+**코드 구조** (추상화):  
+```kotlin  
+class MessageBus {  
+    private val consumerJob by lazy {  
+        busScope.launch(start = CoroutineStart.LAZY) {  
+            messageConsumer.consume(messageHandler)  
+            // (무한 대기)  
+        }  
+    }  
+    // 초기화 시 consumerJob.start() 호출됨  
+    private val messageConsumer by lazy {  
+        createConsumer().also {  
+            consumerJob.start()  // ← 명시적 시작  
+        }  
+    }  
+    private object busScope : CoroutineScope {  
+        override val coroutineContext =            Executors.newFixedThreadPool(workerCount)  
+                .asCoroutineDispatcher()  
+    }  
+}  
+```  
+  
+**사용 구조**:  
+```kotlin  
+// 1. 버스 인스턴스 생성 (consumerJob은 아직 LAZY)val bus = BeBusFactory.get("myTopic")  
+  
+// 2. 리스너 등록  
+bus.listen(MyMessageHandler) 
+// 대기 
+  
+// 3. messageConsumer 접근 → job.start() 자동 호출  
+val messageConsumer = bus.getConsumer()  
+  
+// 4. 이제 메시지 consum 시작  
+```
+
+---
