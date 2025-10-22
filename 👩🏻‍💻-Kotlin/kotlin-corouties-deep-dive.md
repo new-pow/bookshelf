@@ -382,6 +382,15 @@ suspend fun processMessagesOptimal(messages: List<Message>) {
 	- 자식 코루틴에서 에러가 발생하면, 부모 코루틴 또한 에러로 소멸한다.
 - `runBlocking`은 자식이 될 수 없으며, 루트 코루틴으로만 사용될 수 있다.
 
+### coroutineScope
+- 중단 함수 밖에서 스코프를 만들려면 coroutineScope 함수를 사용합니다.
+	- 메인함수와 runBlocking 을 함께 사용하는 것보다 세련되었습니다. (왜지...?) p.70
+- CoroutineScope
+	- 코루틴은 스코프 내에서만 실행되며, 스코프가 종료되면 그 스코프 내에서 실행된 모든 코루틴도 자동으로 취소됩니다.
+		- 실행 중인 Coroutine을 추적함으로써 작업을 더 이상 실행할 필요가 없을 때 취소할 수 있습니다.
+	- 코루틴이 실행되는 범위로, 코루틴을 실행하고 싶은 Lifecycle에 따라 원하는 Scope를 생성하여 코루틴이 실행될 작업 범위를 지정할 수 있습니다.
+	- 
+
 ---
 ##### 사례 1: 리스너 라우팅 (비동기 처리)  
   
