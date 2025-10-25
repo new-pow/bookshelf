@@ -155,7 +155,6 @@ suspend fun main() {
 - ScheduledExecutorService 를 사용할 수 있음.
 	- 정해진 시간이 지나면 resume(Unit) 을 호출하도록 함.
 - 28p. 이그제큐터는 스레드를 사용하긴 하지만 delay 함수를 사용하는 모든 코루틴의 전용 스레드입니다.
-	- 무슨소린지?
 ```kotlin
 private val executor = Executors.newSingleThreadScheduledExecutor {  
     Thread(it, "scheduler").apply { isDaemon = true } // isDaemon 의 뜻: 백그라운드에서 실행되는 스레드.  
