@@ -729,3 +729,15 @@ job.invokeOnCompletion {e ->
 - `withTimeoutOrNull` 은 같은 역할을 하되 시간이 지체되더라도 예외를 던지지 않습니다. 만약 시간이 지연되면 람다가 취소되고 null 을 반환합니다.
 
 ## 코루틴 스코프 함수 연결하기
+- 서로 다른 코루틴 스코프 함수의 두 가지 기능이 모두 필요하다면, 코루틴 스코프 함수에서 다른 기능을 가지는 코루틴 스코프 함수를 호출합니다.
+```
+suspend fun calculate(): User =
+	withContext(Dispatchers.Default) {
+		withTimeoutOrNull(1000) {
+			// do sth
+		}
+	}
+```
+
+### 추가적인 연산
+- 
