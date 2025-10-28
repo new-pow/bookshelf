@@ -721,4 +721,7 @@ job.invokeOnCompletion {e ->
 	- 따라서 자식 코루틴이 예외를 던지면 다른 자식들도 취소됩니다.
 	- 의미가 없음
 ### withTimeout
-- 
+- 인자로 들어온 람다식을 실행할 때 시간제한이 있다는 점이 다른점.
+- 시간이 너무 오래걸리면 람다식은 취소되고 `TimeoutCancellationException : CancellationException` 을 던진다.
+- 특히나 테스트할 때 유용하다. 특정 함수가 시간이 짧게 혹은 길게 걸리는지 확인하는 테스트 용도로도 사용한다.
+- `runTest` 내부에서 사용하면 `withTimeout`은 가상 시간으로 작동한다.
