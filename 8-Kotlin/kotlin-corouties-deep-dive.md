@@ -755,4 +755,5 @@ suspend fun calculate(): User =
 - 코틀린 코루틴에서 코루틴이 어떤 스레드에서 실행될지 정하는 것은 CoroutineContext 이다.
 ## Dispatchers.Default
 - 코드가 실행되는 컴퓨터의 CPU 개수와 동일한 수 (최소 두 개 이상)의 스레드 풀을 가지고 있다.
+- 가은 시간에 특정 수 이상의 스레드를 사용하지 못하게 제한할 수 있다.
 - 
