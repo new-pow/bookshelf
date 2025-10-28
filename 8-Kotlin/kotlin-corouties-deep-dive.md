@@ -706,4 +706,9 @@ job.invokeOnCompletion {e ->
 |예외 전파|부모 스코프에 전파|스코프 규칙에 따라 제어 (`coroutineScope`=전파, `supervisorScope`=독립)|
 |동작 위치|항상 새로운 코루틴 시작|이미 실행 중인 코루틴 내에서 사용|
 
-## withContext
+### withContext
+- 부모 스코프의 컨텍스트를 대체한다.
+- `withContext(EmptyCoroutineContext)` 와 `coroutineScope()` 는 동일하게 작동한다.
+- 디스패처와 함께 종종 사용되곤 한다.
+### supervisorScope
+- 
