@@ -675,4 +675,35 @@ job.invokeOnCompletion {e ->
 | ------------------------------ | --------------------------------- | ------------------------------------------------------------------------------ |
 | **확장 함수 (extension function)** | `fun CoroutineScope.launchTask()` | `CoroutineScope` 타입의 객체(예: ViewModelScope, lifecycleScope)에서 호출할 수 있는 일반 함수    |
 | **중단 함수 (suspend function)**   | `suspend fun fetchData()`         | **코루틴 안에서만** 실행 가능한 함수. `delay()`, `withContext()` 같은 다른 suspend 함수들을 호출할 수 있음 |
+### 코루틴 빌더와 코루틴 스코프 함수
+- 코루틴 빌더
+	- 코루틴을 **생성하고 실행**하는 함수입니다.  
+	- 대표적으로 `launch`, `async`, `runBlocking` 등이 있습니다.
+	- **특징**
+		- 실제로 **새로운 코루틴을 시작**합니다.
+		- 결과 타입이 다릅니다:
+		    - `launch` → `Job` 반환 (결과 없음)
+		    - `async` → `Deferred<T>` 반환 (결과 있음)
+            - `runBlocking` → 현재 스레드를 블로킹하면서 실행
+	- 호출 즉시 **CoroutineScope** 내부에서 코루틴을 실행합니다.
+- 코루틴 스코프 함수
+	- 코루틴을 실행할 **“범위(scope)”** 를 규정하는 함수입니다.
+	- 대표적으로 `coroutineScope`와 `supervisorScope`가 있습니다.
+	- 특징
+		- 새 코루틴을 생성하지 않습니다.
+		- 단지 “안전한 실행 범위”를 만들어, **내부에서 여러 빌더를 실행할 수 있게 함**
+		- **자식 코루틴이 모두 끝날 때까지 suspend** 됩니다.
+		- 예외 처리 방식이 다릅니다:
+			- `coroutineScope`: 자식 코루틴 하나라도 실패하면 모두 취소
+			- `supervisorScope`: 실패해도 다른 자식에는 영향 없음
 
+|구분|코루틴 빌더|코루틴 스코프 함수|
+|---|---|---|
+|목적|코루틴을 **생성하고 실행**|**스코프(범위)** 정의|
+|대표 함수|`launch`, `async`, `runBlocking`|`coroutineScope`, `supervisorScope`|
+|코루틴 생성 여부|새 코루틴을 생성|❌ (기존 코루틴 안에서 스코프만 생성)|
+|반환|`Job`, `Deferred<T>`, 또는 값|스코프 내 suspend 완료 시 결과 반환|
+|예외 전파|부모 스코프에 전파|스코프 규칙에 따라 제어 (`coroutineScope`=전파, `supervisorScope`=독립)|
+|동작 위치|항상 새로운 코루틴 시작|이미 실행 중인 코루틴 내에서 사용|
+
+## withContext
