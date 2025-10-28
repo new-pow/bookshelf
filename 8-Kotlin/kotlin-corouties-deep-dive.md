@@ -718,4 +718,7 @@ job.invokeOnCompletion {e ->
 	- **그러나 async 는 예외가 부모로 전파되는 것 외에, 추가적인 예외처리가 필요함. `await()` 를 호출하면 예외를 다시 던지기 때문이다.**
 - 주의!! `withContext(supervisorJob())` 을 사용할 수 없음.
 	- 기존 가지고 있던 Job을 사용하며, SupervisorJob() 이 해당 잡의 부모가 됩니다.
-	- 
+	- 따라서 자식 코루틴이 예외를 던지면 다른 자식들도 취소됩니다.
+	- 의미가 없음
+### withTimeout
+- 
