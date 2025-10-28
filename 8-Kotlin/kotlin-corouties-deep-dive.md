@@ -650,4 +650,23 @@ job.invokeOnCompletion {e ->
 - ❓ async 를 1개만 할때는 안써야 좋을까?
 	- `async`는 새로운 **Job**을 만들고, 예외 처리나 취소 처리가 한 단계 더 복잡해집니다.
     - 또한 예외가 발생해도 `await()`하기 전까지 전파되지 않기 때문에,  테스트나 구조적 동시성에서 디버깅이 더 어렵습니다.
+	- 굳이 써야하는 경우? 한 개만 있어도 `async`가 의미 있을 때는 **지연 실행(lazy start)** 이 필요한 경우입니다.
+		- ```
+			  coroutineScope {
+			    val deferred = async(start = CoroutineStart.LAZY) { heavyWork() }
+			    // 무언가 준비 로직
+			    deferred.start()
+			    val result = deferred.await()
+			}
+
+		  ```
+	
+## 코루틴 스코프 함수
+- 스코프를 만드는 다양한 함수
+- supervisorScope
+	- Job 대신 SupervisorJob 을 사용함.
+- withContext
+	- context 를 바꿀 때
+- withTimeout
+	- timeout 을 추가하고싶을 때
 - 
