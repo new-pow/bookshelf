@@ -632,4 +632,9 @@ job.invokeOnCompletion {e ->
 		- 코루틴을 단위테스트하는 도구가 작동하지 않는다. **?? 왜?**
 			- 테스트 scope 를 따로 구현해야합니다.
 	- EmptyCoroutineContext 를 가졌다.
-	- 
+- Scope 를 인자로 넘기는 방법
+	- 스코프에서 예상하지 못한 부작용이 발생할 수 있음.
+		- async 예외가 발생하거나 cancel 메서드를 사용해 스코프를 최소하는 등 조작이가능.
+## coroutineScope
+- 스코프를 시작하는 중단 함수
+- 
