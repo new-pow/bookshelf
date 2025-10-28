@@ -711,4 +711,9 @@ job.invokeOnCompletion {e ->
 - `withContext(EmptyCoroutineContext)` 와 `coroutineScope()` 는 동일하게 작동한다.
 - 디스패처와 함께 종종 사용되곤 한다.
 ### supervisorScope
-- 
+- 호출한 스코프로부터 사속받은 CoroutineScope 를 만들고 지정된 중단 함수를 호출합니다.
+- Job을 SupervisorJob 으로 오버라이딩하여, 자식 코루틴이 예외를 던지더라도 취소되지 않습니다.
+- 서로 독립적인 작업을 시작하는 함수에서 주로 사용됩니다.
+- 주의!! launch 는 즉시 예외가 전파되므로 이를 막는 것으로 끝남.
+	- **그러나 async 는 예외가 부모로 전파되는 것 외에, 추가적인 예외처리가 필요함. `await()` 를 호출하면 예외를 다시 던지기 때문이다.**
+- 주의!! `withContext(supervisorJob())` 을 사용할 수 없음.
