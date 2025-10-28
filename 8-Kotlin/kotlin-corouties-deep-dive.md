@@ -755,5 +755,26 @@ suspend fun calculate(): User =
 - 코틀린 코루틴에서 코루틴이 어떤 스레드에서 실행될지 정하는 것은 CoroutineContext 이다.
 ## Dispatchers.Default
 - 코드가 실행되는 컴퓨터의 CPU 개수와 동일한 수 (최소 두 개 이상)의 스레드 풀을 가지고 있다.
-- 가은 시간에 특정 수 이상의 스레드를 사용하지 못하게 제한할 수 있다.
+- 같은 시간에 특정 수 이상의 스레드를 사용하지 못하게 제한할 수 있다.
+```
+@OptIn(ExperimentalCoroutinesApi::class)  
+suspend fun main() = coroutineScope(  
+) {  
+    val dis = Dispatchers.Default.limitedParallelism(3)  
+    repeat(1000) {  
+        launch(dis) {  
+            List(1000) { Random.nextInt() }.maxOrNull()  
+  
+            val threadName = Thread.currentThread().name  
+            println("Running on thread $threadName") // ~ 10개  
+        }  
+    }  
+}
+```
+
+## 메인 디스패처
+- 메인 스레드에서 코루틴을 실행하려면 Dispatchers.Main 를 사용하면 됩니다.
+- 단, 메인 스레드가 블로킹되면 전체 애플리케이션이 멈춰버리므로 주의해야합니다.
+- 주로 안드로이드, UI 상호작용하는 유일한 스레드이므로 클라이언트에서 사용합니다.
+### IO 디스패처
 - 
