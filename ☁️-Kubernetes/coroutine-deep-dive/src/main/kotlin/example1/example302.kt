@@ -1,7 +1,6 @@
-package bu1
+package example1
 
 import java.util.concurrent.Executors
-import kotlin.coroutines.coroutineContext
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 

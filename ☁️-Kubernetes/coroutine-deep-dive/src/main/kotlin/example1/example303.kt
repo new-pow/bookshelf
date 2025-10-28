@@ -1,4 +1,4 @@
-package bu1
+package example1
 
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
