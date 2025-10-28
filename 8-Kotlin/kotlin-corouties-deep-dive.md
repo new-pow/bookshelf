@@ -725,3 +725,7 @@ job.invokeOnCompletion {e ->
 - 시간이 너무 오래걸리면 람다식은 취소되고 `TimeoutCancellationException : CancellationException` 을 던진다.
 - 특히나 테스트할 때 유용하다. 특정 함수가 시간이 짧게 혹은 길게 걸리는지 확인하는 테스트 용도로도 사용한다.
 - `runTest` 내부에서 사용하면 `withTimeout`은 가상 시간으로 작동한다.
+- `TimeoutCancellationException` 은 코루틴만 취소되고 부모에게는 영향을 주지 않습니다.
+- `withTimeoutOrNull` 은 같은 역할을 하되 시간이 지체되더라도 예외를 던지지 않습니다. 만약 시간이 지연되면 람다가 취소되고 null 을 반환합니다.
+
+## 코루틴 스코프 함수 연결하기
