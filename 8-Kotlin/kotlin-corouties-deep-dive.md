@@ -644,4 +644,6 @@ job.invokeOnCompletion {e ->
 	- context의 Job 을 오버라이딩한다. = 부모가 해야할 책임을 이어받는다.
 	- 자신의 작업을 끝내기 전가지 모든 자식을 기다린다.
 	- 부모가 취소되면 자식들을 모두 취소한다.
-- 
+- coroutineBuilder 와는 달리, 스코프에 속한 자식에서 예외가 발생하면 다른 모든 자식이 취소되고 예외가 던져진다.
+- 그래서 병렬로 작업을 수행할 경우, coroutineScope 를 사용하는 것이 좋다.
+	- runBlocking 함수 대체
