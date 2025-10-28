@@ -1,3 +1,5 @@
+@file:JvmName("Example130Kt")
+
 package example2
 
 import kotlinx.coroutines.*
