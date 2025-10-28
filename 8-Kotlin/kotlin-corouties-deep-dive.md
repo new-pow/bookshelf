@@ -669,4 +669,10 @@ job.invokeOnCompletion {e ->
 	- context 를 바꿀 때
 - withTimeout
 	- timeout 을 추가하고싶을 때
-- 
+- ❓확장함수, 중단함수?
+
+| 구분                             | 예시                                | 의미                                                                             |
+| ------------------------------ | --------------------------------- | ------------------------------------------------------------------------------ |
+| **확장 함수 (extension function)** | `fun CoroutineScope.launchTask()` | `CoroutineScope` 타입의 객체(예: ViewModelScope, lifecycleScope)에서 호출할 수 있는 일반 함수    |
+| **중단 함수 (suspend function)**   | `suspend fun fetchData()`         | **코루틴 안에서만** 실행 가능한 함수. `delay()`, `withContext()` 같은 다른 suspend 함수들을 호출할 수 있음 |
+
