@@ -838,4 +838,17 @@ val analyticsScope = CoroutineScope(SupervisorJob())
 ```
 ---
 # 14. 공유 상태로 인한 문제
-- 
+## 동기화 블로킹
+- 자바에서 사용하는 synchronized 블록이나 동기화된 컬렉션을 사용해 해결할 수 있음
+- 주의
+	- synchronized 블록 내부에서 중단함수를 사용할 수 없음.
+	- synchronized 블록에서 코루틴이 자기 차례를 기다릴 때, 스레드를 블로킹한다.
+## 원자성
+- AtomicInteger 등을 사용하기
+- 좀더 복잡한 경우에는 한계가 있을 수 있음
+## 싱글스레드로 제한된 디스패처
+- 싱글스레드 디스패처 사용 가능.
+	- 공유 상태와 관련된 대부분의 문제를 해결할 수 있음.
+- 코스 그레인드 스레드 한정 coarse-grained thred confinement
+	- 디스패처를 싱글스레드로 제한한 withContext 로 전체함수를 래핑하는 방식
+	- 
