@@ -881,4 +881,5 @@ val analyticsScope = CoroutineScope(SupervisorJob())
 	- `advanceTimeBy`
 - StandardTestDispatcher 는 TestCoroutineScheduler 를 만들기 때문에 명시적으로 만들지 않아도 된다.
 ## runTest
+- 가상으로 시간이 흘러가도록 할 수 있음.
 - 
