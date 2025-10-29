@@ -851,4 +851,5 @@ val analyticsScope = CoroutineScope(SupervisorJob())
 	- 공유 상태와 관련된 대부분의 문제를 해결할 수 있음.
 - 코스 그레인드 스레드 한정 coarse-grained thred confinement
 	- 디스패처를 싱글스레드로 제한한 withContext 로 전체함수를 래핑하는 방식
-	- 
+	- 함수 전체에서 멀티 스레딩의 이점을 누리지 못하는 문제가 있음.
+- 
