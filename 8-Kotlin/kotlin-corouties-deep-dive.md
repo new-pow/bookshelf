@@ -855,10 +855,15 @@ val analyticsScope = CoroutineScope(SupervisorJob())
 - 파인 그레인드 스레드 한정 fine-grained thred confinement
 	- 상태를 변경하는 구문들만 래핑
 	- 좀 번거롭지만, 크리티컬 섹션이 아닌 부분이 블로킹되거나 CPU 집약적인 경우에는 더 나은 성능을 제공함.
-- 뮤텍스
-	- 가장 인기있는 방식
-	- lock, unlock 하며 동작함.
-	- 주의
-		- 중간에 예외가 발생할 경우, unlock 이 호출되지 않음 -> withLock 사용
-	- `withLock` 을 사용하는 것이 좋음.
-	- 
+## 뮤텍스
+- 가장 인기있는 방식
+- lock, unlock 하며 동작함.
+- 주의
+	- 중간에 예외가 발생할 경우, unlock 이 호출되지 않음 (데드락)-> withLock 사용
+- `withLock` 을 사용하는 것이 좋음.
+	- finally 블록에서 unlock 을 호출함.
+- 스레드가 블로킹하는 대신 코루틴을 중단시킨다.
+- 코루틴이 락을 두번 통과할 수 없으므로, 주의
+- 코루틴이 중단되었을 때 뮤텍스를 풀 수 없으므로 주의.
+- 따라서 전체함수를 뮤텍스로 래핑하는것은 지양해야한다.
+
