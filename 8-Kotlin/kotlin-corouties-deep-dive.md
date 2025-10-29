@@ -827,4 +827,15 @@ suspend fun main() = coroutineScope(
 	- 스레드 풀을 가진 커스텀 디스패처
 	- 각각의 코루틴을 독립적으로 만들어주는 SupervisorJob
 	- 적절한 에러코드에 응답하고 데드레터를 보내거나 발생한 문제에 대해 로그를 남기는 CoroutineExceptionHandler
-	- 
+```
+private val threadPool = Executors.newFixedThreadPool(10).asCoroutineDispatcher()
+```
+## 추가적인 호출을 위한 스코프 만들기
+- 추가 연산을 위한 스코프를 종종만듭니다.
+- `SupervisorScope` 를 사용하는 것으로 충분
+```kotlin
+val analyticsScope = CoroutineScope(SupervisorJob())
+```
+---
+# 14. 공유 상태로 인한 문제
+- 
