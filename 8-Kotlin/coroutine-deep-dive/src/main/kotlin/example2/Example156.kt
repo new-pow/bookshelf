@@ -13,7 +13,7 @@ val Dispatchers.Loom: CoroutineDispatcher
 
 suspend fun main() {
     coroutineScope {
-        repeat(1_000_000) {
+        repeat(1_000) {
             launch(Dispatchers.Default) {
                 Thread.sleep(1000)
             }
