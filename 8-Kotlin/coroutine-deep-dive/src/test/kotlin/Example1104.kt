@@ -26,6 +26,5 @@ class Example1104Test {
                 delay(1100L)
             }
         }
-
     }
 }
