@@ -885,4 +885,14 @@ val analyticsScope = CoroutineScope(SupervisorJob())
 - TestCoroutineScheduler ⊂ StandardTestDispatcher ⊂ TestScope⊂ runTest
 
 ## 백그라운드 스코프
-- 
+- 테스트가 기다릴 필요 없는 모든 프로세스를 시작할 때 사용.
+- runTest 를 기다리지 않는다.
+## 취소와 테스트 컨텍스트 전달 테스트
+## UnconfinedTestDispatcher
+## 목(mock) 사용하기
+## 디스패처를 바꾸는 함수 테스트하기
+## 함수 실행 중에 일어나는 일 테스트하기
+## 새로운 코루틴을 시작하는 함수 테스트하기
+## 메인 디스패처 교체하기
+## 코루틴을 시작하는 안드로이드 함수 테스트하기
+## 룰이 있는 테스트 디스패처 설정하기
