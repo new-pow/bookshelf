@@ -879,4 +879,5 @@ val analyticsScope = CoroutineScope(SupervisorJob())
 ## TestCoroutineScheduler와 StandardTestDispatcher
 - TestCoroutineScheduler 는 delay 를 가상 시간동안 실행하여 실제 시간이 흘러간 상황과 동일하게 작동하기 때문에 정해진 시간만큼 기다리지않도록 변경가능.
 	- `advanceTimeBy`
+- StandardTestDispatcher 는 TestCoroutineScheduler 를 만들기 때문에 명시적으로 만들지 않아도 된다.
 - 
