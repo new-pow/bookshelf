@@ -41,3 +41,13 @@ suspend fun main() {
     println("Loom: ${timeLoom}ms")
     println("Loom이 ${timeDefault - timeLoom}ms 더 빠름")
 }
+// === Dispatchers.Default ===
+//소요 시간: 100465ms
+//
+//=== Dispatchers.Loom ===
+//소요 시간: 1021ms
+//
+//=== 비교 결과 ===
+//Default: 100465ms
+//Loom: 1021ms
+//Loom이 99444ms 더 빠름
