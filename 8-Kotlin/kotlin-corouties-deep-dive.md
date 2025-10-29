@@ -852,4 +852,6 @@ val analyticsScope = CoroutineScope(SupervisorJob())
 - 코스 그레인드 스레드 한정 coarse-grained thred confinement
 	- 디스패처를 싱글스레드로 제한한 withContext 로 전체함수를 래핑하는 방식
 	- 함수 전체에서 멀티 스레딩의 이점을 누리지 못하는 문제가 있음.
-- 
+- 파인 그레인드 스레드 한정 fine-grained thred confinement
+	- 상태를 변경하는 구문들만 래핑
+	- 
