@@ -854,4 +854,11 @@ val analyticsScope = CoroutineScope(SupervisorJob())
 	- 함수 전체에서 멀티 스레딩의 이점을 누리지 못하는 문제가 있음.
 - 파인 그레인드 스레드 한정 fine-grained thred confinement
 	- 상태를 변경하는 구문들만 래핑
+	- 좀 번거롭지만, 크리티컬 섹션이 아닌 부분이 블로킹되거나 CPU 집약적인 경우에는 더 나은 성능을 제공함.
+- 뮤텍스
+	- 가장 인기있는 방식
+	- lock, unlock 하며 동작함.
+	- 주의
+		- 중간에 예외가 발생할 경우, unlock 이 호출되지 않음 -> withLock 사용
+	- `withLock` 을 사용하는 것이 좋음.
 	- 
