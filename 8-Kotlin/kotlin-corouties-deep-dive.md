@@ -789,7 +789,7 @@ suspend fun main() = coroutineScope(
 - ExcutorService 나 Executor 인터페이스를 구현하며, asCoroutineDispatcher 함수를 이용해 디스패처로 변형하는 것도 가능.
 - 단, asCoroutineDispatcher 함수로 만들어진 디스패처의 큰 문제점은 close 함수로 닫혀야한다는 것. 스레드 누수를 일으키는 경우가 있다. 주의!!!!
 ### 싱글스레드로 제한된 디스패처
-- Excutors 를 사용하여 싱그ㅡㄹ스레드 디스패처를 만들 수 있음.
+- Excutors 를 사용하여 싱글 스레드 디스패처를 만들 수 있음.
 	- 주의!!! 더이상 사용되지 않을 때는 스레드를 반드시 닫아야함.
 - Dispatchers.Default 나 병렬처리를 1로 제한한 Dispacters.IO 도 많이 사용함.
 ### 프로젝트 룸의 가상 스레드 사용하기
