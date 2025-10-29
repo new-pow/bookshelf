@@ -876,8 +876,9 @@ val analyticsScope = CoroutineScope(SupervisorJob())
 - runBlocking 사용. assert 를 지원하는 도구만 사용해도 충분함.
 ## 시간의존성 테스트하기
 - delay 를 사용하여 가짜 함수를 지연시킬 수 있음.
-## TestCoroutineScheduler와 StandardTestDispatcher
+### TestCoroutineScheduler와 StandardTestDispatcher
 - TestCoroutineScheduler 는 delay 를 가상 시간동안 실행하여 실제 시간이 흘러간 상황과 동일하게 작동하기 때문에 정해진 시간만큼 기다리지않도록 변경가능.
 	- `advanceTimeBy`
 - StandardTestDispatcher 는 TestCoroutineScheduler 를 만들기 때문에 명시적으로 만들지 않아도 된다.
+## runTest
 - 
