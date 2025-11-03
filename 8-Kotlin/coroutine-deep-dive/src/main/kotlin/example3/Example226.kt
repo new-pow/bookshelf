@@ -6,7 +6,7 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlin.coroutines.coroutineContext
 
-suspend fun main() = coroutineScope {
+suspend fun main(): Unit = coroutineScope {
     val channel = Channel<Int>() // 정수형 채널 생성
     launch {
         repeat(5) { index ->
