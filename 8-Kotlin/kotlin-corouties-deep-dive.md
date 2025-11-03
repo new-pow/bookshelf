@@ -896,3 +896,4 @@ val analyticsScope = CoroutineScope(SupervisorJob())
 ## 메인 디스패처 교체하기
 ## 코루틴을 시작하는 안드로이드 함수 테스트하기
 ## 룰이 있는 테스트 디스패처 설정하기
+---
