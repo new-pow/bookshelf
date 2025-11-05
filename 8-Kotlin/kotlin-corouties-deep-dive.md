@@ -908,4 +908,23 @@ val analyticsScope = CoroutineScope(SupervisorJob())
 		- receive: 호출시 채널에 원소가 없다면, 원소가 들어올때까지 코루틴이 중단.
 - consumeEach
 	- 채널이 닫힐 때까지 원소를 받음.
-- 
+- produce { }
+	- 코루틴 빌더
+	- ReceiveChannel 을 반환함.
+	- 코루틴이 어떻게 종료되든 상관없이 채널을 닫음. (close)
+## 채널 타입
+- 무제한 Channel.UNLIMITED 버퍼 용량이 무한임.
+- Channel.BUFFERED 기본값이 64로 설정됨. defaultbuffer 를 설정하면 바꿀 수 있음.
+- Channel.RENDEZVOUS 용량이 0. 송신자와 수신자가 만날때만 원소를 교환함. (???)
+	- 송신자는 항상 수신자를 기다림.
+- Channel.CONFLATED 용량이 1. 새로운 원소가 이전 원소를 대체함.
+## 버퍼 오버플로일 때
+- onBufferOverflow 로 정의할 수 있음.
+- SUSPEND: 기본. 버퍼가 가득차면 send 중단.
+- DROP_OLDEST: 가장 오래된 원소부터 제거
+- DROP_LATEST: 가장 최근 원소부터 제거
+## 전달되지 않은 원소 핸들러
+- onUndeliveredElement 원소가 어떠한 이유로 처리되지 않을때 호출됨.
+- 채널에서 보낸 자원을 닫을 때 사용함.
+## 팬아웃 (Fan-out)
+- 여러개의 코루틴이 하나의 채널로부터 원소를 받을 수 있음.
