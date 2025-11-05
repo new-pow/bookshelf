@@ -1080,7 +1080,6 @@ internal suspend fun <R, T> FlowCollector<R>.combineInternal(
 - select 가 값을 생성하고 나서 also 를 호출한 뒤 다른 코루틴을 취소할 수 있다.
 ---
 # Flow 동작방식
-![](https://i.imgur.com/szEOaJH.png)
 ```kotlin
 public fun <T> flow(@BuilderInference block: suspend FlowCollector<T>.() -> Unit): Flow<T> = SafeFlow(block)  
   
