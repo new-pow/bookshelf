@@ -67,11 +67,13 @@ interface Flow {
 }
 
 suspend fun main() {
+    // 내부 로직
     val builder: suspend FlowCollector.() -> Unit = {
         emit("A")
         emit("B")
         emit("C")
     }
+    // flow 객체 생성
     val flow: Flow = object : Flow {
         override suspend fun collect(collector: FlowCollector) {
             collector.builder()
