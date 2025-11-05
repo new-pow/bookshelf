@@ -1,5 +1,6 @@
 package example3
 
+import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.combine
 
@@ -137,7 +138,8 @@ suspend fun main() {
         emit("B")
         emit("C")
     }
-    combine()
+
+    Channel.RENDEZVOUS
 
     f.collect { println(it) }
     f.collect { println(it) }
