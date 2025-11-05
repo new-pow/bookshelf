@@ -58,27 +58,85 @@ import kotlinx.coroutines.delay
 //}
 
 // 5. flowCollector
-fun interface FlowCollector { // 함수형 인터페이스
-    suspend fun emit(value: String)
+//fun interface FlowCollector { // 함수형 인터페이스
+//    suspend fun emit(value: String)
+//}
+//
+//interface Flow {
+//    suspend fun collect(collector: FlowCollector)
+//}
+//
+//suspend fun main() {
+//    // 내부 로직
+//    val builder: suspend FlowCollector.() -> Unit = {
+//        emit("A")
+//        emit("B")
+//        emit("C")
+//    }
+//    // flow 객체 생성
+//    val flow: Flow = object : Flow {
+//        override suspend fun collect(collector: FlowCollector) {
+//            collector.builder()
+//        }
+//    }
+//
+//    flow.collect { println(it) }
+//}
+
+// 6. 플로우 생성 간단하게 만들기 위해 flow cnrk
+//fun interface FlowCollector { // 함수형 인터페이스
+//    suspend fun emit(value: String)
+//}
+//
+//interface Flow {
+//    suspend fun collect(collector: FlowCollector)
+//}
+//
+//fun flow(builder: suspend FlowCollector.() -> Unit): Flow {
+//    return object : Flow {
+//        override suspend fun collect(collector: FlowCollector) {
+//            collector.builder()
+//        }
+//    }
+//}
+//
+//suspend fun main() {
+//    // flow 객체 생성
+//    val f = flow {
+//        emit("A")
+//        emit("B")
+//        emit("C")
+//    }
+//
+//    f.collect { println(it) }
+//    f.collect { println(it) }
+//}
+
+// 7. 제네릭 타입으로 변경
+fun interface FlowCollector<T> { // 함수형 인터페이스
+    suspend fun emit(value: T)
 }
 
-interface Flow {
-    suspend fun collect(collector: FlowCollector)
+interface Flow<T> {
+    suspend fun collect(collector: FlowCollector<T>)
+}
+
+fun <T> flow(builder: suspend FlowCollector<T>.() -> Unit): Flow<T> {
+    return object : Flow<T> {
+        override suspend fun collect(collector: FlowCollector<T>) {
+            collector.builder()
+        }
+    }
 }
 
 suspend fun main() {
-    // 내부 로직
-    val builder: suspend FlowCollector.() -> Unit = {
+    // flow 객체 생성
+    val f = flow {
         emit("A")
         emit("B")
         emit("C")
     }
-    // flow 객체 생성
-    val flow: Flow = object : Flow {
-        override suspend fun collect(collector: FlowCollector) {
-            collector.builder()
-        }
-    }
 
-    flow.collect { println(it) }
+    f.collect { println(it) }
+    f.collect { println(it) }
 }
