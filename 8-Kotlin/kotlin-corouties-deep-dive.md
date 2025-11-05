@@ -1074,3 +1074,8 @@ internal suspend fun <R, T> FlowCollector<R>.combineInternal(
 
 ---
 # 17장. 셀렉트
+- 가장 먼저 완료되는 코루틴의 결과를 기다리는 select
+## 지연되는 값 선택하기
+- 하나의 비동기 작업이 완료됨과 동시에 끝나게 되어 결과값을 반환한다.
+- select 가 값을 생성하고 나서 also 를 호출한 뒤 다른 코루틴을 취소할 수 있다.
+- 
