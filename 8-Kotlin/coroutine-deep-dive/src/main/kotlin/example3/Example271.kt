@@ -1,6 +1,7 @@
 package example3
 
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.combine
 
 // 1. 기본 람다식
 //fun main() {
@@ -136,6 +137,7 @@ suspend fun main() {
         emit("B")
         emit("C")
     }
+    combine()
 
     f.collect { println(it) }
     f.collect { println(it) }
