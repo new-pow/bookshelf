@@ -1078,4 +1078,33 @@ internal suspend fun <R, T> FlowCollector<R>.combineInternal(
 ## 지연되는 값 선택하기
 - 하나의 비동기 작업이 완료됨과 동시에 끝나게 되어 결과값을 반환한다.
 - select 가 값을 생성하고 나서 also 를 호출한 뒤 다른 코루틴을 취소할 수 있다.
-- 
+---
+# Flow 동작방식
+![](https://i.imgur.com/szEOaJH.png)
+```kotlin
+public fun <T> flow(@BuilderInference block: suspend FlowCollector<T>.() -> Unit): Flow<T> = SafeFlow(block)  
+  
+// Named anonymous object  
+private class SafeFlow<T>(private val block: suspend FlowCollector<T>.() -> Unit) : AbstractFlow<T>() {  
+    override suspend fun collectSafely(collector: FlowCollector<T>) {  
+        collector.block()  
+    }  
+}
+
+@ExperimentalCoroutinesApi  
+public abstract class AbstractFlow<T> : Flow<T>, CancellableFlow<T> {  
+  
+    public final override suspend fun collect(collector: FlowCollector<T>) {  
+        val safeCollector = SafeCollector(collector, coroutineContext)  
+        try {  
+            collectSafely(safeCollector)  
+        } finally {  
+            safeCollector.releaseIntercepted()  
+        }  
+    }  
+  
+    /**  
+     * Accepts the given [collector] and [emits][FlowCollector.emit] values into it.     *     * A valid implementation of this method has the following constraints:     * 1) It should not change the coroutine context (e.g. with `withContext(Dispatchers.IO)`) when emitting values.     *    The emission should happen in the context of the [collect] call.     *    Please refer to the top-level [Flow] documentation for more details.     * 2) It should serialize calls to [emit][FlowCollector.emit] as [FlowCollector] implementations are not     *    thread-safe by default.     *    To automatically serialize emissions [channelFlow] builder can be used instead of [flow]     *     * @throws IllegalStateException if any of the invariants are violated.  
+     */    public abstract suspend fun collectSafely(collector: FlowCollector<T>)  
+}
+```
