@@ -140,6 +140,7 @@ suspend fun main() {
     }
 
     Channel.RENDEZVOUS
+    generateSequence{}
 
     f.collect { println(it) }
     f.collect { println(it) }
