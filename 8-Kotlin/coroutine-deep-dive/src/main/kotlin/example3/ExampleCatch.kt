@@ -1,5 +1,6 @@
 package example3
 
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.launch
@@ -8,7 +9,7 @@ import kotlinx.coroutines.runBlocking
 // ========== 테스트 1: 단일 catch ==========
 fun test1_SingleCatch() {
     println("=== Test 1: 단일 catch ===")
-    val f = flow {
+    val f: Flow<String> = flow {
         emit("A")
         throw IllegalStateException("1st error")
     }.catch { e -> println("Catch[$it]: $e") }
@@ -21,7 +22,7 @@ fun test1_SingleCatch() {
 // ========== 테스트 2: 다중 catch (체인) ==========
 fun test2_MultipleCatchChain() {
     println("\n=== Test 2: 다중 catch (체인) ===")
-    val f = flow {
+    val f: Flow<String> = flow {
         emit("A")
         throw IllegalStateException("1st error")
     }
