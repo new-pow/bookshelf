@@ -951,6 +951,71 @@ val analyticsScope = CoroutineScope(SupervisorJob())
 	- 그러나 **IO 디스패처에서 데이터를 읽고, UI 디스패처에서 이를 수집해야 하는 상황**에서는 `Flow`의 순차적 특성상 문제가 발생한다. -> `channelFlow` 빌더를 사용
 	- 이 빌더는 채널을 내부적으로 활용해 코루틴 간 데이터를 안전하게 전달합니다. 즉, `channelFlow`는 채널이 **암묵적으로 사용되는 대표적인 예시**.
 - 뿐만 아니라, 두 개의 Flow를 병합하거나 RxJava 같은 반응형 프레임워크와 통합할 때도 채널이 내부적으로 동작함.
+```kotlin
+@PublishedApi  
+internal suspend fun <R, T> FlowCollector<R>.combineInternal(  
+    flows: Array<out Flow<T>>,  
+    arrayFactory: () -> Array<T?>?, // Array factory is required to workaround array typing on JVM  
+    transform: suspend FlowCollector<R>.(Array<T>) -> Unit  
+): Unit = flowScope { // flow scope so any cancellation within the source flow will cancel the whole scope  
+    val size = flows.size  
+    if (size == 0) return@flowScope // bail-out for empty input  
+    val latestValues = arrayOfNulls<Any?>(size)  
+    latestValues.fill(UNINITIALIZED) // Smaller bytecode & faster than Array(size) { UNINITIALIZED }  
+    val resultChannel = Channel<Update>(size)  
+    val nonClosed = LocalAtomicInt(size)  
+    var remainingAbsentValues = size  
+    for (i in 0 until size) {  
+        // Coroutine per flow that keeps track of its value and sends result to downstream  
+        launch {  
+            try {  
+                flows[i].collect { value ->  
+                    resultChannel.send(Update(i, value))  
+                    yield() // Emulate fairness, giving each flow chance to emit  
+                }  
+            } finally {  
+                // Close the channel when there is no more flows  
+                if (nonClosed.decrementAndGet() == 0) {  
+                    resultChannel.close()  
+                }  
+            }  
+        }  
+    }  
+  
+    /*  
+     * Batch-receive optimization: read updates in batches, but bail-out     * as soon as we encountered two values from the same source     */    val lastReceivedEpoch = ByteArray(size)  
+    var currentEpoch: Byte = 0  
+    while (true) {  
+        ++currentEpoch  
+        // Start batch  
+        // The very first receive in epoch should be suspending        var element = resultChannel.receiveCatching().getOrNull() ?: break // Channel is closed, nothing to do here  
+        while (true) {  
+            val index = element.index  
+            // Update values  
+            val previous = latestValues[index]  
+            latestValues[index] = element.value  
+            if (previous === UNINITIALIZED) --remainingAbsentValues  
+            // Check epoch  
+            // Received the second value from the same flow in the same epoch -- bail out            if (lastReceivedEpoch[index] == currentEpoch) break  
+            lastReceivedEpoch[index] = currentEpoch  
+            element = resultChannel.tryReceive().getOrNull() ?: break  
+        }  
+  
+        // Process batch result if there is enough data  
+        if (remainingAbsentValues == 0) {  
+            /*  
+             * If arrayFactory returns null, then we can avoid array copy because             * it's our own safe transformer that immediately deconstructs the array             */            val results = arrayFactory()  
+            if (results == null) {  
+                transform(latestValues as Array<T>)  
+            } else {  
+                (latestValues as Array<T?>).copyInto(results)  
+                transform(results as Array<T>)  
+            }  
+        }  
+    }  
+}
+```
+
 결국 코루틴 프로그래밍을 할 때 **채널은 직접 사용하지 않더라도, 대부분의 상위 API에서 간접적으로 사용되는 기본 통신 메커니즘**이라 할 수 있습니다.  
 따라서 채널의 내부 작동 원리를 이해해 두면, 성능 저하나 메모리 문제를 해결할 때 큰 도움이 됩니다.
 
