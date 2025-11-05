@@ -1137,17 +1137,22 @@ flow {
 	- buffer() 도 마찬가지
 ```mermaid
 flowchart TD
-    subgraph Cold Flow
-    A["collect() 호출"] --> B["새 Coroutine 생성"]
-    B --> C["emit -> collect"]
-    C --> D["완료 후 종료"]
+    subgraph Scope["CoroutineScope"]
+        A["collect() 호출"] --> B["새 Coroutine 생성"]
+        B --> C["flow { emit(...) }"]
+        C --> D["map / filter / transform ..."]
+        D --> E["collect() (소비)"]
     end
+    F["스코프 취소 시 전체 취소"]
+    Scope --> F
 
-    subgraph Hot Flow
-    E["Emitter 계속 작동"]
-    F["Collector 1"]
-    G["Collector 2"]
-    E --> F
-    E --> G
+```
+```mermaid
+flowchart TD
+    subgraph ParentScope["Parent CoroutineScope (예: viewModelScope)"]
+        J1["flow.collect() Job"] --> U1["emit → map → collect"]
     end
+    note right of J1
+        ParentScope 취소 시\nFlow Job도 즉시 취소됨
+    end note
 ```
