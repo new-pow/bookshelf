@@ -1125,3 +1125,12 @@ public abstract class AbstractFlow<T> : Flow<T>, CancellableFlow<T> {
 - (참고)
 	- `Flow`의 `collect()`는 **콜드 스트림**으로, 데이터를 한 번에 하나씩 **순차적으로(suspend → resume)** 처리한다. `emit()` → suspend → resume → 다음 `emit()` 이런 식으로 **순서대로** 진행됩니다. 이 구조 덕분에 별도의 락(lock)이나 스레드 동기화 없이도 순차성과 일관성이 보장되는데, 이 모델은 **코루틴 컨텍스트가 일정해야** 가능합니다. 바꾸고 싶다면, `flowOn()`로 내부적으로 안전하게 채널과 중간 코루틴을 만들어 **업스트림(emit 쪽)** 만 다른 디스패처에서 실행되도록 처리해야합니다.
 ![](https://i.imgur.com/dzs3uDu.png)
+```kotlin
+flow {
+	(1..5).forEach { emit(it) }
+}.filter { it % 2 != 0 }
+.map { "*".repeat(it) }
+.flowOn(Dispatchers.IO)
+.collect { value -> println(value) }
+```
+![](https://i.imgur.com/atTHAVo.png)
