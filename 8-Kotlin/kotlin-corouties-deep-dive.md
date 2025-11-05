@@ -1037,7 +1037,8 @@ internal suspend fun <R, T> FlowCollector<R>.combineInternal(
 	- 메모리 사용량이 적음
 	- 높은 부하에서도 확장 가능
     
-- 기존 방식처럼 전역 잠금을 사용하는 큐는 단일 스레드에서는 빠르지만 확장성이 떨어짐.
+- 전역 잠금을 사용하는 큐는 단일 스레드에서는 빠르지만 확장성이 떨어짐.
+	- `val queue = LinkedList<Int>() / val lock = ReentrantLock()`
 - `ConcurrentLinkedQueue`는 확장 가능하지만 메모리 오버헤드와 캐시 미스가 많음.
 - Kotlin의 채널은 이러한 한계를 극복하기 위해, **“무한 배열(Infinite Array)” 개념을 사용한 세그먼트 기반 구조**를 채택했습니다.
 	- 요소를 추가하거나 꺼낼 때 각각의 인덱스를 원자적으로 증가시키며, 실제로는 고정 크기 세그먼트들의 연결 리스트로 구현되어 있습니다.
