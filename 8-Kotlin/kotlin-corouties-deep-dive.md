@@ -1135,4 +1135,19 @@ flow {
 ![](https://i.imgur.com/atTHAVo.png)
 - flowOn 으로 인해 서로 다른 코루틴에서 동작하게 되므로, 코루틴간 통신구조가 생깁니다.
 	- buffer() 도 마찬가지
-- 
+```mermaid
+flowchart TD
+    subgraph Cold Flow
+    A["collect() 호출"] --> B["새 Coroutine 생성"]
+    B --> C["emit -> collect"]
+    C --> D["완료 후 종료"]
+    end
+
+    subgraph Hot Flow
+    E["Emitter 계속 작동"]
+    F["Collector 1"]
+    G["Collector 2"]
+    E --> F
+    E --> G
+    end
+```
