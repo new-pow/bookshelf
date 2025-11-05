@@ -1134,3 +1134,6 @@ flow {
 .collect { value -> println(value) }
 ```
 ![](https://i.imgur.com/atTHAVo.png)
+- flowOn 으로 인해 서로 다른 코루틴에서 동작하게 되므로, 코루틴간 통신구조가 생깁니다.
+	- buffer() 도 마찬가지
+- 
