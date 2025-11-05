@@ -2,6 +2,7 @@ package example3
 
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 // ========== 테스트 1: 단일 catch ==========
@@ -10,13 +11,10 @@ fun test1_SingleCatch() {
     val f = flow {
         emit("A")
         throw IllegalStateException("1st error")
-    }
+    }.catch { e -> println("Catch[$it]: $e") }
 
     runBlocking {
-        repeat(3) {
-            f.catch { e -> println("Catch[$it]: $e") }
-                .collect { value -> println("Collect[$it]: $value") }
-        }
+            f.collect { value -> println("Collect[$it]: $value") }
     }
 }
 
