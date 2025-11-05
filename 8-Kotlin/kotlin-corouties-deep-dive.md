@@ -906,8 +906,9 @@ val analyticsScope = CoroutineScope(SupervisorJob())
 		- send: 채널 용량이 가득 차면 중단됨. (기다림)
 	- ReceiveChannel : 원소를 받을 때 사용
 		- receive: 호출시 채널에 원소가 없다면, 원소가 들어올때까지 코루틴이 중단.
-- consumeEach
+- **consumeEach** ⭐️
 	- 채널이 닫힐 때까지 원소를 받음.
+	- 하나의 코루틴이 수신할때 유용함.
 - produce { }
 	- 코루틴 빌더
 	- ReceiveChannel 을 반환함.
@@ -928,3 +929,5 @@ val analyticsScope = CoroutineScope(SupervisorJob())
 - 채널에서 보낸 자원을 닫을 때 사용함.
 ## 팬아웃 (Fan-out)
 - 여러개의 코루틴이 하나의 채널로부터 원소를 받을 수 있음.
+- 원소를 공평하게 배분함.
+- 
