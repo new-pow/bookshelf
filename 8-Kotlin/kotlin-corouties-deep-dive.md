@@ -1103,8 +1103,25 @@ public abstract class AbstractFlow<T> : Flow<T>, CancellableFlow<T> {
         }  
     }  
   
-    /**  
-     * Accepts the given [collector] and [emits][FlowCollector.emit] values into it.     *     * A valid implementation of this method has the following constraints:     * 1) It should not change the coroutine context (e.g. with `withContext(Dispatchers.IO)`) when emitting values.     *    The emission should happen in the context of the [collect] call.     *    Please refer to the top-level [Flow] documentation for more details.     * 2) It should serialize calls to [emit][FlowCollector.emit] as [FlowCollector] implementations are not     *    thread-safe by default.     *    To automatically serialize emissions [channelFlow] builder can be used instead of [flow]     *     * @throws IllegalStateException if any of the invariants are violated.  
-     */    public abstract suspend fun collectSafely(collector: FlowCollector<T>)  
+    /**
+ * 주어진 [collector]를 받아 그 안으로 [emit][FlowCollector.emit]을 통해 값을 방출합니다.
+ *
+ * 이 메서드를 올바르게 구현하기 위해서는 다음과 같은 제약 조건을 따라야 합니다:
+ *
+ * 1) 값을 방출할 때 코루틴 컨텍스트를 변경해서는 안 됩니다.
+ *    (예: `withContext(Dispatchers.IO)`와 같은 방식은 금지됩니다.)
+ *    방출은 [collect] 호출의 컨텍스트 안에서 이루어져야 합니다.
+ *    더 자세한 내용은 상위 수준의 [Flow] 문서를 참고하세요.
+ *
+ * 2) [FlowCollector.emit] 호출은 반드시 직렬화(serialize)되어야 합니다.
+ *    기본적으로 [FlowCollector] 구현체들은 스레드 안전하지 않기 때문입니다.
+ *    방출을 자동으로 직렬화하고 싶다면 [flow] 대신 [channelFlow] 빌더를 사용할 수 있습니다.
+ *
+ * @throws IllegalStateException 위의 불변 조건 중 하나라도 위반될 경우 발생합니다.
+ */
+     public abstract suspend fun collectSafely(collector: FlowCollector<T>)  
 }
 ```
+- (참고)
+	- `Flow`의 `collect()`는 **콜드 스트림**으로, 데이터를 한 번에 하나씩 **순차적으로(suspend → resume)** 처리한다. `emit()` → suspend → resume → 다음 `emit()` 이런 식으로 **순서대로** 진행됩니다. 이 구조 덕분에 별도의 락(lock)이나 스레드 동기화 없이도 순차성과 일관성이 보장되는데, 이 모델은 **코루틴 컨텍스트가 일정해야** 가능합니다. 바꾸고 싶다면, `flowOn()`로 내부적으로 안전하게 채널과 중간 코루틴을 만들어 **업스트림(emit 쪽)** 만 다른 디스패처에서 실행되도록 처리해야합니다.
+	- 
