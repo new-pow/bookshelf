@@ -125,6 +125,8 @@
 - 값을 저장하기 위한 메모리 크기
 	- char <= short <= int <= long <= long long
 - 메모리 크기가 확정되어 있지는 않으며, C언어를 구현하는 컴퓨터에서 가장 효율적으로 처리할 수 있는 정수형을 int 형으로 표현함.
+![](https://i.imgur.com/MnppzlA.png)
+
 # 선행처리기
 
 
