@@ -20,3 +20,4 @@
 | 6. 테스트 더블과 모의 객체        | [related docs](./effective-software-testing/chapter6.md) |
 | 7. 테스트 가능성을 위한 설계       | [related docs](./effective-software-testing/chapter7.md) |
 | 8. 테스트 주도 개발            | [related docs](./effective-software-testing/chapter8.md) |
+|                         |                                                          |
