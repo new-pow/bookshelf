@@ -7,7 +7,7 @@
 	- 스프링에 대한 이해를 높이기
 
 # 새로 알게 된 것
-- `@RestController`는 @Controller + @ResponseBody의 조합으로, 메서드의 반환값을 HTTP 응답 본문에 직접 작성.
+- `@RestController`는 @Controller + @ResponseBody의 조합으로, 메서드의 반환값을 HTTP 응답 본문에 직접 작성. @Controller 어노테이션을 쓸 경우 반환값에 대한 뷰페이지를 찾게된다.
 - zsh 와일드카드 오류가 있었음
 	- 오류 발생 
 		- ```
