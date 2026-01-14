@@ -20,3 +20,8 @@
 			    curl "localhost:8080/v0/request?itemId=hello"
 			```
 	- 원인: zsh가 ?를 와일드카드 패턴으로 해석
+- SpringBoot 프로젝트에서 Kotlin 을 사용하려면 최소 2.2.0 이상이 필요하다.
+	- [참고링크](https://docs.spring.io/spring-boot/reference/features/kotlin.html)
+
+## 2026.01.14
+- 
