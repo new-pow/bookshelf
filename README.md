@@ -6,19 +6,20 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_118 TILs and counting..._
+_119 TILs and counting..._
 
 ---
 
 ### 3 most recent TILs
 
+- [러너스하이 2기 성장일기: 이새힘](0-private/2026-01/%EB%9F%AC%EB%84%88%EC%8A%A4%ED%95%98%EC%9D%B4/%EC%84%B1%EC%9E%A5%EC%9D%BC%EA%B8%B0.md) - 17 Jan 26 19:06 +0900
 - [글또 10기](%F0%9F%92%BC-Career/2024-Geultto-10.md) - 17 Jan 26 18:03 +0900
 - [스프링 핵심 원리 고급편](%F0%9F%8D%83-Spring/spring-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B3%A0%EA%B8%89%ED%8E%B8.md) - 17 Jan 26 17:55 +0900
-- [2025-01 데이터베이스 시스템](%F0%9F%92%BE-Database/database-system.md) - 12 Jan 26 20:08 +0900
 
 
 ### Categories
 
+- [0-private](#0-private)
 - [1-CS](#1-cs)
 - [7-Patterns](#7-patterns)
 - [8-Kotlin](#8-kotlin)
@@ -41,6 +42,11 @@ _118 TILs and counting..._
 - [🥞-data-structure](#🥞-data-structure)
 - [🧪-Test](#🧪-test)
 - [🪈-Data](#🪈-data)
+
+
+### [0-private](#0-private)
+
+    - [러너스하이 2기 성장일기: 이새힘](0-private/2026-01/%EB%9F%AC%EB%84%88%EC%8A%A4%ED%95%98%EC%9D%B4/%EC%84%B1%EC%9E%A5%EC%9D%BC%EA%B8%B0.md)
 
 
 ### [1-CS](#1-cs)
