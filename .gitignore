@@ -1,3 +1,7 @@
+# custom
+.private/
+.private/*
+
 
 .DS_Store
 .idea
