@@ -1,6 +1,6 @@
 # custom
-.private/
-.private/*
+private/
+private/*
 
 
 .DS_Store
