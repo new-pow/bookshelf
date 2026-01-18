@@ -12,7 +12,7 @@ _119 TILs and counting..._
 
 ### 3 most recent TILs
 
-- [러너스하이 2기 성장일기: 이새힘](0-private/2026-01/%EB%9F%AC%EB%84%88%EC%8A%A4%ED%95%98%EC%9D%B4/%EC%84%B1%EC%9E%A5%EC%9D%BC%EA%B8%B0.md) - 17 Jan 26 19:22 +0900
+- [러너스하이 2기 성장일기: 이새힘](0-private/2026-01/%EB%9F%AC%EB%84%88%EC%8A%A4%ED%95%98%EC%9D%B4/%EC%84%B1%EC%9E%A5%EC%9D%BC%EA%B8%B0.md) - 18 Jan 26 09:13 +0900
 - [글또 10기](%F0%9F%92%BC-Career/2024-Geultto-10.md) - 17 Jan 26 18:03 +0900
 - [스프링 핵심 원리 고급편](%F0%9F%8D%83-Spring/spring-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B3%A0%EA%B8%89%ED%8E%B8.md) - 17 Jan 26 17:55 +0900
 
