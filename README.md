@@ -132,11 +132,11 @@ _118 TILs and counting..._
 
 ### [🏗️-DDD](#🏗️-ddd)
 
-  - [1장. 도메인 주도 개발이란 무엇인가?](%F0%9F%8F%97%EF%B8%8F-DDD/dddq/chapter1.md)
-  - [2장. 유비쿼터스 언어](%F0%9F%8F%97%EF%B8%8F-DDD/dddq/chapter2.md)
-  - [3장. 모델 주도 설계](%F0%9F%8F%97%EF%B8%8F-DDD/dddq/chapter3.md)
-- [📖 도메인 주도 설계란 무엇인가?](%F0%9F%8F%97%EF%B8%8F-DDD/domain-driven-design-quickly.md)
-- [🤔 도메인 주도 설계의 사실과 오해](%F0%9F%8F%97%EF%B8%8F-DDD/Facts-and-Misconceptions-of-Domain-Driven-Design.md)
+  - [1장. 도메인 주도 개발이란 무엇인가?](2-Architecture/🏗️-DDD/dddq/chapter1.md)
+  - [2장. 유비쿼터스 언어](2-Architecture/🏗️-DDD/dddq/chapter2.md)
+  - [3장. 모델 주도 설계](2-Architecture/🏗️-DDD/dddq/chapter3.md)
+- [📖 도메인 주도 설계란 무엇인가?](domain-driven-design-quickly.md)
+- [🤔 도메인 주도 설계의 사실과 오해](Facts-and-Misconceptions-of-Domain-Driven-Design.md)
 
 
 ### [👩🏻‍💻-C](#👩🏻‍💻-c)
