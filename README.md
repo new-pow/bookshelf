@@ -6,19 +6,30 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_119 TILs and counting..._
+_120 TILs and counting..._
 
 ---
 
 ### 3 most recent TILs
 
 - [📕 도메인 주도 개발 시작하기](2-Architecture/%F0%9F%8F%97%EF%B8%8F-DDD/%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%A3%BC%EB%8F%84-%EA%B0%9C%EB%B0%9C-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0.md) - 2026-01-19
-- [📖 도메인 주도 설계란 무엇인가?](2-Architecture/%F0%9F%8F%97%EF%B8%8F-DDD/domain-driven-design-quickly.md) - 2026-01-19
 - [🤔 도메인 주도 설계의 사실과 오해](2-Architecture/%F0%9F%8F%97%EF%B8%8F-DDD/Facts-and-Misconceptions-of-Domain-Driven-Design.md) - 2026-01-19
+- [📖 도메인 주도 설계란 무엇인가?](2-Architecture/%F0%9F%8F%97%EF%B8%8F-DDD/domain-driven-design-quickly.md) - 2026-01-19
 
 
 ### Categories
 
+<details>
+<summary><strong>0-private</strong></summary>
+
+    <details>
+    <summary><strong>2026-01</strong></summary>
+
+        - [러너스하이 2기 성장일기: 이새힘](0-private/2026-01/%EC%84%B1%EC%9E%A5%EC%9D%BC%EA%B8%B0.md)
+
+    </details>
+
+</details>
 <details>
 <summary><strong>1-CS</strong></summary>
 
@@ -98,7 +109,7 @@ _119 TILs and counting..._
     - [Open API와 스웨거를 활용한 실전 API 설계](Etc/open-api.md)
     - [RFC 6648 - 애플리케이션 프로토콜에서 "X-" 접두사 및 유사 구조의 사용 중단 (Deprecating the "X-" Prefix and Similar Constructs in Application Protocols)](Etc/RFC6648_KO.md)
     - [디지털 논리 회로](Etc/%EB%94%94%EC%A7%80%ED%84%B8-%EB%85%BC%EB%A6%AC-%ED%9A%8C%EB%A1%9C.md)
-    - [실시간 모니터링 시스템을 만들며 정복하는 MEVN](Etc/%EC%8B%A4%EC%8B%9C%EA%B0%84-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%84-%EB%A7%8C%EB%93%A4%EB%A9%B0-%EC%A0%95%EB%B3%B5%ED%95%98%EB%8A%94-MEVN.md)
+    - [실시간 모니터링 시스템을 만들며 정복하는 MEVN](Etc/%E1%84%89%E1%85%B5%E1%86%AF%E1%84%89%E1%85%B5%E1%84%80%E1%85%A1%E1%86%AB-%E1%84%86%E1%85%A9%E1%84%82%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B5%E1%86%BC-%E1%84%89%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AF-%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%86%E1%85%A7-%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%87%E1%85%A9%E1%86%A8%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB-MEVN.md)
     - [알고리즘](Etc/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98.md)
     - [왜 Array Index는 0부터 시작하는 것일까?](Etc/Why-does-the-Array-Index-start-from-Zero.md)
     - [좋은 코드는 무엇인가?](Etc/Simple-Design-%EC%A2%8B%EC%9D%80-%EC%BD%94%EB%93%9C%EC%9D%98-%EA%B8%B0%EC%A4%80.md)
@@ -113,18 +124,18 @@ _119 TILs and counting..._
 
     </details>
     <details>
+    <summary><strong>실시간-모니터링-시스템을-만들며-정복하는-MEVN</strong></summary>
+
+        - [chapter1](Etc/%E1%84%89%E1%85%B5%E1%86%AF%E1%84%89%E1%85%B5%E1%84%80%E1%85%A1%E1%86%AB-%E1%84%86%E1%85%A9%E1%84%82%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B5%E1%86%BC-%E1%84%89%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AF-%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%86%E1%85%A7-%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%87%E1%85%A9%E1%86%A8%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB-MEVN/chapter1.md)
+        - [제대로 배우는 자바스크립트](Etc/%E1%84%89%E1%85%B5%E1%86%AF%E1%84%89%E1%85%B5%E1%84%80%E1%85%A1%E1%86%AB-%E1%84%86%E1%85%A9%E1%84%82%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B5%E1%86%BC-%E1%84%89%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AF-%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%86%E1%85%A7-%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%87%E1%85%A9%E1%86%A8%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB-MEVN/chapter2.md)
+        - [코드 리팩토링과 함수형 프로그래밍](Etc/%E1%84%89%E1%85%B5%E1%86%AF%E1%84%89%E1%85%B5%E1%84%80%E1%85%A1%E1%86%AB-%E1%84%86%E1%85%A9%E1%84%82%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B5%E1%86%BC-%E1%84%89%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AF-%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%86%E1%85%A7-%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%87%E1%85%A9%E1%86%A8%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB-MEVN/chapter3.md)
+
+    </details>
+    <details>
     <summary><strong>디지털-논리-회로</strong></summary>
 
         - [논리 연산](Etc/%EB%94%94%EC%A7%80%ED%84%B8-%EB%85%BC%EB%A6%AC-%ED%9A%8C%EB%A1%9C/note2.md)
         - [부울함수의 간소화 및 구현](Etc/%EB%94%94%EC%A7%80%ED%84%B8-%EB%85%BC%EB%A6%AC-%ED%9A%8C%EB%A1%9C/note3.md)
-
-    </details>
-    <details>
-    <summary><strong>실시간-모니터링-시스템을-만들며-정복하는-MEVN</strong></summary>
-
-        - [chapter1](Etc/%EC%8B%A4%EC%8B%9C%EA%B0%84-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%84-%EB%A7%8C%EB%93%A4%EB%A9%B0-%EC%A0%95%EB%B3%B5%ED%95%98%EB%8A%94-MEVN/chapter1.md)
-        - [제대로 배우는 자바스크립트](Etc/%EC%8B%A4%EC%8B%9C%EA%B0%84-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%84-%EB%A7%8C%EB%93%A4%EB%A9%B0-%EC%A0%95%EB%B3%B5%ED%95%98%EB%8A%94-MEVN/chapter2.md)
-        - [코드 리팩토링과 함수형 프로그래밍](Etc/%EC%8B%A4%EC%8B%9C%EA%B0%84-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%84-%EB%A7%8C%EB%93%A4%EB%A9%B0-%EC%A0%95%EB%B3%B5%ED%95%98%EB%8A%94-MEVN/chapter3.md)
 
     </details>
 
@@ -231,6 +242,11 @@ _119 TILs and counting..._
 <summary><strong>👩🏻‍💻-Java</strong></summary>
 
     - [객체지향 프로그래밍](%F0%9F%91%A9%F0%9F%8F%BB%E2%80%8D%F0%9F%92%BB-Java/java-and-oop.md)
+
+</details>
+<details>
+<summary><strong>👩🏻‍💻-Kotlin</strong></summary>
+
 
 </details>
 <details>
