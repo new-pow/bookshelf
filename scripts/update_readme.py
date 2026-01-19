@@ -111,11 +111,13 @@ def build_tree(root_dir, max_depth):
 
     return root_node, all_files_flat
 
-def generate_markdown_tree_recursive(node, content_lines):
+def generate_markdown_tree_recursive(node, content_lines, level=0):
+    indent = "    " * level
+    
     # 1. Output Files
     for file_item in node['files']:
         url = urllib.parse.quote(file_item['rel_path'], safe='/')
-        content_lines.append(f"- [{file_item['title']}]({url})")
+        content_lines.append(f"{indent}- [{file_item['title']}]({url})")
     
     # 2. Output Directories (sorted)
     sorted_subdirs = sorted(node['children'].keys(), key=lambda s: s.lower())
@@ -123,21 +125,18 @@ def generate_markdown_tree_recursive(node, content_lines):
     for dirname in sorted_subdirs:
         subnode = node['children'][dirname]
         
-        # Skip empty directories (no files and no children with files)
-        # Note: This simple check might leave empty dirs if they have empty subdirs.
-        # A more robust check would recursively verify 'has_content'.
-        # For now, we just check direct emptiness.
         if not subnode['files'] and not subnode['children']:
             continue
-
-        content_lines.append(f"<details>")
-        content_lines.append(f"<summary><strong>{dirname}</strong></summary>")
+        
+        # We indent the <details> block itself
+        content_lines.append(f"{indent}<details>")
+        content_lines.append(f"{indent}<summary><strong>{dirname}</strong></summary>")
         content_lines.append("") # Blank line required for markdown parsing inside details
         
-        generate_markdown_tree_recursive(subnode, content_lines)
+        generate_markdown_tree_recursive(subnode, content_lines, level + 1)
         
         content_lines.append("")
-        content_lines.append(f"</details>")
+        content_lines.append(f"{indent}</details>")
 
 def main():
     print("Scanning directories...")
@@ -182,7 +181,7 @@ def main():
         content.append(f"<summary><strong>{dirname}</strong></summary>")
         content.append("")
         
-        generate_markdown_tree_recursive(subnode, content)
+        generate_markdown_tree_recursive(subnode, content, 1)
         
         content.append("")
         content.append(f"</details>")
