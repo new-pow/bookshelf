@@ -6,20 +6,21 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_118 TILs and counting..._
+_119 TILs and counting..._
 
 ---
 
 ### 3 most recent TILs
 
-- [글또 10기](%F0%9F%92%BC-Career/2024-Geultto-10.md) - 17 Jan 26 18:03 +0900
-- [스프링 핵심 원리 고급편](%F0%9F%8D%83-Spring/spring-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B3%A0%EA%B8%89%ED%8E%B8.md) - 17 Jan 26 17:55 +0900
-- [2025-01 데이터베이스 시스템](%F0%9F%92%BE-Database/database-system.md) - 12 Jan 26 20:08 +0900
+- [도메인 주도 개발 시작하기](2-Architecture/%F0%9F%8F%97%EF%B8%8F-DDD/%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%A3%BC%EB%8F%84-%EA%B0%9C%EB%B0%9C-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0.md) - 19 Jan 26 22:05 +0900
+- [📖 도메인 주도 설계란 무엇인가?](2-Architecture/%F0%9F%8F%97%EF%B8%8F-DDD/domain-driven-design-quickly.md) - 19 Jan 26 22:01 +0900
+- [🤔 도메인 주도 설계의 사실과 오해](2-Architecture/%F0%9F%8F%97%EF%B8%8F-DDD/Facts-and-Misconceptions-of-Domain-Driven-Design.md) - 19 Jan 26 22:01 +0900
 
 
 ### Categories
 
 - [1-CS](#1-cs)
+- [2-Architecture](#2-architecture)
 - [7-Patterns](#7-patterns)
 - [8-Kotlin](#8-kotlin)
 - [9-💭-look-back](#9-💭-look-back)
@@ -28,7 +29,6 @@ _118 TILs and counting..._
 - [☁️-Kubernetes](#☁️-kubernetes)
 - [➗-Math](#➗-math)
 - [🍃-Spring](#🍃-spring)
-- [🏗️-DDD](#🏗️-ddd)
 - [👩🏻‍💻-C](#👩🏻‍💻-c)
 - [👩🏻‍💻-Golang](#👩🏻‍💻-golang)
 - [👩🏻‍💻-Java](#👩🏻‍💻-java)
@@ -46,6 +46,16 @@ _118 TILs and counting..._
 ### [1-CS](#1-cs)
 
 - [1. 컴파일러란?](1-CS/compiler.md)
+
+
+### [2-Architecture](#2-architecture)
+
+    - [1장. 도메인 주도 개발이란 무엇인가?](2-Architecture/%F0%9F%8F%97%EF%B8%8F-DDD/dddq/chapter1.md)
+    - [2장. 유비쿼터스 언어](2-Architecture/%F0%9F%8F%97%EF%B8%8F-DDD/dddq/chapter2.md)
+    - [3장. 모델 주도 설계](2-Architecture/%F0%9F%8F%97%EF%B8%8F-DDD/dddq/chapter3.md)
+  - [도메인 주도 개발 시작하기](2-Architecture/%F0%9F%8F%97%EF%B8%8F-DDD/%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%A3%BC%EB%8F%84-%EA%B0%9C%EB%B0%9C-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0.md)
+  - [📖 도메인 주도 설계란 무엇인가?](2-Architecture/%F0%9F%8F%97%EF%B8%8F-DDD/domain-driven-design-quickly.md)
+  - [🤔 도메인 주도 설계의 사실과 오해](2-Architecture/%F0%9F%8F%97%EF%B8%8F-DDD/Facts-and-Misconceptions-of-Domain-Driven-Design.md)
 
 
 ### [7-Patterns](#7-patterns)
@@ -128,15 +138,6 @@ _118 TILs and counting..._
   - [리액티브 시스템과 리액티브 프로그래밍](%F0%9F%8D%83-Spring/spring-reactive-programing/chapter1.md)
 - [스프링 핵심 원리 고급편](%F0%9F%8D%83-Spring/spring-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B3%A0%EA%B8%89%ED%8E%B8.md)
 - [스프링으로 시작하는 리액티브 프로그래밍](%F0%9F%8D%83-Spring/spring-webflux-reactive-programing.md)
-
-
-### [🏗️-DDD](#🏗️-ddd)
-
-  - [1장. 도메인 주도 개발이란 무엇인가?](2-Architecture/🏗️-DDD/dddq/chapter1.md)
-  - [2장. 유비쿼터스 언어](2-Architecture/🏗️-DDD/dddq/chapter2.md)
-  - [3장. 모델 주도 설계](2-Architecture/🏗️-DDD/dddq/chapter3.md)
-- [📖 도메인 주도 설계란 무엇인가?](domain-driven-design-quickly.md)
-- [🤔 도메인 주도 설계의 사실과 오해](Facts-and-Misconceptions-of-Domain-Driven-Design.md)
 
 
 ### [👩🏻‍💻-C](#👩🏻‍💻-c)
