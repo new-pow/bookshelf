@@ -8,7 +8,7 @@ ROOT_DIR = "."
 README_FILE = "README.md"
 MAX_DEPTH = 3
 EXCLUDE_DIRS = {".git", ".github", ".idea", ".vscode", "scripts", ".obsidian", ".trash", "assets"}
-EXCLUDE_FILES = {"README.md", "LICENSE"}
+EXCLUDE_FILES = {"README.md", "README-old.md", "LICENSE", ".DS_Store"}
 
 HEADER = """# TIL
 > Today I Learned
@@ -38,130 +38,155 @@ def get_git_date(filepath):
     # Fallback to file modification time if git fails or no commit
     return datetime.fromtimestamp(os.path.getmtime(filepath)).astimezone()
 
+def get_title(filepath):
+    filename = os.path.basename(filepath)
+    title = os.path.splitext(filename)[0].replace("-", " ")
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            for line in f:
+                line = line.strip()
+                if line.startswith("# "):
+                    return line[2:].strip()
+    except Exception:
+        pass
+    return title
 
-def main():
-    til_files = []
+def build_tree(root_dir, max_depth):
+    # Node structure: {'type': 'dir', 'name': 'foo', 'children': {}, 'files': [], 'depth': 0}
+    root_node = {'type': 'dir', 'name': '.', 'children': {}, 'files': [], 'depth': 0}
     
-    # 1. Walk directories
-    for root, dirs, files in os.walk(ROOT_DIR):
-        # Filter directories
+    all_files_flat = []
+
+    for root, dirs, files in os.walk(root_dir):
+        # Filter directories in-place to prevent walking into excluded ones
         dirs[:] = [d for d in dirs if d not in EXCLUDE_DIRS and not d.startswith('.')]
         
-        # Calculate depth
-        rel_path = os.path.relpath(root, ROOT_DIR)
-        if rel_path == ".":
-            depth = 0
-        else:
-            depth = len(rel_path.split(os.sep))
+        rel_path = os.path.relpath(root, root_dir)
         
-        # If we are AT max depth, we can't go deeper, so clear dirs
-        if depth >= MAX_DEPTH:
-            dirs[:] = [] 
+        if rel_path == ".":
+            current_depth = 0
+            current_node = root_node
+        else:
+            parts = rel_path.split(os.sep)
+            current_depth = len(parts)
             
+            # Prune if we reached max depth
+            if current_depth >= max_depth:
+                dirs[:] = []
+            
+            # Navigate/Create nodes in tree
+            current_node = root_node
+            # We traverse from root down to current
+            for idx, part in enumerate(parts):
+                if part not in current_node['children']:
+                    current_node['children'][part] = {
+                        'type': 'dir', 
+                        'name': part, 
+                        'children': {}, 
+                        'files': [], 
+                        'depth': idx + 1
+                    }
+                current_node = current_node['children'][part]
+        
+        # Process files in current directory
         for file in files:
-            if file.endswith(".md") and file not in EXCLUDE_FILES:
+            if file.endswith(".md") and file not in EXCLUDE_FILES and not file.startswith('.'):
                 filepath = os.path.join(root, file)
-                # Get category from root folder name (e.g., "☁️-Kubernetes")
-                if rel_path == ".":
-                    category = "Uncategorized"
-                else:
-                    category = rel_path.split(os.sep)[0]
-                
+                title = get_title(filepath)
                 date = get_git_date(filepath)
                 
-                # Title parsing (naive: filename without extension)
-                title = os.path.splitext(file)[0].replace("-", " ")
-                
-                # Try to read real title from file content (# Title)
-                try:
-                    with open(filepath, 'r', encoding='utf-8') as f:
-                        lines = f.readlines()
-                        for line in lines:
-                            line = line.strip()
-                            if line.startswith("# "):
-                                title = line[2:].strip()
-                                break
-                except Exception:
-                    pass
-
-                til_files.append({
-                    "path": filepath,
-                    "rel_path": os.path.relpath(filepath, ROOT_DIR),
-                    "title": title,
-                    "category": category,
-                    "depth": depth,
-                    "date": date,
-                    "filename": file
-                })
-
-    # 2. Sort by date for "Recent"
-    til_files.sort(key=lambda x: x['date'], reverse=True)
-    recent_tils = til_files[:3]
-    
-    # 3. Sort by category and path for "All"
-    # Group by category
-    files_by_category = {}
-    for item in til_files:
-        cat = item['category']
-        if cat not in files_by_category:
-            files_by_category[cat] = []
-        files_by_category[cat].append(item)
+                file_item = {
+                    'type': 'file',
+                    'name': file,
+                    'title': title,
+                    'path': filepath,
+                    'rel_path': os.path.relpath(filepath, root_dir),
+                    'date': date
+                }
+                current_node['files'].append(file_item)
+                all_files_flat.append(file_item)
         
-    sorted_categories = sorted(files_by_category.keys())
+        # Sort files in current node by title
+        current_node['files'].sort(key=lambda x: x['title'].lower())
+
+    return root_node, all_files_flat
+
+def generate_markdown_tree_recursive(node, content_lines):
+    # 1. Output Files
+    for file_item in node['files']:
+        url = urllib.parse.quote(file_item['rel_path'], safe='/')
+        content_lines.append(f"- [{file_item['title']}]({url})")
     
-    # 4. Generate Content
+    # 2. Output Directories (sorted)
+    sorted_subdirs = sorted(node['children'].keys(), key=lambda s: s.lower())
+    
+    for dirname in sorted_subdirs:
+        subnode = node['children'][dirname]
+        
+        # Skip empty directories (no files and no children with files)
+        # Note: This simple check might leave empty dirs if they have empty subdirs.
+        # A more robust check would recursively verify 'has_content'.
+        # For now, we just check direct emptiness.
+        if not subnode['files'] and not subnode['children']:
+            continue
+
+        content_lines.append(f"<details>")
+        content_lines.append(f"<summary><strong>{dirname}</strong></summary>")
+        content_lines.append("") # Blank line required for markdown parsing inside details
+        
+        generate_markdown_tree_recursive(subnode, content_lines)
+        
+        content_lines.append("")
+        content_lines.append(f"</details>")
+
+def main():
+    print("Scanning directories...")
+    root_node, all_files = build_tree(ROOT_DIR, MAX_DEPTH)
+    
+    # Sort by date for "Recent" section
+    all_files.sort(key=lambda x: x['date'], reverse=True)
+    recent_tils = all_files[:3]
+    
     content = []
     content.append(HEADER)
-    
-    # Total count
-    # Note: original had _35 TILs and counting..._
-    content.append(f"_{len(til_files)} TILs and counting..._\n")
+    content.append(f"_{len(all_files)} TILs and counting..._\n")
     content.append("---\n")
     
-    # Recent
+    # Recent Section
     content.append("### 3 most recent TILs\n")
     for item in recent_tils:
-        date_str = item['date'].strftime('%d %b %y %H:%M %z')
-        # Encode URL
+        date_str = item['date'].strftime('%Y-%m-%d')
         url = urllib.parse.quote(item['rel_path'], safe='/')
         content.append(f"- [{item['title']}]({url}) - {date_str}")
     content.append("\n")
     
-    # Categories Index
     content.append("### Categories\n")
-    for cat in sorted_categories:
-        if cat == "Uncategorized": continue
-        # Encode anchor
-        anchor = cat.lower().replace(" ", "-")
-        # Handle special chars in anchor if needed (GitHub style)
-        # Assuming simple for now
-        content.append(f"- [{cat}](#{anchor})")
-    content.append("\n")
     
-    # Lists
-    for cat in sorted_categories:
-        if cat == "Uncategorized": continue
+    # Generate Tree Content
+    # We treat root node slightly differently: we don't wrap root in a details tag.
+    
+    # 1. Files in Root
+    for file_item in root_node['files']:
+        url = urllib.parse.quote(file_item['rel_path'], safe='/')
+        content.append(f"- [{file_item['title']}]({url})")
         
-        anchor = cat.lower().replace(" ", "-")
-        content.append(f"### [{cat}](#{anchor})\n")
+    # 2. Subdirectories in Root
+    sorted_subdirs = sorted(root_node['children'].keys(), key=lambda s: s.lower())
+    for dirname in sorted_subdirs:
+        subnode = root_node['children'][dirname]
         
-        # Sort files in category by filename/title
-        cat_files = sorted(files_by_category[cat], key=lambda x: x['title'])
-        
-        for item in cat_files:
-            # Determine indentation based on depth relative to category root
-            parts = item['rel_path'].split(os.sep)
-            # parts: [Category, Sub, File] -> len 3 -> indent 1
-            # parts: [Category, File] -> len 2 -> indent 0
+        if not subnode['files'] and not subnode['children']:
+            continue
             
-            indent_level = len(parts) - 2 
-            if indent_level < 0: indent_level = 0
-            
-            indent = "  " * indent_level
-            url = urllib.parse.quote(item['rel_path'], safe='/')
-            content.append(f"{indent}- [{item['title']}]({url})")
-        content.append("\n")
-
+        content.append(f"<details>")
+        content.append(f"<summary><strong>{dirname}</strong></summary>")
+        content.append("")
+        
+        generate_markdown_tree_recursive(subnode, content)
+        
+        content.append("")
+        content.append(f"</details>")
+    
     content.append(FOOTER)
     
     with open(README_FILE, 'w', encoding='utf-8') as f:
