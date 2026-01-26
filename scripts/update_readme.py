@@ -174,14 +174,11 @@ def main():
         if not subnode['files'] and not subnode['children']:
             continue
             
-        content.append(f"<details>")
-        content.append(f"<summary><strong>{dirname}</strong></summary>")
-        content.append("")
+        content.append(f"#### {dirname}")
         
         generate_markdown_tree_recursive(subnode, content)
         
         content.append("")
-        content.append(f"</details>")
     
     content.append(FOOTER)
     
