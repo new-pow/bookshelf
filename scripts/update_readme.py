@@ -174,6 +174,7 @@ def main():
         if not subnode['files'] and not subnode['children']:
             continue
             
+        content.append("")
         content.append(f"#### {dirname}")
         
         generate_markdown_tree_recursive(subnode, content)
