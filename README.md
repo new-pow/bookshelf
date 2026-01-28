@@ -12,7 +12,7 @@ _119 TILs and counting..._
 
 ### 3 most recent TILs
 
-- [📕 도메인 주도 개발 시작하기](2-Architecture/%F0%9F%8F%97%EF%B8%8F-DDD/%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%A3%BC%EB%8F%84-%EA%B0%9C%EB%B0%9C-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0.md) - 2026-01-26
+- [📕 도메인 주도 개발 시작하기](2-Architecture/%F0%9F%8F%97%EF%B8%8F-DDD/%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%A3%BC%EB%8F%84-%EA%B0%9C%EB%B0%9C-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0.md) - 2026-01-28
 - [📖 도메인 주도 설계란 무엇인가?](2-Architecture/%F0%9F%8F%97%EF%B8%8F-DDD/domain-driven-design-quickly.md) - 2026-01-19
 - [🤔 도메인 주도 설계의 사실과 오해](2-Architecture/%F0%9F%8F%97%EF%B8%8F-DDD/Facts-and-Misconceptions-of-Domain-Driven-Design.md) - 2026-01-19
 
