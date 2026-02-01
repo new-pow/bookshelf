@@ -24,4 +24,5 @@
 	- [참고링크](https://docs.spring.io/spring-boot/reference/features/kotlin.html)
 
 ## 2026.01.14
-- 
+
+## 2026.01.17
