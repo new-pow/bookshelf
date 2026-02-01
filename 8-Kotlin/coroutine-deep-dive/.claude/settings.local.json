@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(kotlinc:*)",
+      "Bash(java:*)",
+      "Bash(git add:*)",
+      "Read(//Users/berapt/Library/Mobile Documents/com~apple~CloudDocs/Study/bookshelf/👩🏻‍💻-Kotlin/**)",
+      "Bash(./gradlew build:*)",
+      "Bash(./gradlew run:*)",
+      "Bash(./gradlew:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
