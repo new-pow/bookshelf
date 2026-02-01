@@ -1,7 +1,6 @@
 ---
-tags: [framework, react, typescript]
+tags: [typescript, language]
 ---
-
 # 타입스크립트 소개와 배경
 - [타입스크립트 공식문서](https://arc.net/l/quote/pbwpchjn)
 - 자바스크립트에서 확장된 언어임

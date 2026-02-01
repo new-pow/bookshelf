@@ -1,7 +1,6 @@
 ---
-tags: [systems, distributed-systems]
+tags: [systems, distributed-systems, recommender-systems]
 ---
-
 # 추천 시스템 소개
 ## 주요 추천 알고리즘
 ### 협업 필터링 Collaborative Filtering : CF
