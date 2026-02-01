@@ -1,7 +1,6 @@
 ---
-tags: [systems, distributed-systems]
+tags: [systems, distributed-systems, payment]
 ---
-
 # 견고한 결제 시스템 만들기
 ## 결제 시스템 Requests
 - 사용자 인증이나 보안을 고려해야한다.

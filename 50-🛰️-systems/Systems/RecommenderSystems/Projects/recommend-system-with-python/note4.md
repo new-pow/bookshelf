@@ -1,7 +1,6 @@
 ---
-tags: [systems, distributed-systems]
+tags: [systems, distributed-systems, recommender-systems]
 ---
-
 # Surprise 패키지 사용
 - `pip install scikit-surprise` 
 	- 아래와 같은 에러가 발생함.

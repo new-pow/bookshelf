@@ -1,7 +1,6 @@
 ---
-tags: [systems, distributed-systems]
+tags: [systems, distributed-systems, recommender-systems]
 ---
-
 # Python을 이용한 개인화 추천시스템
 
 ## 개요

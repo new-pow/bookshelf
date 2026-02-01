@@ -1,7 +1,6 @@
 ---
-tags: [systems, distributed-systems]
+tags: [systems, distributed-systems, recommender-systems]
 ---
-
 # 협업 필터링 collaborative filtering
 - 사용자의 구매 패턴이나 평점 등 사용자의 기호 경향을 활용하여 다른 사람들의 기호 경향 추천을 하는 방법입니다.
 - 사용자의 개인정보나 아이템 정보가 없이도 추천할 수 있는 것이 큰 장점입니다.

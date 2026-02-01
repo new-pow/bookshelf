@@ -1,7 +1,6 @@
 ---
-tags: [framework, react, typescript]
+tags: [typescript, language]
 ---
-
 - `npm install` 
 	- package.json 에 정의된 모듈을 설지함
 - npm 강의 추천

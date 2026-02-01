@@ -1,7 +1,6 @@
 ---
-tags: [systems, distributed-systems]
+tags: [systems, distributed-systems, recommender-systems]
 ---
-
 # 협업 필터링 추천 시스템
 - 어떤 아이템에 대해 비슷한 취향을 가진 사람들은 다른 아이템또한 비슷한 취향을 가질 것이다.
 ## 협업 필터링 Collaborative Filtering : CF

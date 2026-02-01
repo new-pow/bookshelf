@@ -1,7 +1,6 @@
 ---
-tags: [framework, react, typescript]
+tags: [typescript, language]
 ---
-
 # 타입스크립트 입문 - 기초부터 실전까지
 
 ![](https://i.imgur.com/W17XGzW.png)

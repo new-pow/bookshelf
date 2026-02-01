@@ -1,7 +1,6 @@
 ---
-tags: [systems, distributed-systems]
+tags: [systems, distributed-systems, recommender-systems]
 ---
-
 # 추천 시스템 입문
 
 ![](https://image.yes24.com/goods/118625987/XL)

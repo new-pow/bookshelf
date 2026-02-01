@@ -1,7 +1,6 @@
 ---
-tags: [systems, distributed-systems]
+tags: [systems, distributed-systems, recommender-systems]
 ---
-
 # Matrix Factorization (MF) 기반 추천
 - 추천 시스템의 종류
 	- 메모리 기반 알고리즘

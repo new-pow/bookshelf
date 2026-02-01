@@ -1,7 +1,6 @@
 ---
-tags: [systems, distributed-systems]
+tags: [systems, distributed-systems, recommender-systems]
 ---
-
 # 추천 시스템 실습을 위한 리서치
 
 - 추천 알고리즘에 대한 학습과 추천 시스템 설계-구축에 대한 서치는 별개로 진행되어야 할 것 같습니다.

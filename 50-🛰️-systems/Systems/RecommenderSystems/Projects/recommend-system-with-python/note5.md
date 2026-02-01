@@ -1,7 +1,6 @@
 ---
-tags: [systems, distributed-systems]
+tags: [systems, distributed-systems, recommender-systems]
 ---
-
 # 하이브리드 추천 시스템
 - 각각의 추천 시스템의 장단점을 합치기 위함
 - 단순히 평균을 낸다거나 하지 않는다.
