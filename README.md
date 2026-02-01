@@ -6,15 +6,15 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_119 TILs and counting..._
+_120 TILs and counting..._
 
 ---
 
 ### 3 most recent TILs
 
+- [▶️ [Inflean] 제미니의 개발실무 - 커머스 백엔드 레거시와 AI 활용편](91-%F0%9F%91%A9%F0%9F%8F%BB%E2%80%8D%F0%9F%92%BB-work-well/Gemini_CommerceBackend_Legacy_and_AI.md) - 2026-02-01
 - [📕 도메인 주도 개발 시작하기](2-Architecture/%F0%9F%8F%97%EF%B8%8F-DDD/%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%A3%BC%EB%8F%84-%EA%B0%9C%EB%B0%9C-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0.md) - 2026-01-28
 - [📖 도메인 주도 설계란 무엇인가?](2-Architecture/%F0%9F%8F%97%EF%B8%8F-DDD/domain-driven-design-quickly.md) - 2026-01-19
-- [🤔 도메인 주도 설계의 사실과 오해](2-Architecture/%F0%9F%8F%97%EF%B8%8F-DDD/Facts-and-Misconceptions-of-Domain-Driven-Design.md) - 2026-01-19
 
 
 ### Categories
@@ -81,6 +81,10 @@ _119 TILs and counting..._
 
 #### 9-💭-look-back
 - [2025 08](9-%F0%9F%92%AD-look-back/2025-08.md)
+
+
+#### 91-👩🏻‍💻-work-well
+- [▶️ [Inflean] 제미니의 개발실무 - 커머스 백엔드 레거시와 AI 활용편](91-%F0%9F%91%A9%F0%9F%8F%BB%E2%80%8D%F0%9F%92%BB-work-well/Gemini_CommerceBackend_Legacy_and_AI.md)
 
 
 #### Etc
