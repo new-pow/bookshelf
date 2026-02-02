@@ -6,15 +6,15 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_109 TILs and counting..._
+_112 TILs and counting..._
 
 ---
 
 ### 3 most recent TILs
 
-- [Python을 이용한 개인화 추천시스템](50-%F0%9F%9B%B0%EF%B8%8F-systems/RecommenderSystems/recommend-system-with-python.md) - 2026-02-01
-- [👍 추천 시스템을 알아보자](50-%F0%9F%9B%B0%EF%B8%8F-systems/RecommenderSystems/recommend-system.md) - 2026-02-01
-- [추천 시스템 입문](50-%F0%9F%9B%B0%EF%B8%8F-systems/RecommenderSystems/recommender-systems.md) - 2026-02-01
+- [📖 도메인 주도 설계란 무엇인가?](20-%F0%9F%8F%97%EF%B8%8F-architecture/DDD/domain-driven-design-quickly.md) - 2026-02-02
+- [📕 도메인 주도 개발 시작하기](20-%F0%9F%8F%97%EF%B8%8F-architecture/DDD/%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%A3%BC%EB%8F%84-%EA%B0%9C%EB%B0%9C-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0.md) - 2026-02-02
+- [🤔 도메인 주도 설계의 사실과 오해](20-%F0%9F%8F%97%EF%B8%8F-architecture/DDD/Facts-and-Misconceptions-of-Domain-Driven-Design.md) - 2026-02-02
 
 
 ### Categories
@@ -47,14 +47,17 @@ _109 TILs and counting..._
 
 #### 20-🏗️-architecture
 <details>
-<summary><strong>Architecture</strong></summary>
+<summary><strong>DDD</strong></summary>
 
+- [📕 도메인 주도 개발 시작하기](20-%F0%9F%8F%97%EF%B8%8F-architecture/DDD/%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%A3%BC%EB%8F%84-%EA%B0%9C%EB%B0%9C-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0.md)
+- [📖 도메인 주도 설계란 무엇인가?](20-%F0%9F%8F%97%EF%B8%8F-architecture/DDD/domain-driven-design-quickly.md)
+- [🤔 도메인 주도 설계의 사실과 오해](20-%F0%9F%8F%97%EF%B8%8F-architecture/DDD/Facts-and-Misconceptions-of-Domain-Driven-Design.md)
 <details>
-<summary><strong>🏗️-DDD</strong></summary>
+<summary><strong>dddq</strong></summary>
 
-- [📕 도메인 주도 개발 시작하기](도메인-주도-개발-시작하기.md)
-- [📖 도메인 주도 설계란 무엇인가?](domain-driven-design-quickly.md)
-- [🤔 도메인 주도 설계의 사실과 오해](Facts-and-Misconceptions-of-Domain-Driven-Design.md)
+- [1장. 도메인 주도 개발이란 무엇인가?](20-%F0%9F%8F%97%EF%B8%8F-architecture/DDD/dddq/chapter1.md)
+- [2장. 유비쿼터스 언어](20-%F0%9F%8F%97%EF%B8%8F-architecture/DDD/dddq/chapter2.md)
+- [3장. 모델 주도 설계](20-%F0%9F%8F%97%EF%B8%8F-architecture/DDD/dddq/chapter3.md)
 
 </details>
 
