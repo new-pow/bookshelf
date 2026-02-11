@@ -17,10 +17,10 @@ _112 TILs and counting..._
 - [🤔 도메인 주도 설계의 사실과 오해](20-%F0%9F%8F%97%EF%B8%8F-architecture/DDD/Facts-and-Misconceptions-of-Domain-Driven-Design.md) - 2026-02-02
 
 
-### Categories
+## Categories
 
 
-#### 10-🧠-cs
+### 10-🧠-cs
 <details>
 <summary><strong>CS</strong></summary>
 
@@ -35,7 +35,7 @@ _112 TILs and counting..._
 </details>
 
 
-#### 15-➗-math
+### 15-➗-math
 <details>
 <summary><strong>Math</strong></summary>
 
@@ -45,7 +45,7 @@ _112 TILs and counting..._
 </details>
 
 
-#### 20-🏗️-architecture
+### 20-🏗️-architecture
 <details>
 <summary><strong>DDD</strong></summary>
 
@@ -64,7 +64,7 @@ _112 TILs and counting..._
 </details>
 
 
-#### 30-💻-languages
+### 30-💻-languages
 <details>
 <summary><strong>C</strong></summary>
 
@@ -139,7 +139,7 @@ _112 TILs and counting..._
 </details>
 
 
-#### 40-🧩-frameworks
+### 40-🧩-frameworks
 <details>
 <summary><strong>NextJS</strong></summary>
 
@@ -173,7 +173,7 @@ _112 TILs and counting..._
 </details>
 
 
-#### 50-🛰️-systems
+### 50-🛰️-systems
 <details>
 <summary><strong>Data</strong></summary>
 
@@ -293,7 +293,7 @@ _112 TILs and counting..._
 </details>
 
 
-#### 60-🧪-testing
+### 60-🧪-testing
 <details>
 <summary><strong>Testing</strong></summary>
 
@@ -317,7 +317,7 @@ _112 TILs and counting..._
 </details>
 
 
-#### 70-🧵-patterns
+### 70-🧵-patterns
 <details>
 <summary><strong>Patterns</strong></summary>
 
@@ -326,7 +326,7 @@ _112 TILs and counting..._
 </details>
 
 
-#### 80-📈-career
+### 80-📈-career
 <details>
 <summary><strong>Career</strong></summary>
 
@@ -350,7 +350,7 @@ _112 TILs and counting..._
 </details>
 
 
-#### 90-🧑💼-work
+### 90-🧑💼-work
 <details>
 <summary><strong>Work</strong></summary>
 
@@ -365,7 +365,7 @@ _112 TILs and counting..._
 </details>
 
 
-#### 99-📦-misc
+### 99-📦-misc
 <details>
 <summary><strong>Misc</strong></summary>
 
