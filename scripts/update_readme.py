@@ -156,7 +156,7 @@ def main():
         content.append(f"- [{item['title']}]({url}) - {date_str}")
     content.append("\n")
     
-    content.append("### Categories\n")
+    content.append("## Categories\n")
     
     # Generate Tree Content
     # We treat root node slightly differently: we don't wrap root in a details tag.
@@ -175,7 +175,7 @@ def main():
             continue
             
         content.append("")
-        content.append(f"#### {dirname}")
+        content.append(f"### {dirname}")
         
         generate_markdown_tree_recursive(subnode, content)
         
