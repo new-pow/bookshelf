@@ -149,7 +149,7 @@ def main():
     content.append("---\n")
     
     # Recent Section
-    content.append("### 3 most recent TILs\n")
+    content.append("## 3 most recent TILs\n")
     for item in recent_tils:
         date_str = item['date'].strftime('%Y-%m-%d')
         url = urllib.parse.quote(item['rel_path'], safe='/')
@@ -179,6 +179,7 @@ def main():
         
         generate_markdown_tree_recursive(subnode, content)
         
+        content.append("")
         content.append("")
     
     content.append(FOOTER)
