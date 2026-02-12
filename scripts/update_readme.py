@@ -180,7 +180,7 @@ def main():
         generate_markdown_tree_recursive(subnode, content)
         
         content.append("")
-        content.append("")
+        content.append("---\n")
     
     content.append(FOOTER)
     
