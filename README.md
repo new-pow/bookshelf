@@ -10,9 +10,9 @@ _112 TILs and counting..._
 
 ---
 
-### 3 most recent TILs
+## 3 most recent TILs
 
-- [📕 도메인 주도 개발 시작하기](20-%F0%9F%8F%97%EF%B8%8F-architecture/DDD/%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%A3%BC%EB%8F%84-%EA%B0%9C%EB%B0%9C-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0.md) - 2026-02-11
+- [📕 도메인 주도 개발 시작하기](20-%F0%9F%8F%97%EF%B8%8F-architecture/DDD/%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%A3%BC%EB%8F%84-%EA%B0%9C%EB%B0%9C-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0.md) - 2026-02-12
 - [📖 도메인 주도 설계란 무엇인가?](20-%F0%9F%8F%97%EF%B8%8F-architecture/DDD/domain-driven-design-quickly.md) - 2026-02-02
 - [🤔 도메인 주도 설계의 사실과 오해](20-%F0%9F%8F%97%EF%B8%8F-architecture/DDD/Facts-and-Misconceptions-of-Domain-Driven-Design.md) - 2026-02-02
 
@@ -35,6 +35,7 @@ _112 TILs and counting..._
 </details>
 
 
+
 ### 15-➗-math
 <details>
 <summary><strong>Math</strong></summary>
@@ -43,6 +44,7 @@ _112 TILs and counting..._
 - [선형대수](15-%E2%9E%97-math/Math/%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98.md)
 
 </details>
+
 
 
 ### 20-🏗️-architecture
@@ -62,6 +64,7 @@ _112 TILs and counting..._
 </details>
 
 </details>
+
 
 
 ### 30-💻-languages
@@ -139,6 +142,7 @@ _112 TILs and counting..._
 </details>
 
 
+
 ### 40-🧩-frameworks
 <details>
 <summary><strong>NextJS</strong></summary>
@@ -171,6 +175,7 @@ _112 TILs and counting..._
 </details>
 
 </details>
+
 
 
 ### 50-🛰️-systems
@@ -293,6 +298,7 @@ _112 TILs and counting..._
 </details>
 
 
+
 ### 60-🧪-testing
 <details>
 <summary><strong>Testing</strong></summary>
@@ -317,6 +323,7 @@ _112 TILs and counting..._
 </details>
 
 
+
 ### 70-🧵-patterns
 <details>
 <summary><strong>Patterns</strong></summary>
@@ -324,6 +331,7 @@ _112 TILs and counting..._
 - [워커 스레드 패턴](70-%F0%9F%A7%B5-patterns/Patterns/worker-thread-pattern.md)
 
 </details>
+
 
 
 ### 80-📈-career
@@ -350,6 +358,7 @@ _112 TILs and counting..._
 </details>
 
 
+
 ### 90-🧑💼-work
 <details>
 <summary><strong>Work</strong></summary>
@@ -363,6 +372,7 @@ _112 TILs and counting..._
 - [▶️ [Inflean] 제미니의 개발실무 - 커머스 백엔드 레거시와 AI 활용편](90-%F0%9F%A7%91%F0%9F%92%BC-work/WorkWell/Gemini_CommerceBackend_Legacy_and_AI.md)
 
 </details>
+
 
 
 ### 99-📦-misc
@@ -403,6 +413,7 @@ _112 TILs and counting..._
 </details>
 
 </details>
+
 
 
 [1]: https://new-pow.tistory.com
