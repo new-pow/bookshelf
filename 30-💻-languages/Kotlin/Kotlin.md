@@ -1,0 +1,56 @@
+# 🏃‍♂️‍➡️ Kotlin 기본기 루틴
+- 6 kyu 1문제
+- Kotlin 표준 라이브러리 문서 1개 확인
+- 배운 API를 Notion/블로그에 3줄 요약
+---
+## 26. 02. 17
+## 8 kyu [Convert a Boolean to a String](https://www.codewars.com/kata/551b4501ac0447318f0009cd/train/kotlin)
+- ref
+	- https://kotlinlang.org/docs/control-flow.html#when-expressions-and-statements
+- 새로 알게된 점
+```kotlin
+fun convert(b: Boolean) = "$b"
+// StringBuilder()
+    .append(b)
+    .toString() // 내부적으로 toString() 호출
+```
+
+```kotlin
+fun convert(b: Boolean) = b.toString() // 이렇게 쓰는게 실무적으로도 더 괜찮을듯.
+```
+
+- 실제로 동작하는 방식
+```java
+public static String toString(boolean b) {
+    return b ? "true" : "false";
+}
+```
+
+## [8kyu] [get ascii value of character](https://www.codewars.com/kata/55acfc59c3c23d230f00006d/train/kotlin)
+
+- 새로 알게된 점
+```kotlin
+fun getAscii(c: Char) = c.code // 해당 문자의 Unicode 코드 포인트(Int)
+```
+
+```kotlin
+c.toInt() // 이것도 동일한 동작. Kotlin 1.5 이전에 주로 사용함.
+```
+
+```kotlin
+c.hashCode() // 같은 결과값.
+```
+
+## [8kyu] [Is the string uppercase?](https://www.codewars.com/kata/56cd44e1aa4ac7879200010b/kotlin)
+- ref
+	- https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.text/uppercase.html
+- 새로 알게된 점
+```kotlin
+fun String.isUpperCase() = this == uppercase()
+```
+
+```kotlin
+fun String.isUpperCase(): Boolean =
+    all { !it.isLetter() || it.isUpperCase() }
+```
+
