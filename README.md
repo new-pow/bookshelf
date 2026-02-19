@@ -12,7 +12,7 @@ _114 TILs and counting..._
 
 ## 3 most recent TILs
 
-- [🏃‍♂️‍➡️ Kotlin 기본기 루틴](Kotlin-practice.md) - 2026-02-17
+- [🏃‍♂️‍➡️ Kotlin 기본기 루틴](30-%F0%9F%92%BB-languages/Kotlin/Kotlin-practice.md) - 2026-02-19
 - [🦞 44bits x OpenClaw 밋업](91-%F0%9F%A6%9E-ai-tools/openclaw/44bits%20x%20OpenClaw%20%EB%B0%8B%EC%97%85.md) - 2026-02-14
 - [📕 도메인 주도 개발 시작하기](20-%F0%9F%8F%97%EF%B8%8F-architecture/DDD/%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%A3%BC%EB%8F%84-%EA%B0%9C%EB%B0%9C-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0.md) - 2026-02-12
 
@@ -107,7 +107,7 @@ _114 TILs and counting..._
 - [Kotlin Coroutine: Flow와 Channel](30-%F0%9F%92%BB-languages/Kotlin/Flow-Channel.md)
 - [코루틴 학습자료](30-%F0%9F%92%BB-languages/Kotlin/croutine.md)
 - [코틀린 코루틴(Kotlin Coroutines: Deep Dive)](30-%F0%9F%92%BB-languages/Kotlin/kotlin-corouties-deep-dive.md)
-- [🏃‍♂️‍➡️ Kotlin 기본기 루틴](Kotlin-practice.md)
+- [🏃‍♂️‍➡️ Kotlin 기본기 루틴](30-%F0%9F%92%BB-languages/Kotlin/Kotlin-practice.md)
 - [📖 2시간으로 끝내는 코루틴](30-%F0%9F%92%BB-languages/Kotlin/2hours-for-coroutine.md)
 - [📖 Kotlin in action](30-%F0%9F%92%BB-languages/Kotlin/kotlin-in-action.md)
 <details>
