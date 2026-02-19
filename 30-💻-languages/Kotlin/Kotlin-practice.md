@@ -54,3 +54,4 @@ fun String.isUpperCase(): Boolean =
     all { !it.isLetter() || it.isUpperCase() }
 ```
 
+---
