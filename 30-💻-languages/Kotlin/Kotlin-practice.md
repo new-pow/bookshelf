@@ -56,3 +56,46 @@ fun String.isUpperCase(): Boolean =
 
 ---
 ## 26.02.19
+## [8kyu] [If you can't sleep, just count sheep!!](https://www.codewars.com/kata/5b077ebdaf15be5c7f000077/train/kotlin)
+- 다양한 풀이 방법들이 있었음.
+
+```kotlin
+fun countingSheep(num: Int) = (1..num).joinToString("") { "$it sheep..." }
+```
+
+```kotlin
+fun countingSheep(num: Int): String = buildString { for(i in 1..num) append(i, " sheep...") }
+```
+
+```kotlin
+fun countingSheep(num: Int) = (1..num).fold("") { a, n -> a + "$n sheep..." }
+```
+
+## [8kyu] [Total amount of points](https://www.codewars.com/kata/5bb904724c47249b10000131/train/kotlin)
+- 새로 알게된 것
+```kotlin
+fun points(games: List<String>) =
+        games.sumBy { // sumOf 로 개선하는 것이 좋음
+            val (x, y) = it.split(":")
+            when {
+                x > y -> 3 // 숫자로 안바꿔도 비교 가능
+                x < y -> 0
+                else -> 1
+            }
+        }
+```
+
+- https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/sum-by.html
+- `sumBy`는 **Int 전용이라는 구조적 한계** 때문에 deprecated 되었고,  이를 일반화한 `sumOf`로 통합됨.
+	- `sumOf`는 타입별 오버로드가 존재함.
+
+## [8kyu] [Sum Arrays](https://www.codewars.com/kata/53dc54212259ed3d4f00071c/kotlin)
+- (생략)
+
+## [7kyu] [Credit Card Mask]()
+- 새로 알게된 것
+```kotlin
+fun maskify(cc: String) = cc.takeLast(4).padStart(cc.length,'#')
+```
+
+
