@@ -92,10 +92,21 @@ fun points(games: List<String>) =
 ## [8kyu] [Sum Arrays](https://www.codewars.com/kata/53dc54212259ed3d4f00071c/kotlin)
 - (생략)
 
-## [7kyu] [Credit Card Mask]()
+## [7kyu] [Credit Card Mask]
 - 새로 알게된 것
 ```kotlin
 fun maskify(cc: String) = cc.takeLast(4).padStart(cc.length,'#')
 ```
 
+```kotlin
+fun maskify(cc: String): String {
+    if(cc.length <= 4){
+        return cc
+    }
+    val maskedPart = "#".repeat(cc.length - 4)
+    val visiblePart = cc.takeLast(4)
+    return maskedPart  + visiblePart
+    
+}
+```
 
