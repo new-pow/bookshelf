@@ -3,6 +3,10 @@
 - Kotlin 표준 라이브러리 문서 1개 확인
 - 배운 API를 Notion/블로그에 3줄 요약
 ---
+## 26-02-20
+
+
+---
 ## 26. 02. 17
 ## 8 kyu [Convert a Boolean to a String](https://www.codewars.com/kata/551b4501ac0447318f0009cd/train/kotlin)
 - ref
@@ -109,9 +113,3 @@ fun maskify(cc: String): String {
     
 }
 ```
-
----
-## 26.02.20
-- 테스트 커밋
-- 커밋이 되나요???
-- 테트테스트
