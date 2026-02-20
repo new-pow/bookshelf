@@ -5,8 +5,74 @@
 ## 26-02-20
 - **7kyu 로 레벨업했다 🎉**
 ### 7 kyu [Fizz Buzz](https://www.codewars.com/kata/5300901726d12b80e8000498/train/kotlin)
+```kotlin
+fun fizzBuzz(n: Int): Array<String> {
+  return (1..n).map {
+      when {
+          it % 3 == 0 && it % 5 == 0-> "FizzBuzz" 
+          it % 3 == 0 -> "Fizz"
+          it % 5 == 0 -> "Buzz"
+          else -> it.toString()
+      }
+  }.toTypedArray()
+}
+```
+- 새로 알게된 것
+```kotlin
+expect inline fun <T> Collection<T>.toTypedArray(): Array<T>
+```
 
+- `CharArray`
+	- **원시 타입 배열 (primitive array)**
+	- JVM에서는 내부적으로 `char[]`
+	- 각 요소가 **primitive char**
+    - **박싱(Boxing) 없음**
+    - 메모리/성능 효율적
 
+```
+char[] 
+[a][b][c]
+```
+
+- 연속된 2바이트 primitive
+- GC 부담 적음
+
+```kotlin
+val a: CharArray = charArrayOf('a', 'b', 'c')
+```
+- `Array<Char>`
+	- **제네릭 배열**
+	- JVM에서는 `Character[]`
+	- 각 요소가 **java.lang.Character (박싱된 객체)**
+	- 제네릭 컬렉션과 호환 가능
+    - 박싱 비용 발생
+
+```kotlin
+val b: Array<Char> = arrayOf('a', 'b', 'c')
+```
+
+```
+Character[] (참조 배열)
+[ref][ref][ref]
+   ↓    ↓    ↓
+ Character('a')
+ Character('b')
+ Character('c')
+```
+
+- 객체 + 참조
+- 메모리 2~3배 이상 사용 가능
+- GC 부담 증가
+
+왜 필요할까?
+- Kotlin의 제네릭은 primitive를 직접 다룰 수 없음.
+- 박싱해서 넘겨야 함.
+Kotlin이 primitive 배열을 별도로 둔 이유:
+1. JVM의 구조적 한계
+2. 박싱 비용 제거
+3. 메모리 효율성 확보
+4. Java interop 유지
+5. 제네릭 타입 시스템 제약
 
 ### [6kyu] [Split Strings](https://www.codewars.com/kata/515de9ae9dcfc28eb6000001/train/kotlin)
 - mine
