@@ -1,11 +1,90 @@
 # 🏃‍♂️‍➡️ Kotlin 기본기 루틴
-- 6 kyu 1문제
+- 매일 6 kyu 1문제 이상
 - Kotlin 표준 라이브러리 문서 1개 확인
-- 배운 API를 Notion/블로그에 3줄 요약
 ---
 ## 26-02-20
+- **7kyu 로 레벨업했다 🎉**
+### 7 kyu [Fizz Buzz](https://www.codewars.com/kata/5300901726d12b80e8000498/train/kotlin)
 
-- 수동 커밋 테스트
+
+
+### [6kyu] [Split Strings](https://www.codewars.com/kata/515de9ae9dcfc28eb6000001/train/kotlin)
+- mine
+	- 마음에 너무 안들어서 작성해둠.
+```kotlin
+fun solution(s: String): List<String> {
+    var curStart = 0
+    var curEnd = 2
+    
+    val result = mutableListOf<String>() // mutableListOf 를 mutableList() 로 헷갈림
+    
+    if (s.length == 0) return result
+    
+    while (curEnd < s.length) {
+        result.add(s.substring(curStart, curEnd))
+        curStart = curEnd
+        curEnd = curStart + 2
+    }
+    
+    when {
+        s.length % 2 == 0 -> result.add(s.substring(curStart, curEnd))
+        else -> result.add(s.substring(curStart, curEnd-1) + "_")
+    }
+    
+    return result
+}
+```
+- 새로 알게된 점
+	- [chunked(n)](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/chunked.html
+```kotlin
+// transform 도 할 수 있다.
+fun <T, R> Iterable<T>.chunked(size: Int, transform: (List<T>) -> R): List<R>
+```
+
+```kotlin
+@SinceKotlin("1.2")
+public fun <T> Iterable<T>.chunked(size: Int): List<List<T>> {
+    return windowed(size, size, partialWindows = true) // 첫번째 아이디어는 그닥 다르진 않은 듯.
+}
+
+@SinceKotlin("1.2")
+public fun <T> Iterable<T>.windowed(size: Int, step: Int = 1, partialWindows: Boolean = false): List<List<T>> {
+    checkWindowSizeStep(size, step) // 먼저 step 을 측정
+    if (this is RandomAccess && this is List) {
+        val thisSize = this.size
+        val resultCapacity = thisSize / step + if (thisSize % step == 0) 0 else 1
+        val result = ArrayList<List<T>>(resultCapacity)
+        var index = 0
+        while (index in 0 until thisSize) {
+            val windowSize = size.coerceAtMost(thisSize - index)
+            if (windowSize < size && !partialWindows) break
+            result.add(List(windowSize) { this[it + index] })
+            index += step
+        }
+        return result
+    }
+    val result = ArrayList<List<T>>()
+    windowedIterator(iterator(), size, step, partialWindows, reuseBuffer = false).forEach {
+        result.add(it)
+    }
+    return result
+}
+```
+
+- padStart 도 있고, padEnd 도 있다. 활용할것.
+```kotlin
+fun solution(s: String): List<String> = 
+    s.chunked(2).map { it.padEnd(2, '_') }
+```
+
+- 인덱스 기반으로 정리할 수도 있다.
+```kotlin
+fun solution(s: String): List<String> =
+    (0 until s.length step 2).map { i -> // step 2 는 2번식 건너뛴다는 이야기
+        s.substring(i, minOf(i + 2, s.length)).padEnd(2, '_') // minOf 로 에러 방지
+    }
+```
+
 ---
 ## 26. 02. 17
 ## 8 kyu [Convert a Boolean to a String](https://www.codewars.com/kata/551b4501ac0447318f0009cd/train/kotlin)

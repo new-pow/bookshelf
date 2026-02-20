@@ -6,9 +6,13 @@
 .DS_Store
 .idea
 .idea/*
-.obsidian/*
-.obsidian
+
+### Obsidian ###
+# Keep .obsidian settings in git, but ignore volatile/local files
 .obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+.trash/
 
 # go 생략
 *.go
@@ -26,9 +30,7 @@ node_modules/
 # data set 생략
 *.csv
 
-### Opsidian ###
-# config dir
-.obsidian/
+# (removed Obsidian ignore block; see Obsidian section above)
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
@@ -361,7 +363,6 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
-# smart-env
-.smart-env/*
-.smart-env/*/*
+# smart-env (local env/cache; do not commit)
+.smart-env/
 *.ajson
