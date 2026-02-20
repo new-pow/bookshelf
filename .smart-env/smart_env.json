@@ -27,5 +27,16 @@
       "embedding_complete": true,
       "done_import": true
     }
+  },
+  "smart_threads": {
+    "chat_model": {
+      "adapter": "openai",
+      "openai": {
+        "model_key": "gpt-4o"
+      }
+    },
+    "embed_model": {
+      "model_key": "None"
+    }
   }
 }
