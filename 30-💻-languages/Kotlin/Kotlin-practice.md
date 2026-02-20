@@ -5,7 +5,7 @@
 ---
 ## 26-02-20
 
-
+- 수동 커밋 테스트
 ---
 ## 26. 02. 17
 ## 8 kyu [Convert a Boolean to a String](https://www.codewars.com/kata/551b4501ac0447318f0009cd/train/kotlin)
