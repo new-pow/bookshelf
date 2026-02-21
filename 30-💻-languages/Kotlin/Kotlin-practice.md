@@ -2,6 +2,11 @@
 - 매일 6 kyu 1문제 이상
 - Kotlin 표준 라이브러리 문서 1개 확인
 ---
+## 26-02-21
+### 7kyu [Printer Errors](https://www.codewars.com/kata/56541980fa08ab47a0000040/train/kotlin)
+
+
+---
 ## 26-02-20
 - **7kyu 로 레벨업했다 🎉**
 ### 7 kyu [Fizz Buzz](https://www.codewars.com/kata/5300901726d12b80e8000498/train/kotlin)
