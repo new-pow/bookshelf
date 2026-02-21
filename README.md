@@ -12,8 +12,8 @@ _115 TILs and counting..._
 
 ## 3 most recent TILs
 
+- [🏃‍♂️‍➡️ Kotlin 기본기 루틴](30-%F0%9F%92%BB-languages/Kotlin/Kotlin-practice.md) - 2026-02-22
 - [🕸️ 브라우저에서 도메인을 치면 일어나는 일들](10-%F0%9F%A7%A0-cs/Network/www-structure.md) - 2026-02-21
-- [🏃‍♂️‍➡️ Kotlin 기본기 루틴](30-%F0%9F%92%BB-languages/Kotlin/Kotlin-practice.md) - 2026-02-20
 - [🦞 44bits x OpenClaw 밋업](91-%F0%9F%A6%9E-ai-tools/openclaw/44bits%20x%20OpenClaw%20%EB%B0%8B%EC%97%85.md) - 2026-02-14
 
 
