@@ -2,6 +2,44 @@
 - 매일 6 kyu 1문제 이상
 - Kotlin 표준 라이브러리 문서 1개 확인
 ---
+## 26-02-22
+### [5kyu] [String incrementer](https://www.codewars.com/kata/54a91a4883a7de5d7800009c/train/kotlin)
+- 정말 맘에 안드는 내 답변
+```kotlin
+fun incrementString(str: String) : String {
+    var splitCur = str.length -1
+    
+    if (str.length == 0) return "1"
+    
+    while (splitCur > -1) {
+        if (str[splitCur].isDigit()) {
+            splitCur --
+        } else {
+            break
+        }
+    }
+    return when {
+        // 모두 숫자일때
+        splitCur == -1 -> ((str.toInt() + 1).toString()).padStart(str.length, '0')
+        // 모두 숫자가 아닐때
+        splitCur == str.length -1 -> str + "1"
+        // 섞여있는 경우
+        else -> str.substring(0, splitCur+1) + ((str.substring(splitCur+1, str.length).toInt() + 1).toString()).padStart(str.length -1 - splitCur, '0') 
+    }
+}
+```
+
+- 새로 알게된 점
+	- [takeLastWhile](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/take-last-while.html)
+	- [toIntOrNull](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.text/to-int-or-null.html)
+```kotlin
+fun incrementString(str: String) : String {
+    val i = str.takeLastWhile { it.isDigit() }
+    return str.dropLast(i.length) + ((i.toIntOrNull() ?: 0) + 1).toString().padStart(i.length, '0')
+}
+```
+
+---
 ## 26-02-21
 ### 7kyu [Printer Errors](https://www.codewars.com/kata/56541980fa08ab47a0000040/train/kotlin)
 
