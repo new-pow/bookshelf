@@ -2,6 +2,59 @@
 - 매일 6 kyu 1문제 이상
 - Kotlin 표준 라이브러리 문서 1개 확인
 ---
+## 26-02-25
+### 5kyu [PaginationHelper](https://www.codewars.com/kata/515bb423de843ea99400000a/train/kotlin)
+- 역시 맘에 안드는 내 답변
+```kotlin
+class PaginationHelper<T>(val collection: List<T>, val itemsPerPage: Int) {
+    
+   /**
+   * returns the number of items within the entire collection
+   */
+  val itemCount: Int = collection.size
+  
+  val isFull : Boolean = (itemCount % itemsPerPage == 0)
+    
+  /**
+   * returns the number of pages
+   */
+  val pageCount: Int = (itemCount / itemsPerPage) + (if (itemCount % itemsPerPage == 0) 0 else 1)
+  
+  /**
+   * returns the number of items on the current page. page_index is zero based.
+   * this method should return -1 for pageIndex values that are out of range
+   */
+  fun pageItemCount(pageIndex: Int): Int = when {
+      pageIndex == pageCount - 1 && isFull -> itemsPerPage
+      pageIndex == pageCount - 1 -> itemCount % itemsPerPage
+      (0 <= pageIndex && pageIndex < pageCount-1) -> itemsPerPage
+      else -> -1
+  }
+  
+  
+  /**
+   * determines what page an item is on. Zero based indexes
+   * this method should return -1 for itemIndex values that are out of range
+   */
+  fun pageIndex(itemIndex: Int): Int = when {
+      itemIndex < 0 -> -1
+      itemIndex >= itemCount -> -1
+      else -> itemIndex / itemsPerPage
+  }
+}
+```
+
+- 새로 알게된 점
+```kotlin
+class PaginationHelper<T>(val collection: List<T>, val itemsPerPage: Int) {
+    val itemCount = collection.count()
+    val pageCount = (itemCount / itemsPerPage).inc()
+    fun pageItemCount(index: Int) = collection.chunked(itemsPerPage).getOrNull(index)?.count() ?: -1
+    fun pageIndex(index: Int) = if (itemCount == 0) -1 else (index / itemsPerPage).takeIf { index in 0..itemCount && it in 0..pageCount } ?: -1
+}
+```
+
+---
 ## 26-02-22
 ### [5kyu] [String incrementer](https://www.codewars.com/kata/54a91a4883a7de5d7800009c/train/kotlin)
 - 정말 맘에 안드는 내 답변
