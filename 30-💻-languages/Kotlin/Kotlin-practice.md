@@ -4,6 +4,43 @@
 ---
 ## 25-02-26
 ### 6kyu[ Buying a Car](https://www.codewars.com/kata/554a44516729e4d80b000012/train/kotlin)
+- 내 답변
+```kotlin
+package solution
+
+object BuyCar {
+    fun nbMonths(
+        startPriceOld: Int,
+        startPriceNew: Int,
+        savingperMonth: Int,
+        percentLossByMonth: Double
+    ): Pair<Int, Int> {
+        // your code
+        
+        if (startPriceOld >= startPriceNew) return 0 to (startPriceOld - startPriceNew)
+        
+        var month = 1
+        var saving = 0
+        var priceOld = startPriceOld.toDouble()
+        var priceNew = startPriceNew.toDouble()
+        var loss = percentLossByMonth
+        
+        while(true) {            
+            saving += savingperMonth
+            priceOld -= (priceOld*loss/100)
+            priceNew -= (priceNew*loss/100)
+            
+            if (isEnough(priceOld, priceNew, saving)) break
+            month ++
+            if (month % 2 == 0) loss += 0.5
+        }
+        return month to kotlin.math.round(saving + priceOld - priceNew).toInt()
+    }
+    
+    fun isEnough(priceOld: Double,priceNew: Double, saving: Int) = (saving + priceOld) >= priceNew
+}
+```
+
 
 ---
 ## 26-02-25
