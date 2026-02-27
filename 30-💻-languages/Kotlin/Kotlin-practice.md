@@ -2,6 +2,10 @@
 - 매일 6 kyu 1문제 이상
 - Kotlin 표준 라이브러리 문서 1개 확인
 ---
+## 25-02-26
+### 6kyu[ Buying a Car](https://www.codewars.com/kata/554a44516729e4d80b000012/train/kotlin)
+
+---
 ## 26-02-25
 ### 5kyu [PaginationHelper](https://www.codewars.com/kata/515bb423de843ea99400000a/train/kotlin)
 - 역시 맘에 안드는 내 답변
@@ -53,6 +57,8 @@ class PaginationHelper<T>(val collection: List<T>, val itemsPerPage: Int) {
     fun pageIndex(index: Int) = if (itemCount == 0) -1 else (index / itemsPerPage).takeIf { index in 0..itemCount && it in 0..pageCount } ?: -1
 }
 ```
+- [icn](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-byte/inc.html)
+- 
 
 ---
 ## 26-02-22
