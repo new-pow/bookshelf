@@ -2,6 +2,15 @@
 - 매일 6 kyu 1문제 이상
 - Kotlin 표준 라이브러리 문서 1개 확인
 ---
+## 25-03-01
+### 5kyu [Can you get the loop ?](https://www.codewars.com/kata/52a89c2ea8ddc5547a000863/train/kotlin)
+- 내 답변
+	- 
+- 새로 알게된 것
+---
+## 25-02-27
+- 
+---
 ## 25-02-26
 ### 6kyu[ Buying a Car](https://www.codewars.com/kata/554a44516729e4d80b000012/train/kotlin)
 - 내 답변
