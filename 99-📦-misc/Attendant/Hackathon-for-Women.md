@@ -74,4 +74,8 @@
 	- 확장여부판단 -> 확장시 리텐션 유지 가능한가?
 ---
 - 공식 엠베서더에 많이 지원해보자
-- 
+- 지정공모 과제 도전해볼 수 있다
+	- ["모두의 아이디어"](https://www.ipmarket.or.kr/idearo/moduidea/newIdrContestDesignatedDetail.do?styleType=2&challengeId=govt005)
+- 정부 AI 응용 서비스 개발 체크리스트
+	- 문제정의
+	- 
