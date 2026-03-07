@@ -78,4 +78,4 @@
 	- ["모두의 아이디어"](https://www.ipmarket.or.kr/idearo/moduidea/newIdrContestDesignatedDetail.do?styleType=2&challengeId=govt005)
 - 정부 AI 응용 서비스 개발 체크리스트
 	- 문제정의
-- 
+---
