@@ -6,15 +6,15 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_117 TILs and counting..._
+_118 TILs and counting..._
 
 ---
 
 ## 3 most recent TILs
 
-- [📕 JVM 밑바닥까지 파헤치기](20-%F0%9F%8F%97%EF%B8%8F-architecture/Runtime/JVM/JVM-%EB%B0%91%EB%B0%94%EB%8B%A5%EA%B9%8C%EC%A7%80-%ED%8C%8C%ED%97%A4%EC%B9%98%EA%B8%B0.md) - 2026-03-30
-- [🌹 Hackathon for Women](99-%F0%9F%93%A6-misc/Attendant/Hackathon-for-Women.md) - 2026-03-07
-- [📕 도메인 주도 개발 시작하기](20-%F0%9F%8F%97%EF%B8%8F-architecture/DDD/%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%A3%BC%EB%8F%84-%EA%B0%9C%EB%B0%9C-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0.md) - 2026-03-02
+- [일의 감각](90-%F0%9F%A7%91%F0%9F%92%BC-work/WorkWell/Work-and-sence.md) - 2026-04-04
+- [2024 Women Tech Week](80-%F0%9F%93%88-career/Attendent/2024-Women-Tech-Week.md) - 2026-04-04
+- [글또 10기](80-%F0%9F%93%88-career/Attendent/2024-Geultto-10.md) - 2026-04-04
 
 
 ## Categories
@@ -362,22 +362,22 @@ _117 TILs and counting..._
 
 ### 80-📈-career
 <details>
-<summary><strong>Career</strong></summary>
+<summary><strong>Attendent</strong></summary>
 
-- [2024 Women Tech Week](2024-Women-Tech-Week.md)
-- [글또 10기](2024-Geultto-10.md)
+- [2024 Women Tech Week](80-%F0%9F%93%88-career/Attendent/2024-Women-Tech-Week.md)
+- [글또 10기](80-%F0%9F%93%88-career/Attendent/2024-Geultto-10.md)
 <details>
 <summary><strong>2024-wtw</strong></summary>
 
-- [5년차 중니어, 0년차 게임 서버 프로그래머가 되었습니다](section3.md)
-- [여성 엔지니어로 성장하기](section2.md)
-- [질의 응답](section4.md)
+- [5년차 중니어, 0년차 게임 서버 프로그래머가 되었습니다](80-%F0%9F%93%88-career/Attendent/2024-wtw/section3.md)
+- [여성 엔지니어로 성장하기](80-%F0%9F%93%88-career/Attendent/2024-wtw/section2.md)
+- [질의 응답](80-%F0%9F%93%88-career/Attendent/2024-wtw/section4.md)
 
 </details>
 <details>
 <summary><strong>geultto-10</strong></summary>
 
-- [240929 ot](240929-ot.md)
+- [240929 ot](80-%F0%9F%93%88-career/Attendent/geultto-10/240929-ot.md)
 
 </details>
 
@@ -397,6 +397,7 @@ _117 TILs and counting..._
 <summary><strong>WorkWell</strong></summary>
 
 - [▶️ [Inflean] 제미니의 개발실무 - 커머스 백엔드 레거시와 AI 활용편](90-%F0%9F%A7%91%F0%9F%92%BC-work/WorkWell/Gemini_CommerceBackend_Legacy_and_AI.md)
+- [일의 감각](90-%F0%9F%A7%91%F0%9F%92%BC-work/WorkWell/Work-and-sence.md)
 
 </details>
 
