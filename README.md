@@ -364,20 +364,20 @@ _117 TILs and counting..._
 <details>
 <summary><strong>Career</strong></summary>
 
-- [2024 Women Tech Week](80-%F0%9F%93%88-career/Career/2024-Women-Tech-Week.md)
-- [글또 10기](80-%F0%9F%93%88-career/Career/2024-Geultto-10.md)
+- [2024 Women Tech Week](2024-Women-Tech-Week.md)
+- [글또 10기](2024-Geultto-10.md)
 <details>
 <summary><strong>2024-wtw</strong></summary>
 
-- [5년차 중니어, 0년차 게임 서버 프로그래머가 되었습니다](80-%F0%9F%93%88-career/Career/2024-wtw/section3.md)
-- [여성 엔지니어로 성장하기](80-%F0%9F%93%88-career/Career/2024-wtw/section2.md)
-- [질의 응답](80-%F0%9F%93%88-career/Career/2024-wtw/section4.md)
+- [5년차 중니어, 0년차 게임 서버 프로그래머가 되었습니다](section3.md)
+- [여성 엔지니어로 성장하기](section2.md)
+- [질의 응답](section4.md)
 
 </details>
 <details>
 <summary><strong>geultto-10</strong></summary>
 
-- [240929 ot](80-%F0%9F%93%88-career/Career/geultto-10/240929-ot.md)
+- [240929 ot](240929-ot.md)
 
 </details>
 
