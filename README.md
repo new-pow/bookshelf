@@ -12,9 +12,9 @@ _118 TILs and counting..._
 
 ## 3 most recent TILs
 
+- [📕 JVM 밑바닥까지 파헤치기](20-%F0%9F%8F%97%EF%B8%8F-architecture/Runtime/JVM/JVM-%EB%B0%91%EB%B0%94%EB%8B%A5%EA%B9%8C%EC%A7%80-%ED%8C%8C%ED%97%A4%EC%B9%98%EA%B8%B0.md) - 2026-04-06
 - [일의 감각](90-%F0%9F%A7%91%F0%9F%92%BC-work/WorkWell/Work-and-sence.md) - 2026-04-04
 - [2024 Women Tech Week](80-%F0%9F%93%88-career/Attendent/2024-Women-Tech-Week.md) - 2026-04-04
-- [글또 10기](80-%F0%9F%93%88-career/Attendent/2024-Geultto-10.md) - 2026-04-04
 
 
 ## Categories
