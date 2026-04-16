@@ -19,7 +19,7 @@
 ```
 - `git` 깔기
 	- github 에 가입되어 있지 않다면, 가입합니다.
-```
+```shell
 brew install gh
 # 로그인 하기
 ls
@@ -34,9 +34,17 @@ ls
 **?** **How would you like to authenticate GitHub CLI?** Login with a web browser
 ```
 - 내 컴퓨터에 Github 레포지토리 다운 받기
-```
+```shell
+# 해당 경로로 이동합니다
+cd {경로}
+# 상위 경로로 이동합니다. 
+cd ..
+
+# github 레포지토리 다운받기
 git clone https://github.com/new-pow/doing-sth.git
 ```
+
+
 
 
 ---
