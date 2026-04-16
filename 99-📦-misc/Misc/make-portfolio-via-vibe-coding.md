@@ -33,7 +33,7 @@ ls
 
 **?** **How would you like to authenticate GitHub CLI?** Login with a web browser
 
-# 
+# 이후 웹브라우저에서 인증합니다.
 ```
 - 내 컴퓨터에 Github 레포지토리 다운 받기
 ```shell
@@ -49,6 +49,11 @@ git clone https://github.com/new-pow/doing-sth.git
 ```shell
 brew install node
 ```
+- 내 컴퓨터에 gemini-cli 설치하기
+```shell
+npm install -g @google/gemini-cli
+gemini
+```
 
 
 ---
@@ -61,7 +66,7 @@ brew install node
 	- 디자인 폴더를 별도로 만들면 좋음.
 - 섬세한 작업은 Figma 나 Framer 를 사용해도 좋음
 	- 만약 IT 기획을 할것이라면, Figma 사용법을 익히는 것도 매우 좋습니다.
-
+---
 # 프롬프트 작성하기
 GPT의 도움을 받아서 작성해봅니다.
 - 목적
@@ -73,6 +78,13 @@ GPT의 도움을 받아서 작성해봅니다.
 	- 챗봇 기능을 넣는 것도 괜찮을듯. (사이트 문서를 기반으로 나에 대한 답변해줌)
 	- 조회수 기능 등?
 	- SEO랑 콘텐츠 관리를 할 것인지?
+---
+# Git에 중간 저장하기
+
+
+---
+# 배포하기
+
 ---
 # 오늘의 키워드들
 - 마크다운 `.md` 혹은 `markdown`
