@@ -43,8 +43,10 @@ cd ..
 # github 레포지토리 다운받기
 git clone https://github.com/new-pow/doing-sth.git
 ```
-
-
+- 내 컴퓨터에 npm 다운받기
+```shell
+brew install node
+```
 
 
 ---
