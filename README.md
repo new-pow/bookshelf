@@ -6,15 +6,15 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_118 TILs and counting..._
+_119 TILs and counting..._
 
 ---
 
 ## 3 most recent TILs
 
+- [💪 바이브코딩으로 포트폴리오 만들기](99-%F0%9F%93%A6-misc/Misc/make-portfolio-via-vibe-coding.md) - 2026-04-16
+- [▶️ [Inflean] 제미니의 개발실무 - 커머스 백엔드 레거시와 AI 활용편](90-%F0%9F%A7%91%F0%9F%92%BC-work/WorkWell/Gemini_CommerceBackend_Legacy_and_AI.md) - 2026-04-15
 - [📕 JVM 밑바닥까지 파헤치기](20-%F0%9F%8F%97%EF%B8%8F-architecture/Runtime/JVM/JVM-%EB%B0%91%EB%B0%94%EB%8B%A5%EA%B9%8C%EC%A7%80-%ED%8C%8C%ED%97%A4%EC%B9%98%EA%B8%B0.md) - 2026-04-06
-- [일의 감각](90-%F0%9F%A7%91%F0%9F%92%BC-work/WorkWell/Work-and-sence.md) - 2026-04-04
-- [2024 Women Tech Week](80-%F0%9F%93%88-career/Attendent/2024-Women-Tech-Week.md) - 2026-04-04
 
 
 ## Categories
@@ -434,6 +434,7 @@ _118 TILs and counting..._
 - [좋은 코드는 무엇인가?](99-%F0%9F%93%A6-misc/Misc/Simple-Design-%EC%A2%8B%EC%9D%80-%EC%BD%94%EB%93%9C%EC%9D%98-%EA%B8%B0%EC%A4%80.md)
 - [👀 커리어 성장 멘토링 후기](99-%F0%9F%93%A6-misc/Misc/udemy-career-mentoring.md)
 - [💕 좋았던 아티클](99-%F0%9F%93%A6-misc/Misc/Reference-articles.md)
+- [💪 바이브코딩으로 포트폴리오 만들기](99-%F0%9F%93%A6-misc/Misc/make-portfolio-via-vibe-coding.md)
 <details>
 <summary><strong>open-api</strong></summary>
 
