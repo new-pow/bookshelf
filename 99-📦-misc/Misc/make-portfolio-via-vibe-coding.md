@@ -32,6 +32,8 @@ ls
 **?** **Authenticate Git with your GitHub credentials?** Yes
 
 **?** **How would you like to authenticate GitHub CLI?** Login with a web browser
+
+# 
 ```
 - 내 컴퓨터에 Github 레포지토리 다운 받기
 ```shell
