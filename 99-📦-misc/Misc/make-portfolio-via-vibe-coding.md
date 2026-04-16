@@ -20,7 +20,18 @@
 - `git` 깔기
 	- github 에 가입되어 있지 않다면, 가입합니다.
 ```
-brew install git
+brew install gh
+# 로그인 하기
+ls
+
+#
+**?** **Where do you use GitHub?** GitHub.com
+
+**?** **What is your preferred protocol for Git operations on this host?** HTTPS
+
+**?** **Authenticate Git with your GitHub credentials?** Yes
+
+**?** **How would you like to authenticate GitHub CLI?** Login with a web browser
 ```
 - 내 컴퓨터에 Github 레포지토리 다운 받기
 ```
