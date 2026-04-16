@@ -12,7 +12,17 @@
 
 ---
 ## 개발 환경설정하기
-- `homebrew` 
+- `homebrew` 깔기
+	- https://brew.sh/
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+- `git` 깔기
+	- github 에 가입되어 있지 않다면, 가입합니다.
+```
+brew install git
+```
+- 내 컴퓨터에 Github 레포지토리
 
 
 ---
@@ -21,7 +31,8 @@
 - Notion이나 ppt 등에 무드 보드 정리
 	- 스크린 샷이나 출력 활용하여 문서화.
 - GPT 등 다른 AI를 사용해서 디자인 명세 문서 작성
-- Manus 에 문서 전달
+- Cursor 에 문서 전달
+	- 디자인 폴더를 별도로 만들면 좋음.
 - 섬세한 작업은 Figma 나 Framer 를 사용해도 좋음
 	- 만약 IT 기획을 할것이라면, Figma 사용법을 익히는 것도 매우 좋습니다.
 
