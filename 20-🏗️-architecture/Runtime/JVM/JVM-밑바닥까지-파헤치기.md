@@ -604,3 +604,10 @@ new ---------> new // JVM 관점에서 객체셍성
 - 컴파일된 코드를 다시 컴파일하지 않고도 변경된 클래스와 함께 실행 가능
 
 ---
+# 기타 찾아본 글
+- 클래스로더 관련
+	- https://hbase.tistory.com/174
+	- https://syeon2.medium.com/jvm%EC%9D%98-%EC%B2%AB%EA%B4%80%EB%AC%B8-classloader-ecdf93d53a7b
+- GraalVM
+	- [https://mangkyu.tistory.com/302](https://mangkyu.tistory.com/302 "https://mangkyu.tistory.com/302")
+- 
