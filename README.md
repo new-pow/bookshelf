@@ -6,15 +6,15 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_119 TILs and counting..._
+_120 TILs and counting..._
 
 ---
 
 ## 3 most recent TILs
 
-- [📕 JVM 밑바닥까지 파헤치기](20-%F0%9F%8F%97%EF%B8%8F-architecture/Runtime/JVM/JVM-%EB%B0%91%EB%B0%94%EB%8B%A5%EA%B9%8C%EC%A7%80-%ED%8C%8C%ED%97%A4%EC%B9%98%EA%B8%B0.md) - 2026-04-20
+- [미니멀리즘 프로그래머](20-%F0%9F%8F%97%EF%B8%8F-architecture/minimalrism-programer.md) - 2026-05-01
+- [📕 JVM 밑바닥까지 파헤치기](20-%F0%9F%8F%97%EF%B8%8F-architecture/Runtime/JVM/JVM-%EB%B0%91%EB%B0%94%EB%8B%A5%EA%B9%8C%EC%A7%80-%ED%8C%8C%ED%97%A4%EC%B9%98%EA%B8%B0.md) - 2026-05-01
 - [💪 바이브코딩으로 포트폴리오 만들기](99-%F0%9F%93%A6-misc/Misc/make-portfolio-via-vibe-coding.md) - 2026-04-16
-- [▶️ [Inflean] 제미니의 개발실무 - 커머스 백엔드 레거시와 AI 활용편](90-%F0%9F%A7%91%F0%9F%92%BC-work/WorkWell/Gemini_CommerceBackend_Legacy_and_AI.md) - 2026-04-15
 
 
 ## Categories
@@ -56,6 +56,7 @@ _119 TILs and counting..._
 
 
 ### 20-🏗️-architecture
+- [미니멀리즘 프로그래머](20-%F0%9F%8F%97%EF%B8%8F-architecture/minimalrism-programer.md)
 <details>
 <summary><strong>DDD</strong></summary>
 
