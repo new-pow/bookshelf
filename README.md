@@ -12,9 +12,9 @@ _125 TILs and counting..._
 
 ## 3 most recent TILs
 
+- [bookshelf](CLAUDE.md) - 2026-11-22
+- [📕 요즘 개발자를 위한 시스템 설계 수업](20-%F0%9F%8F%97%EF%B8%8F-architecture/SystemDesign/%EC%9A%94%EC%A6%98-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%84%A4%EA%B3%84-%EC%88%98%EC%97%85.md) - 2026-11-22
 - [🐳 Docker에서 Kubernetes까지 (5주 과정)](50-%F0%9F%9B%B0%EF%B8%8F-systems/Kubernetes/docker-to-kubernetes.md) - 2026-11-22
-- [1주차. 왜 컨테이너인가](50-%F0%9F%9B%B0%EF%B8%8F-systems/Kubernetes/docker-to-kubernetes/week1.md) - 2026-11-22
-- [🗄️ DynamoDB 깊게 파보기](50-%F0%9F%9B%B0%EF%B8%8F-systems/Database/dynamodb-deep-dive.md) - 2026-11-08
 
 
 ## Categories
