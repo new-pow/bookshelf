@@ -6,15 +6,15 @@ If you're interested in more in-depth discussions, check out [my blog][1].
 Feel free to explore the most recent writeups below this README.
 
 
-_125 TILs and counting..._
+_126 TILs and counting..._
 
 ---
 
 ## 3 most recent TILs
 
+- [🔐 JWT 보안 — 헤더와 클레임](10-%F0%9F%A7%A0-cs/Security/jwt-header-and-claims.md) - 2026-11-26
 - [📕 요즘 개발자를 위한 시스템 설계 수업](20-%F0%9F%8F%97%EF%B8%8F-architecture/SystemDesign/%EC%9A%94%EC%A6%98-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%84%A4%EA%B3%84-%EC%88%98%EC%97%85.md) - 2026-11-22
 - [bookshelf](CLAUDE.md) - 2026-11-22
-- [🐳 Docker에서 Kubernetes까지 (5주 과정)](50-%F0%9F%9B%B0%EF%B8%8F-systems/Kubernetes/docker-to-kubernetes.md) - 2026-11-22
 
 
 ## Categories
@@ -38,6 +38,12 @@ _125 TILs and counting..._
 <summary><strong>Network</strong></summary>
 
 - [🕸️ 브라우저에서 도메인을 치면 일어나는 일들](10-%F0%9F%A7%A0-cs/Network/www-structure.md)
+
+</details>
+<details>
+<summary><strong>Security</strong></summary>
+
+- [🔐 JWT 보안 — 헤더와 클레임](10-%F0%9F%A7%A0-cs/Security/jwt-header-and-claims.md)
 
 </details>
 
